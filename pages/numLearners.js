@@ -33,10 +33,6 @@ export default class Main extends React.Component {
                     onPress={() => Actions.addPlayers({ numPlayers: 3 })}
                 />
 
-                {/* <Button
-                    title="Next"
-                    onPress={goToHome}
-                /> */}
             </View>
 
         )

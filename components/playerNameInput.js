@@ -1,53 +1,35 @@
 import React from "react";
-import { Text, TextInput, View, Button, StyleSheet } from 'react-native';
-import { Actions } from 'react-native-router-flux'
+import { TextInput, View, StyleSheet } from 'react-native';
 
 
-export default class AddPlayers extends React.Component {
+
+export default class NameInput extends React.Component {
     constructor(props) {
         super(props);
+        let key = `player_${this.props.number}_name`
         this.state = {
-            "player1": "",
-            "player2": "",
-            "player3": ""
+            [key]: ""
         }
-        this.addInputBoxes = this.addInputBoxes.bind(this)
-    }
-
-    componentDidMount() {
-        let obj = {}
-        for (let i = 0; i < this.props.numPlayers; i++) {
-            obj[`player${i + 1}`] = ""
-        }
-        this.state = obj
-        console.log(this.state)
     }
 
 
-    addInputBoxes = () => {
-        let inputTextArray = []
-        for (let i = 0; i < this.props.numPlayers; i++) {
-            let placeHolder = `Player ${i + 1}'s Name`
-            inputTextArray.push()
-        }
-
-
-        return inputTextArray
-    }
-
+    handleChange = e => {
+        let key = `player_${this.props.number}_name`
+        this.setState({ [key]: e }, () => {
+            if (this.props.onChange) {
+                this.props.onChange(this.state);
+            }
+        })
+    };
 
     render() {
-        const goToHome = () => {
-            Actions.main()
-        }
-
         return (
             <View style={{ padding: 10 }}>
                 <TextInput
                     style={styles.input}
-                    key={i + 1}
-                    // onChangeText={onChangeNumber}
-                    placeholder={placeHolder}
+                    key={this.props.number}
+                    onChangeText={this.handleChange}
+                    placeholder={"Insert Players Name"}
                 />
             </View>
 

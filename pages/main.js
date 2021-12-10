@@ -10,12 +10,13 @@ export default class Main extends React.Component {
     constructor(props) {
         super(props)
         this.learnerRecord
-
+        console.log(this.props.PlayerName)
         this.state = {
             "learnerRecord": [],
             "currentLevelContent": [],
             "currentLevelIndex": 0,
         }
+
         this.loadLearnerRecord = this.loadLearnerRecord.bind(this)
     }
 
@@ -56,10 +57,6 @@ export default class Main extends React.Component {
 
         return (
             <View >
-                <Header
-                    centerComponent={{ text: 'Learner Record', style: { color: '#fff' } }}
-                />
-
                 <View style={styles.container}>
                     <Levels></Levels>
                 </View>

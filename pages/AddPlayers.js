@@ -1,49 +1,33 @@
 import React from "react";
 import { Text, TextInput, View, Button, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux'
+import NameInput from "../components/playerNameInput"
 
 
 export default class AddPlayers extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            "player1": "",
-            "player2": "",
-            "player3": ""
-        }
+        this.inputValue = {}
         this.addInputBoxes = this.addInputBoxes.bind(this)
-    }
-
-    componentDidMount() {
-        let obj = {}
-        for (let i = 0; i < this.props.numPlayers; i++) {
-            obj[`player${i + 1}`] = ""
-        }
-        this.state = obj
-        console.log(this.state)
     }
 
 
     addInputBoxes = () => {
         let inputTextArray = []
         for (let i = 0; i < this.props.numPlayers; i++) {
-            let placeHolder = `Player ${i + 1}'s Name`
-            inputTextArray.push(<TextInput
-                style={styles.input}
-                key={i + 1}
-                // onChangeText={onChangeNumber}
-                placeholder={placeHolder}
-            />)
+            const eventhandler = data => {
+                this.inputValue = Object.assign(this.inputValue, data)
+            }
+            inputTextArray.push(<NameInput onChange={eventhandler} number={i + 1} />
+            )
         }
-
-
         return inputTextArray
     }
 
 
     render() {
         const goToHome = () => {
-            Actions.main()
+            Actions.main({ "PlayerName": this.inputValue })
         }
 
 
