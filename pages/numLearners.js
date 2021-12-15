@@ -10,7 +10,6 @@ export default class Main extends React.Component {
 
     }
 
-
     render() {
         return (
             <View style={{ padding: 10 }}>
@@ -32,13 +31,8 @@ export default class Main extends React.Component {
                     type="outline"
                     onPress={() => Actions.addPlayers({ numPlayers: 3 })}
                 />
-
             </View>
-
         )
     }
 }
 
-const styles = StyleSheet.create({
-
-});
