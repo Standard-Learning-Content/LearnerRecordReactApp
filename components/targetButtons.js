@@ -20,7 +20,9 @@ export default class TargetBtn extends React.Component {
         }
 
         if (this.props.correct) {
-            console.log(answerData)
+            // console.log(answerData)
+            this.props.changePlayer()
+
         } else {
             console.log("Incorrect")
         }

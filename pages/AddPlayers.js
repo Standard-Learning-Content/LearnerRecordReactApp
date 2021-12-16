@@ -1,14 +1,18 @@
 import React from "react";
-import { Text, TextInput, View, Button, StyleSheet } from 'react-native';
-import { Actions } from 'react-native-router-flux'
+import { View, Button } from 'react-native';
 import NameInput from "../components/playerNameInput"
 import all_levels from '../levels/levels.json'
+import { JSHash, CONSTANTS } from 'react-native-hash';
+
+
+const hashAlgorithm = CONSTANTS.HashAlgorithms.sha256;
 
 
 export default class AddPlayers extends React.Component {
     constructor(props) {
         super(props);
         this.inputValue = {}
+
         this.addInputBoxes = this.addInputBoxes.bind(this)
         this.goToHome = this.goToHome.bind(this)
     }
@@ -16,7 +20,7 @@ export default class AddPlayers extends React.Component {
 
     addInputBoxes = () => {
         let inputTextArray = []
-        for (let i = 0; i < this.props.numPlayers; i++) {
+        for (let i = 0; i < this.props.route.params.numPlayers; i++) {
             const eventhandler = data => {
                 this.inputValue = Object.assign(this.inputValue, data)
             }
@@ -29,10 +33,19 @@ export default class AddPlayers extends React.Component {
 
     async goToHome() {
         let allPlayers = []
-        for (let player in this.inputValue) {
-            let id = "12NSNF_2IEHJFUEHA_21345SDG" // Dynamically Create ID
+        let GamePlayer = function (id, name, learnerRecord, quentions) {
+            this.questionIndex = 0
+            this.id = id
+            this.name = name
+            this.learnerRecord = learnerRecord
+            this.questions = quentions
+        }
 
-            let temp_data = { "userID": id }
+        for (let player in this.inputValue) {
+            // Currently we are sha256 hashing the first name
+            let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
+            let hashed_id = { "userID": hash }
+
             // const res = await fetch("http://3.132.12.204:4000/readFromLearnerRecord", {
             //     method: 'POST',
             //     headers: {
@@ -40,7 +53,7 @@ export default class AddPlayers extends React.Component {
             //         'Access-Control-Allow-Origin': "*",
             //         'Access-Control-Allow-Method': 'POST,GET'
             //     },
-            //     body: JSON.stringify(temp_data)
+            //     body: JSON.stringify(hashed_id)
             // })
 
             // if (!res.ok) {
@@ -52,16 +65,11 @@ export default class AddPlayers extends React.Component {
             // for (let standardContent of data) {
             //     contentArray.push(standardContent.StandardContent.value)
             // }
-            let gamePlayer = {}
-            gamePlayer.questionIndex = 0
-            gamePlayer.id = id
-            gamePlayer.name = this.inputValue[player]
-            gamePlayer.learnerRecord = contentArray
-            gamePlayer.quentions = all_levels
 
-            allPlayers.push(JSON.stringify(gamePlayer))
+            let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, all_levels)
+            allPlayers.push(tempPlayer)
         }
-        Actions.main({ "players": allPlayers })
+        this.props.navigation.navigate('LearnerRecord', { "players": allPlayers })
     }
 
 
