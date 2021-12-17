@@ -15,8 +15,9 @@ export default class Levels extends React.Component {
             currentPlayer: "",
         }
     }
+
     static getDerivedStateFromProps(props, state) {
-        console.log(props)
+        // console.log(props)
         let questionIndex = props.currentPlayer.questionIndex
         let newState = {
             levelID: props.currentPlayer.questions[questionIndex].LevelID,
@@ -33,11 +34,6 @@ export default class Levels extends React.Component {
 
 
     }
-    // componentDidUpdate(nextProps) {
-    //     console.log(nextProps)
-    //     // this.setState({ data: nextProps.data });
-    // }
-
 
     render() {
         return (
@@ -60,10 +56,12 @@ const styles = StyleSheet.create({
 
     },
     targetContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
         margin: "5%",
         height: "35%",
         borderRadius: 5,
-        backgroundColor: "#CBC3E3",
+        backgroundColor: "#F76C6C",
     },
     targetText: {
         fontSize: 80,

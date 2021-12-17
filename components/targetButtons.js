@@ -47,5 +47,6 @@ const styles = StyleSheet.create({
     button: {
         padding: '5%',
         width: '100%',
+        color: "#24305E"
     },
 });

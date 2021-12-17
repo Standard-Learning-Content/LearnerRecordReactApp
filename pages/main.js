@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
 import Levels from "../components/levels";
-
+const debug = false
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -30,19 +30,25 @@ export default class Main extends React.Component {
             "currentPlayerIndex": currentPlayerIndex,
             "players": all_players
         })
-        console.log("============================")
-        console.log(this.state)
-        console.log("============================")
+        if (debug) {
+            console.log("============================")
+            console.log(this.state)
+            console.log("============================")
+        }
     }
 
 
 
     render() {
         return (
-            <View >
-                <Text style={styles.headline}>
-                    {this.state.players[this.state.currentPlayerIndex].name}'s Turn
-                </Text>
+            <View style={styles.background}>
+
+                <View style={styles.headerContainer}>
+                    <Text style={styles.headline}>
+                        {this.state.players[this.state.currentPlayerIndex].name}'s Turn {'\n'}
+                        Question #:{this.state.players[this.state.currentPlayerIndex].questionIndex + 1}
+                    </Text>
+                </View>
                 <View style={styles.container}>
                     <Levels currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels>
                 </View>
@@ -53,15 +59,21 @@ export default class Main extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "column"
+    background: {
+        backgroundColor: '#A8D0E6',
+        width: "100%",
+        height: "100%",
+        flex: 1,
+    },
+    headerContainer: {
+        width: "100%",
+        height: "12%",
+        backgroundColor: '#F8E9A1',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     headline: {
-        textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 18,
-        marginTop: 0,
-        width: 200,
-        backgroundColor: 'yellow',
+        fontSize: 30,
     }
 });
