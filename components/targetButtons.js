@@ -10,17 +10,38 @@ export default class TargetBtn extends React.Component {
         this.answer = this.answer.bind(this)
     }
 
-    answer() {
+    async answer() {
 
-        let answerData = {
-            "userID": this.props.userID,
-            "standardLearnedContent": this.props.value,
-            "correct": this.props.correct,
-            "timestamp": Date.now()
-        }
 
         if (this.props.correct) {
-            // console.log(answerData)
+            let answerData = {
+                userID: this.props.userID,
+                standardLearnedContent: this.props.content.replace("<", "").replace(">", ""),
+                correct: this.props.correct,
+                timestamp: Date.now()
+            }
+            console.log(answerData)
+
+            const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': "*",
+                    'Access-Control-Allow-Method': 'POST,GET'
+                },
+                body: JSON.stringify(answerData)
+            })
+
+            if (!res.ok) {
+                throw new Error('Request returned a non 200 response code')
+            }
+
+            const { data } = await res.json()
+            console.log(data)
+
+
+
+
             this.props.changePlayer()
 
         } else {

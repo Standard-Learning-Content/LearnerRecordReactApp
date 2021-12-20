@@ -46,25 +46,25 @@ export default class AddPlayers extends React.Component {
             let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
             let hashed_id = { "userID": hash }
 
-            // const res = await fetch("http://3.132.12.204:4000/readFromLearnerRecord", {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //         'Access-Control-Allow-Origin': "*",
-            //         'Access-Control-Allow-Method': 'POST,GET'
-            //     },
-            //     body: JSON.stringify(hashed_id)
-            // })
+            const res = await fetch("http://3.132.12.204:4000/readFromLearnerRecord", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': "*",
+                    'Access-Control-Allow-Method': 'POST,GET'
+                },
+                body: JSON.stringify(hashed_id)
+            })
 
-            // if (!res.ok) {
-            //     throw new Error('Request returned a non 200 response code')
-            // }
+            if (!res.ok) {
+                throw new Error('Request returned a non 200 response code')
+            }
 
-            // const { data } = await res.json()
+            const { data } = await res.json()
             let contentArray = []
-            // for (let standardContent of data) {
-            //     contentArray.push(standardContent.StandardContent.value)
-            // }
+            for (let standardContent of data) {
+                contentArray.push(standardContent.StandardContent.value)
+            }
 
             let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, all_levels)
             allPlayers.push(tempPlayer)

@@ -10,6 +10,7 @@ export default class Main extends React.Component {
             "currentPlayerIndex": 0,
             "players": this.props.route.params.players,
         }
+        if (debug) console.log(this.state)
         this.changeCurrentPlayer = this.changeCurrentPlayer.bind(this)
     }
 

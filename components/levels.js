@@ -17,7 +17,9 @@ export default class Levels extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        // console.log(props)
+
+        // var audio = new Audio(`./assets/audio/${props.currentPlayer.questions[questionIndex].correctTarget}.wax`);
+        // audio.play();
         let questionIndex = props.currentPlayer.questionIndex
         let newState = {
             levelID: props.currentPlayer.questions[questionIndex].LevelID,
@@ -44,8 +46,8 @@ export default class Levels extends React.Component {
                         {this.state.correctTarget}
                     </Text>
                 </View>
-                <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} value={this.state.correctTarget}></TargetBtn>
-                <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} value={this.state.incorrectTarget}></TargetBtn>
+                <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
+                <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
             </View>
         )
     }
