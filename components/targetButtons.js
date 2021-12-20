@@ -11,8 +11,6 @@ export default class TargetBtn extends React.Component {
     }
 
     async answer() {
-
-
         if (this.props.correct) {
             let answerData = {
                 userID: this.props.userID,
@@ -20,8 +18,6 @@ export default class TargetBtn extends React.Component {
                 correct: this.props.correct,
                 timestamp: Date.now()
             }
-            console.log(answerData)
-
             const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
                 method: 'PUT',
                 headers: {
@@ -35,15 +31,8 @@ export default class TargetBtn extends React.Component {
             if (!res.ok) {
                 throw new Error('Request returned a non 200 response code')
             }
-
             const { data } = await res.json()
-            console.log(data)
-
-
-
-
             this.props.changePlayer()
-
         } else {
             console.log("Incorrect")
         }

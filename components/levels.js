@@ -14,6 +14,32 @@ export default class Levels extends React.Component {
             incorrectTarget: "",
             currentPlayer: "",
         }
+        this.renderTargerButtons = this.renderTargerButtons.bind(this)
+    }
+
+    renderTargerButtons() {
+
+        let randNum = Math.round(Math.random())
+
+        if (randNum == 0) {
+            return (
+                <View>
+                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
+                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
+                </View>
+
+            )
+        } else {
+            return (
+                <View>
+                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
+                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
+                </View>
+
+            )
+        }
+
+
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -30,14 +56,11 @@ export default class Levels extends React.Component {
             currentPlayer: props.currentPlayer,
         }
         console.log(newState)
-        return (
-            newState
-        )
-
-
+        return newState
     }
 
     render() {
+
         return (
 
             <View style={styles.container}>
@@ -46,8 +69,7 @@ export default class Levels extends React.Component {
                         {this.state.correctTarget}
                     </Text>
                 </View>
-                <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
-                <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
+                {this.renderTargerButtons()}
             </View>
         )
     }
