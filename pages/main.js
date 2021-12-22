@@ -25,8 +25,8 @@ export default class Main extends React.Component {
             ...this.state.players.slice(this.state.currentPlayerIndex + 1)
         ]
 
-        let playes_len = this.state.players.length
-        let currentPlayerIndex = (this.state.currentPlayerIndex + 1) % playes_len
+        let players_len = this.state.players.length
+        let currentPlayerIndex = (this.state.currentPlayerIndex + 1) % players_len
         this.setState({
             "currentPlayerIndex": currentPlayerIndex,
             "players": all_players

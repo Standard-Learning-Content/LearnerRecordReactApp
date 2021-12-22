@@ -32,6 +32,7 @@ export default class TargetBtn extends React.Component {
                 throw new Error('Request returned a non 200 response code')
             }
             const { data } = await res.json()
+            console.log(data)
             this.props.changePlayer()
         } else {
             console.log("Incorrect")
