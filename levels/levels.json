@@ -2,22 +2,22 @@
     {
         "LevelID": "1",
         "correctTarget": "A",
-        "correctStandardContent": "<http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-ICE>",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-ICE",
         "incorrectTarget": "C",
-        "incorrectStandardContent": "<http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-ICE>"
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-ICE"
     },
     {
         "LevelID": "2",
         "correctTarget": "C",
-        "correctStandardContent": "<http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-ICE>",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-ICE",
         "incorrectTarget": "T",
-        "incorrectStandardContent": "<http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_t_Grapheme-t-ICE>"
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_t_Grapheme-t-ICE"
     },
     {
         "LevelID": "3",
         "correctTarget": "A",
-        "correctStandardContent": "<http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-ICE>",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-ICE",
         "incorrectTarget": "T",
-        "incorrectStandardContent": "<http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_t_Grapheme-t-ICE>"
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_t_Grapheme-t-ICE"
     }
 ]

@@ -41,6 +41,8 @@ export default class AddPlayers extends React.Component {
             this.questions = quentions
         }
 
+
+
         for (let player in this.inputValue) {
             // Currently we are sha256 hashing the first name
             let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
@@ -61,12 +63,23 @@ export default class AddPlayers extends React.Component {
             }
 
             const { data } = await res.json()
-            let contentArray = []
-            for (let standardContent of data) {
-                contentArray.push(standardContent.StandardContent.value)
-            }
+            let contentArray = data
+            // console.log(contentArray)
+            let playerLevels = []
+            for (level of all_levels) {
+                // console.log(level.correctStandardContent)
+                if (contentArray[level.correctStandardContent] == undefined) {
+                    playerLevels.push(level)
+                } else if (contentArray[level.correctStandardContent].countsCorrect < 10) {
+                    playerLevels.push(level)
+                } else {
+                    console.log("Player Has learned Level")
+                }
 
-            let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, all_levels)
+
+            }
+            console.log(playerLevels)
+            let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
             allPlayers.push(tempPlayer)
         }
         this.props.navigation.navigate('LearnerRecord', { "players": allPlayers })
