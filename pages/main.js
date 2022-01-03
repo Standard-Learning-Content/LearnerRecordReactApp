@@ -43,7 +43,6 @@ export default class Main extends React.Component {
     render() {
         return (
             <View style={styles.background}>
-
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
                         {this.state.players[this.state.currentPlayerIndex].name}'s Turn {'\n'}
@@ -51,7 +50,7 @@ export default class Main extends React.Component {
                     </Text>
                 </View>
                 <View style={styles.container}>
-                    <Levels currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels>
+                    {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Levels currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels> : this.changeCurrentPlayer()}
                 </View>
             </View >
 
