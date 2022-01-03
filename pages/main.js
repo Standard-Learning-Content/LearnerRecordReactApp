@@ -12,6 +12,8 @@ export default class Main extends React.Component {
         }
         if (debug) console.log(this.state)
         this.changeCurrentPlayer = this.changeCurrentPlayer.bind(this)
+        this.play = this.play.bind(this)
+        this.gameOver = this.gameOver.bind(this)
     }
 
 
@@ -38,11 +40,9 @@ export default class Main extends React.Component {
         }
     }
 
-
-
-    render() {
+    play() {
         return (
-            <View style={styles.background}>
+            <View>
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
                         {this.state.players[this.state.currentPlayerIndex].name}'s Turn {'\n'}
@@ -52,6 +52,29 @@ export default class Main extends React.Component {
                 <View style={styles.container}>
                     {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Levels currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels> : this.changeCurrentPlayer()}
                 </View>
+            </View>
+
+        )
+    }
+
+    gameOver() {
+        return (
+            <View>
+                <View style={styles.completeHeaderContainer}>
+                    <Text style={styles.headline}> Congrats!{'\n'}  All the quentions are learned </Text>
+                </View>
+
+            </View>
+
+        )
+    }
+
+
+    render() {
+        return (
+            <View style={styles.background}>
+                {this.state.players != 0 ? this.play() : this.gameOver()}
+
             </View >
 
         )
@@ -67,7 +90,7 @@ const styles = StyleSheet.create({
     },
     headerContainer: {
         width: "100%",
-        height: "12%",
+        height: "15%",
         backgroundColor: '#F8E9A1',
         justifyContent: 'center',
         alignItems: 'center'
@@ -75,5 +98,12 @@ const styles = StyleSheet.create({
     headline: {
         fontWeight: 'bold',
         fontSize: 30,
+    },
+    completeHeaderContainer: {
+        width: "100%",
+        height: "100%",
+        backgroundColor: '#F8E9A1',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
