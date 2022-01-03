@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
 import Levels from "../components/levels";
-const debug = false
+import config from '../config.json'
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export default class Main extends React.Component {
             "currentPlayerIndex": 0,
             "players": this.props.route.params.players,
         }
-        if (debug) console.log(this.state)
+        if (config['debug-mode']) console.log(this.state)
         this.changeCurrentPlayer = this.changeCurrentPlayer.bind(this)
         this.play = this.play.bind(this)
         this.gameOver = this.gameOver.bind(this)
@@ -33,7 +33,7 @@ export default class Main extends React.Component {
             "currentPlayerIndex": currentPlayerIndex,
             "players": all_players
         })
-        if (debug) {
+        if (config['debug-mode']) {
             console.log("============================")
             console.log(this.state)
             console.log("============================")

@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from 'react-native-elements';
-import { StyleSheet, View, SafeAreaView, Text, Alert } from 'react-native';
-import { Tile } from 'react-native-elements';
-import levels from '../levels/levels.json'
+import { StyleSheet, View } from 'react-native';
+import config from '../config.json'
+
 
 export default class TargetBtn extends React.Component {
     constructor(props) {
@@ -32,7 +32,7 @@ export default class TargetBtn extends React.Component {
                 throw new Error('Request returned a non 200 response code')
             }
             const { data } = await res.json()
-            console.log(data)
+            if (config["debug-mode"]) console.log(data)
             this.props.changePlayer()
         } else {
             console.log("Incorrect")

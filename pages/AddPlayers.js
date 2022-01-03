@@ -3,11 +3,8 @@ import { View, Button, Alert } from 'react-native';
 import NameInput from "../components/playerNameInput"
 import all_levels from '../levels/levels.json'
 import { JSHash, CONSTANTS } from 'react-native-hash';
-import { InputGroup } from "react-bootstrap";
+import config from '../config.json'
 
-
-const hashAlgorithm = CONSTANTS.HashAlgorithms.sha256;
-const debug = true
 
 export default class AddPlayers extends React.Component {
     constructor(props) {
@@ -46,11 +43,12 @@ export default class AddPlayers extends React.Component {
 
 
         for (let player in this.inputValue) {
+
             // Currently we are sha256 hashing the first name
             let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
             let hashed_id = { "userID": hash }
 
-            const res = await fetch("http://3.132.12.204:4000/readFromLearnerRecord", {
+            const res = await fetch(`${config["api-location"]}/readFromLearnerRecord`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,17 +80,17 @@ export default class AddPlayers extends React.Component {
             } else {
                 Alert.alert(
                     this.inputValue[player],
-                    "has Completed all the questions before",
+                    "Has completed all the questions before!",
                     [
                         {
                             text: "Cancel",
-                            onPress: () => console.log("Cancel Pressed"),
                             style: "cancel"
                         },
-                        { text: "OK", onPress: () => console.log("OK Pressed") }
+                        { text: "OK" }
                     ]
                 )
-                if (debug) console.log(this.inputValue[player] + " has Completed the app")
+
+                if (config["debug-mode"]) console.log(this.inputValue[player] + " has Completed the app")
                 completedPlayers.push(tempPlayer)
             }
 
