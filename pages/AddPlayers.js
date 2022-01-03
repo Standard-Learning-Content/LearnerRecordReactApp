@@ -64,21 +64,14 @@ export default class AddPlayers extends React.Component {
 
             const { data } = await res.json()
             let contentArray = data
-            // console.log(contentArray)
             let playerLevels = []
             for (level of all_levels) {
-                // console.log(level.correctStandardContent)
                 if (contentArray[level.correctStandardContent] == undefined) {
                     playerLevels.push(level)
                 } else if (contentArray[level.correctStandardContent].countsCorrect < 10) {
                     playerLevels.push(level)
-                } else {
-                    console.log("Player Has learned Level")
                 }
-
-
             }
-            console.log(playerLevels)
             let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
             allPlayers.push(tempPlayer)
         }
@@ -87,10 +80,6 @@ export default class AddPlayers extends React.Component {
 
 
     render() {
-
-
-
-
         return (
             <View style={{ padding: 10 }}>
                 {this.addInputBoxes()}

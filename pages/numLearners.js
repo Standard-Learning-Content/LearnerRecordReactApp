@@ -10,7 +10,7 @@ export default class Main extends React.Component {
 
     render() {
         return (
-            <View style={{ padding: 10 }}>
+            <View style={{ padding: 20 }}>
                 <Button
                     style={{ padding: 10 }}
                     title="1"
@@ -33,4 +33,5 @@ export default class Main extends React.Component {
         )
     }
 }
+
 

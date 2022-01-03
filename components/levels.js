@@ -1,7 +1,7 @@
 import React from "react";
 import TargetBtn from "./targetButtons";
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
-// import Sound from 'react-native-sound';
+import Sounds from './sounds'
 import { Tile } from 'react-native-elements';
 
 export default class Levels extends React.Component {
@@ -46,6 +46,7 @@ export default class Levels extends React.Component {
     static getDerivedStateFromProps(props, state) {
         // ./assets/audio/${props.currentPlayer.questions[questionIndex].correctTarget}.wav
         // play this sounds
+        console.log(props)
         let questionIndex = props.currentPlayer.questionIndex
         let newState = {
             levelID: props.currentPlayer.questions[questionIndex].LevelID,
@@ -63,6 +64,7 @@ export default class Levels extends React.Component {
         return (
 
             <View style={styles.container}>
+                <Sounds></Sounds>
                 <View style={styles.targetContainer}>
                     <Text style={styles.targetText}>
                         {this.state.correctTarget}
