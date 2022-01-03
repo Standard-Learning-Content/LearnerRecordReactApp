@@ -44,9 +44,6 @@ export default class Levels extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        // ./assets/audio/${props.currentPlayer.questions[questionIndex].correctTarget}.wav
-        // play this sounds
-        console.log(props)
         let questionIndex = props.currentPlayer.questionIndex
         let newState = {
             levelID: props.currentPlayer.questions[questionIndex].LevelID,
@@ -64,7 +61,7 @@ export default class Levels extends React.Component {
         return (
 
             <View style={styles.container}>
-                <Sounds></Sounds>
+                <Sounds sound={this.state.correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text style={styles.targetText}>
                         {this.state.correctTarget}
