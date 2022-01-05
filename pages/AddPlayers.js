@@ -62,7 +62,7 @@ export default class AddPlayers extends React.Component {
                 throw new Error('Request returned a non 200 response code')
             }
 
-            const { data } = await res.json()
+            const data = await res.json()
             let contentArray = data
             let playerLevels = []
 
