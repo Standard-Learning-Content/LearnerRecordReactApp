@@ -1,3 +1,8 @@
+/**
+ * Selects how many users are learning 
+ * 05 Jaunuary 2022
+ * @CR
+ */
 import React from "react";
 import { Button } from 'react-native-elements';
 import { StyleSheet, View } from 'react-native';

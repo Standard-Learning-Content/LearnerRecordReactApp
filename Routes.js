@@ -5,12 +5,14 @@ import AddPlayer from './pages/AddPlayers'
 import Main from './pages/main'
 import NumLearners from './pages/numLearners'
 
+
 const Stack = createStackNavigator();
 
 
 const Routes = () => {
     return (
         <Stack.Navigator>
+            {/* <Stack.Screen name="Multi-Learner Questions" component={title} /> */}
             <Stack.Screen name="HowManyLearners" component={NumLearners} />
             <Stack.Screen name="AddPlayers" component={AddPlayer} />
             <Stack.Screen name="LearnerRecord" component={Main} />

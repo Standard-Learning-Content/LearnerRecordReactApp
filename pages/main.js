@@ -20,6 +20,11 @@ export default class Main extends React.Component {
     changeCurrentPlayer() {
         let currentPlayer = this.state.players[this.state.currentPlayerIndex]
         let questionLen = this.state.players[this.state.currentPlayerIndex].questions.length
+
+        if (this.state.players[this.state.currentPlayerIndex].questionIndex + 1 == questionLen) {
+            if (config['debug-mode']) console.log("Current Player: " + currentPlayer.id + " has finished their questions!")
+        }
+
         let newQuestionIndex = (this.state.players[this.state.currentPlayerIndex].questionIndex + 1) % questionLen
         let all_players = [
             ...this.state.players.slice(0, this.state.currentPlayerIndex),
@@ -63,7 +68,6 @@ export default class Main extends React.Component {
                 <View style={styles.completeHeaderContainer}>
                     <Text style={styles.headline}> Congrats!{'\n'}  All the quentions are learned </Text>
                 </View>
-
             </View>
 
         )

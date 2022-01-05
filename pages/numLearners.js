@@ -1,9 +1,12 @@
+/**
+ * Selects how many user are learnering 
+ */
 import React from "react";
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
 
 
-export default class Main extends React.Component {
+export default class NumLearners extends React.Component {
     constructor(props) {
         super(props);
     }
