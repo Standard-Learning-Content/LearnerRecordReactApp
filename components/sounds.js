@@ -111,6 +111,7 @@ export default class Sounds extends React.Component {
     static async getDerivedStateFromProps(props, state) {
         Audio.setAudioModeAsync({
             allowsRecordingIOS: false,
+            allowsRecordingAndroid: false,
             interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
             playsInSilentModeIOS: true,
             interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
