@@ -52,6 +52,14 @@ export default class TargetBtn extends React.Component {
             <View >
                 <Button
                     onPress={() => this.answer()}
+                    color="#15DB95"
+                    buttonStyle={{ backgroundColor: "#15DB95" }}
+                    containerStyle={{
+                        width: 400,
+                        marginHorizontal: 50,
+                        marginVertical: 10,
+                    }}
+                    titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                     style={styles.button}
                     title={this.props.value}
                 />
@@ -64,6 +72,6 @@ const styles = StyleSheet.create({
     button: {
         padding: '5%',
         width: '100%',
-        color: "#24305E"
+
     },
 });

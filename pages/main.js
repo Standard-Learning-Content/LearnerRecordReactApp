@@ -82,6 +82,7 @@ export default class Main extends React.Component {
                     style={{ padding: 10 }}
                     title={`View ${this.state.players[this.state.currentPlayerIndex].name}'s Report Card`}
                     type="outline"
+                    color="#F4E4C1"
                     onPress={() => this.props.navigation.navigate('LearnerRecord', { player: this.state.players[this.state.currentPlayerIndex] })}
                 />
             </View >
@@ -92,7 +93,7 @@ export default class Main extends React.Component {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: '#A8D0E6',
+        backgroundColor: '#080F5B',
         width: "100%",
         height: "100%",
         flex: 1,
@@ -100,12 +101,13 @@ const styles = StyleSheet.create({
     headerContainer: {
         width: "100%",
         height: "15%",
-        backgroundColor: '#F8E9A1',
+        backgroundColor: '#0D19AA',
         justifyContent: 'center',
         alignItems: 'center'
     },
     headline: {
         fontWeight: 'bold',
+        color: "#FFFFFF",
         fontSize: 30,
     },
     completeHeaderContainer: {

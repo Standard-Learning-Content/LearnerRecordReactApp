@@ -67,7 +67,12 @@ export default class Levels extends React.Component {
                         {this.state.correctTarget}
                     </Text>
                 </View>
-                {this.renderTargerButtons()}
+                <View style={styles.buttonsContainer}>
+                    {this.renderTargerButtons()}
+                </View>
+
+
+
             </View>
         )
     }
@@ -83,7 +88,15 @@ const styles = StyleSheet.create({
         margin: "5%",
         height: "35%",
         borderRadius: 5,
-        backgroundColor: "#F76C6C",
+        backgroundColor: "#E4C580",
+    },
+    buttonsContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        marginVertical: 20,
     },
     targetText: {
         fontSize: 80,
