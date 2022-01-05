@@ -78,7 +78,12 @@ export default class Main extends React.Component {
         return (
             <View style={styles.background}>
                 {this.state.players != 0 ? this.play() : this.gameOver()}
-
+                <Button
+                    style={{ padding: 10 }}
+                    title={`View ${this.state.players[this.state.currentPlayerIndex].name}'s Report Card`}
+                    type="outline"
+                    onPress={() => this.props.navigation.navigate('LearnerRecord', { player: this.state.players[this.state.currentPlayerIndex] })}
+                />
             </View >
 
         )

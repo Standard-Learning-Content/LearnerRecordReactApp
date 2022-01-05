@@ -114,7 +114,7 @@ export default class AddPlayers extends React.Component {
             }
 
         }
-        this.props.navigation.navigate('LearnerRecord', { "players": allPlayers, "completedPlayer": completedPlayers })
+        this.props.navigation.navigate('Learn', { "players": allPlayers, "completedPlayer": completedPlayers })
     }
 
 
