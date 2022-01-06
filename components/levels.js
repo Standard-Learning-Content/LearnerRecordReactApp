@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         fontSize: 80,
     },
     headline: {
-        textAlign: 'center', // <-- the magic
+        textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 18,
         marginTop: 0,

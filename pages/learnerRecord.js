@@ -37,11 +37,11 @@ export default class LearnerRecord extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#080F5B',
         flex: 1,
         marginTop: StatusBar.currentHeight,
     },
     scrollView: {
-        backgroundColor: 'pink',
         marginHorizontal: 20,
     },
 });
