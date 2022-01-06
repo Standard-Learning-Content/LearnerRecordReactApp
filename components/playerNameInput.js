@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput, View, StyleSheet } from 'react-native';
+import { TextInput, View, StyleSheet, Text } from 'react-native';
 
 
 
@@ -25,11 +25,13 @@ export default class NameInput extends React.Component {
     render() {
         return (
             <View style={{ padding: 10 }}>
+                <Text style={styles.title}>Add Player {this.props.number}'s Name</Text>
                 <TextInput
                     style={styles.input}
                     key={this.props.number}
                     onChangeText={this.handleChange}
                     placeholder={"Insert Players Name"}
+                    placeholderTextColor="#15DB95"
                 />
             </View>
 
@@ -38,10 +40,18 @@ export default class NameInput extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    title: {
+        color: "#FFFFFF",
+        margin: 20,
+        fontWeight: "bold"
+    },
     input: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
+        height: 50,
+        width: 300,
+        margin: 5,
+        borderWidth: 2,
         padding: 10,
+        borderColor: "#15DB95",
+        color: "#15DB95",
     },
 });
