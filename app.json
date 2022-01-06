@@ -2,7 +2,7 @@
   "expo": {
     "name": "Multi Learner Questions",
     "slug": "learnerRecord",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "updates": {
@@ -13,12 +13,12 @@
     ],
     "ios": {
       "bundleIdentifier": "com.knowledgeGraphsForLearning.mlq",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.0.2",
       "supportsTablet": true
     },
     "android": {
       "package": "com.knowledgeGraphsForLearning.mlq",
-      "versionCode": 4
+      "versionCode": 6
     },
     "web": {
       "favicon": "./assets/favicon.png"
