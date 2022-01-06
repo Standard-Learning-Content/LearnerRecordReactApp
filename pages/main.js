@@ -12,10 +12,44 @@ export default class Main extends React.Component {
         }
         if (config['debug-mode']) console.log(this.state)
         this.changeCurrentPlayer = this.changeCurrentPlayer.bind(this)
+        this.updateLocalLearnerRecord = this.updateLocalLearnerRecord.bind(this)
         this.play = this.play.bind(this)
         this.gameOver = this.gameOver.bind(this)
     }
 
+
+    updateLocalLearnerRecord(literal, userID, standardLearnedContent, correct, timestamp) {
+        let learnerRecord = this.state.players[this.state.currentPlayerIndex].learnerRecord
+        if (Object.keys(learnerRecord).length == 0 || learnerRecord[standardLearnedContent] == undefined) {
+            if (correct) {
+                Object.assign(learnerRecord,
+                    {
+                        [standardLearnedContent]: {
+                            "countsCorrect": 1,
+                            "literal": literal,
+                            "totalCounts": 1,
+                        }
+                    })
+            } else {
+                Object.assign(learnerRecord,
+                    {
+                        [standardLearnedContent]: {
+                            "countsCorrect": 0,
+                            "literal": literal,
+                            "totalCounts": 1,
+                        }
+                    })
+            }
+
+        } else {
+            let indexedContent = learnerRecord[standardLearnedContent]
+            if (correct) {
+                indexedContent.countsCorrect = indexedContent.countsCorrect + 1
+            }
+            indexedContent.totalCounts = indexedContent.totalCounts + 1
+        }
+
+    }
 
     changeCurrentPlayer() {
         let currentPlayer = this.state.players[this.state.currentPlayerIndex]
@@ -55,7 +89,7 @@ export default class Main extends React.Component {
                     </Text>
                 </View>
                 <View style={styles.container}>
-                    {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Levels currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels> : this.changeCurrentPlayer()}
+                    {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Levels updateLocalLearnerRecord={this.updateLocalLearnerRecord} currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels> : this.changeCurrentPlayer()}
                 </View>
             </View>
 

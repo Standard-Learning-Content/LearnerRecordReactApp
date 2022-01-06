@@ -25,16 +25,16 @@ export default class Levels extends React.Component {
         if (randNum == 0) {
             return (
                 <View>
-                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
-                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
+                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
+                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
                 </View>
 
             )
         } else {
             return (
                 <View>
-                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
-                    <TargetBtn changePlayer={this.props.changePlayer} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
+                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
+                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
                 </View>
 
             )

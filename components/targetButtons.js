@@ -16,13 +16,13 @@ export default class TargetBtn extends React.Component {
     }
 
     async answer() {
+        let answerData = {
+            userID: this.props.userID,
+            standardLearnedContent: this.props.content.replace("<", "").replace(">", ""),
+            correct: this.props.correct,
+            timestamp: Date.now()
+        }
         if (this.props.correct) {
-            let answerData = {
-                userID: this.props.userID,
-                standardLearnedContent: this.props.content.replace("<", "").replace(">", ""),
-                correct: this.props.correct,
-                timestamp: Date.now()
-            }
             const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
                 method: 'PUT',
                 headers: {
@@ -39,9 +39,11 @@ export default class TargetBtn extends React.Component {
 
             const data = await res.text()
             if (config["debug-mode"]) console.log(data)
+            this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.userID, answerData.standardLearnedContent, answerData.correct, answerData.timestamp)
             this.props.changePlayer()
         } else {
-            console.log("Incorrect")
+            if (config["debug-mode"]) console.log("Incorrect")
+            this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.userID, answerData.standardLearnedContent, answerData.correct, answerData.timestamp)
         }
     }
 
