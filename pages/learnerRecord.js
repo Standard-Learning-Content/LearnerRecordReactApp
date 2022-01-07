@@ -4,6 +4,7 @@
 import React from "react";
 import { SafeAreaView, StatusBar, StyleSheet, ScrollView } from 'react-native';
 import Record from "../components/record";
+import PropTypes from 'prop-types';
 
 
 export default class LearnerRecord extends React.Component {
@@ -33,6 +34,11 @@ export default class LearnerRecord extends React.Component {
             </SafeAreaView>
         )
     }
+}
+
+LearnerRecord.propTypes = {
+    navigation: PropTypes.object,
+    route: PropTypes.object,
 }
 
 const styles = StyleSheet.create({

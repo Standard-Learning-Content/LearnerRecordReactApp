@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
+import React from "react";
+import { StyleSheet, Button, View, Text } from 'react-native';
 import Levels from "../components/levels";
 import config from '../config.json'
+import PropTypes from 'prop-types';
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ export default class Main extends React.Component {
     }
 
 
-    updateLocalLearnerRecord(literal, userID, standardLearnedContent, correct, timestamp) {
+    updateLocalLearnerRecord(literal, standardLearnedContent, correct) {
         let learnerRecord = this.state.players[this.state.currentPlayerIndex].learnerRecord
         if (Object.keys(learnerRecord).length == 0 || learnerRecord[standardLearnedContent] == undefined) {
             if (correct) {
@@ -84,7 +85,7 @@ export default class Main extends React.Component {
             <View>
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
-                        {this.state.players[this.state.currentPlayerIndex].name}'s Turn {'\n'}
+                        {this.state.players[this.state.currentPlayerIndex].name}s Turn {'\n'}
                         Question #:{this.state.players[this.state.currentPlayerIndex].questionIndex + 1}
                     </Text>
                 </View>
@@ -124,6 +125,12 @@ export default class Main extends React.Component {
         )
     }
 }
+
+Main.propTypes = {
+    navigation: PropTypes.object,
+    route: PropTypes.object,
+}
+
 
 const styles = StyleSheet.create({
     background: {

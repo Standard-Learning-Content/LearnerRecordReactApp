@@ -4,11 +4,13 @@
 import React from "react";
 import { View, StyleSheet, Text } from 'react-native';
 import { Button } from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 
 export default class NumLearners extends React.Component {
     constructor(props) {
         super(props);
+
     }
 
     render() {
@@ -56,6 +58,11 @@ export default class NumLearners extends React.Component {
         )
     }
 }
+
+NumLearners.propTypes = {
+    navigation: PropTypes.object
+}
+
 
 const styles = StyleSheet.create({
     background: {

@@ -12,6 +12,7 @@ import NameInput from "../components/playerNameInput"
 import all_levels from '../levels/levels.json'
 import { JSHash, CONSTANTS } from 'react-native-hash';
 import config from '../config.json'
+import PropTypes from 'prop-types';
 
 
 export default class AddPlayers extends React.Component {
@@ -87,7 +88,7 @@ export default class AddPlayers extends React.Component {
                 let playerLevels = []
 
                 // If the player has leared the contentless then 10 time, we add it to the set of questions
-                for (level of all_levels) {
+                for (let level of all_levels) {
                     if (contentArray[level.correctStandardContent] == undefined) {
                         playerLevels.push(level)
                     } else if (contentArray[level.correctStandardContent].countsCorrect < 10) {
@@ -149,6 +150,12 @@ export default class AddPlayers extends React.Component {
 
         )
     }
+}
+
+
+AddPlayers.propTypes = {
+    navigation: PropTypes.object,
+    route: PropTypes.object,
 }
 
 const styles = StyleSheet.create({
