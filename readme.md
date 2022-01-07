@@ -11,6 +11,13 @@
 4. AddPlayers.js - Each learner inputs their name. Using the name, MQL gathers the Learning Record and questions for each player 
 5. Main.js - The Brain of the Opperation. Creates the levels and question for the currently player 
 
+
+# How to Run
+1. Install all the dependacies `yarn install`
+2. 
+
+
+
 # How to build 
 1. Install all the dependacies `yarn install`
 2. Android - `eas build -p android`
