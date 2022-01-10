@@ -1,0 +1,142 @@
+[
+    {
+        "LevelID": "1",
+        "correctTarget": "A",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA",
+        "incorrectTarget": "C",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
+    },
+    {
+        "LevelID": "2",
+        "correctTarget": "B",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_b_Grapheme-b-IBA",
+        "incorrectTarget": "D",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_d_Grapheme-d-IBA"
+    },
+    {
+        "LevelID": "3",
+        "correctTarget": "C",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA",
+        "incorrectTarget": "K",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-k-IBA"
+    },
+    {
+        "LevelID": "4",
+        "correctTarget": "D",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_d_Grapheme-d-IBA",
+        "incorrectTarget": "I",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
+    },
+    {
+        "LevelID": "5",
+        "correctTarget": "E",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
+        "incorrectTarget": "A",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
+    },
+    {
+        "LevelID": "6",
+        "correctTarget": "F",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_f_Grapheme-f-IBA",
+        "incorrectTarget": "C",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
+    },
+    {
+        "LevelID": "7",
+        "correctTarget": "G",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA",
+        "incorrectTarget": "S",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_s_Grapheme-s-IBA"
+    },
+    {
+        "LevelID": "8",
+        "correctTarget": "H",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_h_Grapheme-h-IBA",
+        "incorrectTarget": "K",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-k-IBA"
+    },
+    {
+        "LevelID": "9",
+        "correctTarget": "I",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
+        "incorrectTarget": "U",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
+    },
+    {
+        "LevelID": "10",
+        "correctTarget": "J",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-j-IBA",
+        "incorrectTarget": "A",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
+    },
+    {
+        "LevelID": "11",
+        "correctTarget": "K",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-k-IBA",
+        "incorrectTarget": "C",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
+    },
+    {
+        "LevelID": "12",
+        "correctTarget": "L",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_l_Grapheme-l-IBA",
+        "incorrectTarget": "D",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_d_Grapheme-d-IBA"
+    },
+    {
+        "LevelID": "13",
+        "correctTarget": "M",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_m_Grapheme-m-IBA",
+        "incorrectTarget": "L",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_l_Grapheme-l-IBA"
+    },
+    {
+        "LevelID": "14",
+        "correctTarget": "N",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA",
+        "incorrectTarget": "I",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
+    },
+    {
+        "LevelID": "15",
+        "correctTarget": "O",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
+        "incorrectTarget": "A",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
+    },
+    {
+        "LevelID": "16",
+        "correctTarget": "P",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_p_Grapheme-p-IBA",
+        "incorrectTarget": "O",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
+    },
+    {
+        "LevelID": "17",
+        "correctTarget": "R",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_r_Grapheme-r-IBA",
+        "incorrectTarget": "S",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_s_Grapheme-s-IBA"
+    },
+    {
+        "LevelID": "18",
+        "correctTarget": "S",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_s_Grapheme-s-IBA",
+        "incorrectTarget": "K",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-k-IBA"
+    },
+    {
+        "LevelID": "19",
+        "correctTarget": "I",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
+        "incorrectTarget": "U",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
+    },
+    {
+        "LevelID": "20",
+        "correctTarget": "J",
+        "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-j-IBA",
+        "incorrectTarget": "A",
+        "incorrectStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
+    }
+]

@@ -59,7 +59,6 @@ export default class TargetBtn extends React.Component {
                     containerStyle={{
                         width: 400,
                         marginHorizontal: 50,
-                        marginVertical: 10,
                     }}
                     titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                     style={styles.button}

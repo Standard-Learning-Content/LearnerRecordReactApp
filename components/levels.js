@@ -9,58 +9,49 @@ export default class Levels extends React.Component {
         super(props)
         this.state = {
             levelID: "",
+            levelType: "",
             correctStandardContent: "",
             correctTarget: "",
-            incorrectStandardContent: "",
-            incorrectTarget: "",
-            currentPlayer: "",
+            incorrect: "",
+            currentPlayerId: "",
         }
         this.renderTargerButtons = this.renderTargerButtons.bind(this)
+        this.renderLevel = this.renderLevel.bind(this)
     }
 
     renderTargerButtons() {
+        let buttonArray = []
 
-        let randNum = Math.round(Math.random())
+        let correct = <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayerId} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
+        buttonArray.push(correct)
 
-        if (randNum == 0) {
-            return (
-                <View>
-                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
-                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
-                </View>
+        for (let attempt of this.state.incorrect) {
 
-            )
-        } else {
-            return (
-                <View>
-                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={false} content={this.state.incorrectStandardContent} value={this.state.incorrectTarget}></TargetBtn>
-                    <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayer.id} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
-                </View>
-
-            )
+            let incorrect = <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayerId} correct={false} content={attempt.iri} value={attempt.literal}></TargetBtn>
+            buttonArray.push(incorrect)
         }
+        const shuffled = buttonArray.sort(() => Math.random() - 0.5)
 
-
+        return shuffled
     }
 
     static getDerivedStateFromProps(props, state) {
         let questionIndex = props.currentPlayer.questionIndex
+
         let newState = {
-            levelID: props.currentPlayer.questions[questionIndex].LevelID,
+            levelID: props.currentPlayer.questions[questionIndex].levelID,
+            levelType: props.currentPlayer.questions[questionIndex].levelType,
             correctStandardContent: props.currentPlayer.questions[questionIndex].correctStandardContent,
             correctTarget: props.currentPlayer.questions[questionIndex].correctTarget,
-            incorrectStandardContent: props.currentPlayer.questions[questionIndex].incorrectStandardContent,
-            incorrectTarget: props.currentPlayer.questions[questionIndex].incorrectTarget,
-            currentPlayer: props.currentPlayer,
+            incorrect: props.currentPlayer.questions[questionIndex].incorrect,
+            currentPlayerId: props.currentPlayer.id,
         }
         return newState
     }
 
-    render() {
-
-        return (
-
-            <View style={styles.container}>
+    renderLevel() {
+        if (this.state.levelType == "match") {
+            return (<View style={styles.container}>
                 <Sounds sound={this.state.correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text style={styles.targetText}>
@@ -70,9 +61,25 @@ export default class Levels extends React.Component {
                 <View style={styles.buttonsContainer}>
                     {this.renderTargerButtons()}
                 </View>
+            </View>)
+        } else {
+            return (<View style={styles.container}>
+                <View style={styles.targetContainer}>
+                    <Text style={styles.targetText}>
+                        {console.log(this.state.levelType)}
+                    </Text>
+                </View>
+
+            </View>
+            )
+        }
+    }
 
 
-
+    render() {
+        return (
+            <View>
+                {this.renderLevel()}
             </View>
         )
     }
@@ -83,12 +90,14 @@ const styles = StyleSheet.create({
 
     },
     targetContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: "5%",
-        height: "35%",
+        justifyContent: "center",
+        alignItems: "center",
+        marginHorizontal: "5%",
+        height: "20%",
         borderRadius: 5,
         backgroundColor: "#E4C580",
+        textAlign: 'center'
+
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -96,18 +105,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        marginVertical: 20,
     },
     targetText: {
-        fontSize: 80,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 60,
+        marginTop: 0,
     },
     headline: {
-        textAlign: 'center',
+        // textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 18,
         marginTop: 0,
-        width: 200,
-        backgroundColor: 'yellow',
     }
 
 });
