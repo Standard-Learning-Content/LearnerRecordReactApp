@@ -133,12 +133,13 @@ Main.propTypes = {
 
 
 const styles = StyleSheet.create({
+    container: {
+
+    },
     background: {
         backgroundColor: '#080F5B',
         width: "100%",
         height: "100%",
-        flex: 1,
-
     },
     headerContainer: {
         width: "100%",

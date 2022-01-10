@@ -2,6 +2,7 @@ import React from "react";
 import TargetBtn from "./targetButtons";
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
 import Sounds from './sounds'
+import uuid from 'react-native-uuid';
 import { Tile } from 'react-native-elements';
 
 export default class Levels extends React.Component {
@@ -15,24 +16,11 @@ export default class Levels extends React.Component {
             incorrect: "",
             currentPlayerId: "",
         }
-        this.renderTargerButtons = this.renderTargerButtons.bind(this)
+        this.renderTargetButtons = this.renderTargetButtons.bind(this)
         this.renderLevel = this.renderLevel.bind(this)
-    }
-
-    renderTargerButtons() {
-        let buttonArray = []
-
-        let correct = <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayerId} correct={true} content={this.state.correctStandardContent} value={this.state.correctTarget}></TargetBtn>
-        buttonArray.push(correct)
-
-        for (let attempt of this.state.incorrect) {
-
-            let incorrect = <TargetBtn correctTarget={this.state.correctTarget} changePlayer={this.props.changePlayer} updateLocalLearnerRecord={this.props.updateLocalLearnerRecord} userID={this.state.currentPlayerId} correct={false} content={attempt.iri} value={attempt.literal}></TargetBtn>
-            buttonArray.push(incorrect)
-        }
-        const shuffled = buttonArray.sort(() => Math.random() - 0.5)
-
-        return shuffled
+        this.returnMatchLevel = this.returnMatchLevel.bind(this)
+        this.returnMatchFirstLevel = this.returnMatchFirstLevel.bind(this)
+        this.returnSpellingLevel = this.returnSpellingLevel.bind(this)
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -49,9 +37,41 @@ export default class Levels extends React.Component {
         return newState
     }
 
-    renderLevel() {
-        if (this.state.levelType == "match") {
-            return (<View style={styles.container}>
+    renderTargetButtons(correctTarget) {
+        let buttonArray = []
+
+        let correct = <TargetBtn
+            key={correctTarget + uuid.v4()}
+            value={correctTarget}
+            changePlayer={this.props.changePlayer}
+            updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
+            userID={this.state.currentPlayerId}
+            correct={true}
+            content={this.state.correctStandardContent} >
+        </TargetBtn>
+        buttonArray.push(correct)
+
+        for (let attempt of this.state.incorrect) {
+            let incorrect = <TargetBtn
+                key={attempt.literal + uuid.v4()}
+                changePlayer={this.props.changePlayer}
+                updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
+                userID={this.state.currentPlayerId} correct={false}
+                content={attempt.iri}
+                value={attempt.literal}>
+            </TargetBtn>
+            buttonArray.push(incorrect)
+        }
+        const shuffled = buttonArray.sort(() => Math.random() - 0.5)
+
+        return shuffled
+    }
+
+
+
+    returnMatchLevel() {
+        return (
+            <View>
                 <Sounds sound={this.state.correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text style={styles.targetText}>
@@ -59,26 +79,87 @@ export default class Levels extends React.Component {
                     </Text>
                 </View>
                 <View style={styles.buttonsContainer}>
-                    {this.renderTargerButtons()}
+                    {this.renderTargetButtons(this.state.correctTarget)}
                 </View>
-            </View>)
-        } else {
-            return (<View style={styles.container}>
+            </View>
+        )
+    }
+
+    returnMatchFirstLevel() {
+        let regex = /\(([^)]+)\)/
+        var matches = regex.exec(this.state.correctTarget)
+
+        let correctTarget = matches[1]
+        let restOfWord = this.state.correctTarget.replace(matches[0], "")
+        return (
+            <View>
+                <Sounds sound={correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
-                    <Text style={styles.targetText}>
-                        {console.log(this.state.levelType)}
+                    <Text>
+                        <Text style={styles.matchFirstTarget}>
+                            {correctTarget}
+                        </Text>
+                        <Text style={styles.matchFirstRest}>
+                            {restOfWord}
+                        </Text>
+                    </Text>
+
+
+                </View>
+                <View style={styles.buttonsContainer}>
+                    {this.renderTargetButtons(correctTarget)}
+                </View>
+            </View>
+        )
+    }
+
+    // TODO
+    returnSpellingLevel() {
+        let fullword = this.state.correctTarget.replace(/\|/g, "")
+        return (
+            <View>
+                <Sounds word={fullword}></Sounds>
+                <View style={styles.targetContainer}>
+                    <Text>
+                        <Text style={styles.targetText}>
+                            {fullword}
+                        </Text>
                     </Text>
                 </View>
-
+                <View style={styles.buttonsContainer}>
+                    {this.renderTargetButtons(fullword)}
+                </View>
             </View>
-            )
+        )
+    }
+
+
+
+    renderLevel() {
+        switch (this.state.levelType) {
+            case "match":
+                return this.returnMatchLevel()
+            case "matchfirst":
+                return this.returnMatchFirstLevel()
+            case "spelling":
+                return this.returnSpellingLevel()
+            default:
+                return (<View>
+                    <View style={styles.targetContainer}>
+                        <Text style={styles.targetText}>
+                            {console.log(this.state.levelType)}
+                        </Text>
+                    </View>
+
+                </View>
+                )
         }
     }
 
 
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 {this.renderLevel()}
             </View>
         )
@@ -87,17 +168,15 @@ export default class Levels extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-
+        flexDirection: "column",
     },
     targetContainer: {
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: "5%",
         height: "20%",
-        borderRadius: 5,
         backgroundColor: "#E4C580",
         textAlign: 'center'
-
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -112,8 +191,21 @@ const styles = StyleSheet.create({
         fontSize: 60,
         marginTop: 0,
     },
+    matchFirstTarget: {
+        flex: 1,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 60,
+        marginTop: 0,
+        color: "#FC3D14"
+    },
+    matchFirstRest: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 60,
+        marginTop: 0,
+    },
     headline: {
-        // textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 18,
         marginTop: 0,
