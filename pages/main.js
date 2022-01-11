@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Button, View, Text } from 'react-native';
-import Levels from "../components/levels";
+import Level from "../components/mainPageComponents/level";
 import config from '../config.json'
 import PropTypes from 'prop-types';
 
@@ -90,7 +90,7 @@ export default class Main extends React.Component {
                     </Text>
                 </View>
                 <View style={styles.container}>
-                    {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Levels updateLocalLearnerRecord={this.updateLocalLearnerRecord} currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Levels> : this.changeCurrentPlayer()}
+                    {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Level updateLocalLearnerRecord={this.updateLocalLearnerRecord} currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Level> : this.changeCurrentPlayer()}
                 </View>
             </View>
 

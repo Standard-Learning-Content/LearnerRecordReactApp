@@ -6,7 +6,7 @@
 import React from "react";
 import { Button } from 'react-native-elements';
 import { StyleSheet, View } from 'react-native';
-import config from '../config.json'
+import config from '../../config.json'
 
 
 export default class TargetBtn extends React.Component {

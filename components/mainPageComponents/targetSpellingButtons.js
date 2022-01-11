@@ -6,7 +6,7 @@
 import React from "react";
 import { Button, ThemeConsumer } from 'react-native-elements';
 import { StyleSheet, View } from 'react-native';
-import config from '../config.json'
+import config from '../../config.json'
 import uuid from 'react-native-uuid';
 
 

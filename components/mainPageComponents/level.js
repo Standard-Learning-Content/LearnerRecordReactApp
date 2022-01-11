@@ -1,11 +1,12 @@
 import React from "react";
-import TargetBtn from "./targetButtons";
+import uuid from 'react-native-uuid';
 import { StyleSheet, View, Text } from 'react-native';
 import Sounds from './sounds'
 import TargetSpellingButton from "./targetSpellingButtons";
-import uuid from 'react-native-uuid';
+import TargetBtn from "./targetButtons";
 
-export default class Levels extends React.Component {
+
+export default class Level extends React.Component {
     constructor(props) {
         super(props)
         this.state = {

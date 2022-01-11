@@ -822,8 +822,8 @@
         "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tan",
         "incorrect": [
             {
-                "literal": "n",
-                "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA"
+                "literal": "m",
+                "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_m_Grapheme-m-IBA"
             },
             {
                 "literal": "p",
@@ -874,8 +874,8 @@
                 "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA"
             },
             {
-                "literal": "c",
-                "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
+                "literal": "t",
+                "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_t_Grapheme-t-IBA"
             }
         ]
     },
@@ -902,8 +902,8 @@
         "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_can",
         "incorrect": [
             {
-                "literal": "n",
-                "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA"
+                "literal": "t",
+                "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_t_Grapheme-t-IBA"
             },
             {
                 "literal": "m",
