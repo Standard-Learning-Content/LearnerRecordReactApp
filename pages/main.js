@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Button, View, Text } from 'react-native';
-import Level from "../components/mainPageComponents/level";
+import Level from "../components/mainComponents/level";
 import config from '../config.json'
 import PropTypes from 'prop-types';
 

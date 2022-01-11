@@ -8,7 +8,7 @@
 
 import React from "react";
 import { View, Button, Alert, StyleSheet, Text } from 'react-native';
-import NameInput from "../components/playerNameInput"
+import NameInput from "../components/addPlayerComponents/playerNameInput"
 import all_levels from '../levels/levels.json'
 import { JSHash, CONSTANTS } from 'react-native-hash';
 import config from '../config.json'

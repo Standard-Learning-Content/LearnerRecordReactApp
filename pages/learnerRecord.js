@@ -3,7 +3,7 @@
  */
 import React from "react";
 import { SafeAreaView, StatusBar, StyleSheet, ScrollView } from 'react-native';
-import Record from "../components/record";
+import Record from "../components/learnerRecordComponents/record";
 import PropTypes from 'prop-types';
 
 
