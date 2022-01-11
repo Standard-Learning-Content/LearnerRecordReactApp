@@ -39,11 +39,11 @@ export default class TargetBtn extends React.Component {
 
             const data = await res.text()
             if (config["debug-mode"]) console.log(data)
-            this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
+            this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
             this.props.changePlayer()
         } else {
             if (config["debug-mode"]) console.log("Incorrect")
-            this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
+            this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
         }
     }
 

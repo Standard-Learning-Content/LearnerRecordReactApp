@@ -2,6 +2,7 @@ import React from "react";
 import TargetBtn from "./targetButtons";
 import { StyleSheet, View, Text } from 'react-native';
 import Sounds from './sounds'
+import TargetSpellingButton from "./targetSpellingButtons";
 import uuid from 'react-native-uuid';
 
 export default class Levels extends React.Component {
@@ -16,6 +17,8 @@ export default class Levels extends React.Component {
             currentPlayerId: "",
         }
         this.renderTargetButtons = this.renderTargetButtons.bind(this)
+        this.renderSpellingTargetButtons = this.renderSpellingTargetButtons.bind(this)
+
         this.renderLevel = this.renderLevel.bind(this)
         this.returnMatchLevel = this.returnMatchLevel.bind(this)
         this.returnMatchFirstLevel = this.returnMatchFirstLevel.bind(this)
@@ -36,9 +39,10 @@ export default class Levels extends React.Component {
         return newState
     }
 
+
+
     renderTargetButtons(correctTarget) {
         let buttonArray = []
-
         let correct = <TargetBtn
             key={correctTarget + uuid.v4()}
             value={correctTarget}
@@ -46,7 +50,7 @@ export default class Levels extends React.Component {
             updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
             userID={this.state.currentPlayerId}
             correct={true}
-            content={this.state.correctStandardContent} >
+            content={this.state.correctStandardContent}>
         </TargetBtn>
         buttonArray.push(correct)
 
@@ -55,7 +59,8 @@ export default class Levels extends React.Component {
                 key={attempt.literal + uuid.v4()}
                 changePlayer={this.props.changePlayer}
                 updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
-                userID={this.state.currentPlayerId} correct={false}
+                userID={this.state.currentPlayerId}
+                correct={false}
                 content={attempt.iri}
                 value={attempt.literal}>
             </TargetBtn>
@@ -66,6 +71,17 @@ export default class Levels extends React.Component {
         return shuffled
     }
 
+    renderSpellingTargetButtons(correctTargetsArray) {
+        let buttons = <TargetSpellingButton
+            changePlayer={this.props.changePlayer}
+            updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
+            userID={this.state.currentPlayerId}
+            correctStandardContent={this.state.correctStandardContent}
+            correctTarget={correctTargetsArray}
+            incorrectTargets={this.state.incorrect}>
+        </TargetSpellingButton>
+        return buttons
+    }
 
     returnMatchLevel() {
         return (
@@ -86,7 +102,6 @@ export default class Levels extends React.Component {
     returnMatchFirstLevel() {
         let regex = /\(([^)]+)\)/
         var matches = regex.exec(this.state.correctTarget)
-
         let correctTarget = matches[1]
         let restOfWord = this.state.correctTarget.replace(matches[0], "")
         return (
@@ -114,7 +129,7 @@ export default class Levels extends React.Component {
     // TODO
     returnSpellingLevel() {
         let fullword = this.state.correctTarget.replace(/\|/g, "")
-        console.log(fullword)
+        let targetArray = this.state.correctTarget.split("|")
         return (
             <View>
                 <Sounds sound={fullword}></Sounds>
@@ -126,7 +141,7 @@ export default class Levels extends React.Component {
                     </Text>
                 </View>
                 <View style={styles.buttonsContainer}>
-                    {this.renderTargetButtons(fullword)}
+                    {this.renderSpellingTargetButtons(targetArray)}
                 </View>
             </View>
         )

@@ -94,8 +94,16 @@ const soundsMap = new Map([
     ["x", require('../assets/audio/x.mp3')],
     ["y", require('../assets/audio/y.mp3')],
     ["z", require('../assets/audio/z.mp3')],
-    ["cat", require('../assets/audio/cat.mp3')]
-
+    ["cat", require('../assets/audio/cat.mp3')],
+    ["pan", require('../assets/audio/pan.mp3')],
+    ["mat", require('../assets/audio/mat.mp3')],
+    ["pat", require('../assets/audio/pat.mp3')],
+    ["tan", require('../assets/audio/tan.mp3')],
+    ["map", require('../assets/audio/map.mp3')],
+    ["tap", require('../assets/audio/tap.mp3')],
+    ["cap", require('../assets/audio/cap.mp3')],
+    ["nap", require('../assets/audio/nap.mp3')],
+    ["can", require('../assets/audio/can.mp3')],
 ])
 
 export default class Sounds extends React.Component {

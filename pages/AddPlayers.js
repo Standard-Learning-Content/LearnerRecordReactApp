@@ -91,7 +91,7 @@ export default class AddPlayers extends React.Component {
                 for (let level of all_levels) {
                     if (contentArray[level.correctStandardContent] == undefined) {
                         playerLevels.push(level)
-                    } else if (contentArray[level.correctStandardContent].countsCorrect < 10) {
+                    } else if (contentArray[level.correctStandardContent].countsCorrect < 30) {
                         playerLevels.push(level)
                     }
                 }
