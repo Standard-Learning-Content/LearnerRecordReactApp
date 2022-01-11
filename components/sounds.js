@@ -94,6 +94,7 @@ const soundsMap = new Map([
     ["x", require('../assets/audio/x.mp3')],
     ["y", require('../assets/audio/y.mp3')],
     ["z", require('../assets/audio/z.mp3')],
+    ["cat", require('../assets/audio/cat.mp3')]
 
 ])
 

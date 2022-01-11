@@ -1,9 +1,8 @@
 import React from "react";
 import TargetBtn from "./targetButtons";
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Sounds from './sounds'
 import uuid from 'react-native-uuid';
-import { Tile } from 'react-native-elements';
 
 export default class Levels extends React.Component {
     constructor(props) {
@@ -68,7 +67,6 @@ export default class Levels extends React.Component {
     }
 
 
-
     returnMatchLevel() {
         return (
             <View>
@@ -116,9 +114,10 @@ export default class Levels extends React.Component {
     // TODO
     returnSpellingLevel() {
         let fullword = this.state.correctTarget.replace(/\|/g, "")
+        console.log(fullword)
         return (
             <View>
-                <Sounds word={fullword}></Sounds>
+                <Sounds sound={fullword}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text>
                         <Text style={styles.targetText}>
