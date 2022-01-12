@@ -82,14 +82,14 @@ export default class Main extends React.Component {
 
     play() {
         return (
-            <View>
+            <View style={styles.mainContainer}>
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
-                        {this.state.players[this.state.currentPlayerIndex].name}s Turn {'\n'}
+                        {this.state.players[this.state.currentPlayerIndex].name}'s Turn {'\n'}
                         Question #:{this.state.players[this.state.currentPlayerIndex].questionIndex + 1}
                     </Text>
                 </View>
-                <View style={styles.container}>
+                <View style={styles.contentContainer}>
                     {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Level updateLocalLearnerRecord={this.updateLocalLearnerRecord} currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Level> : this.changeCurrentPlayer()}
                 </View>
             </View>
@@ -99,7 +99,7 @@ export default class Main extends React.Component {
 
     gameOver() {
         return (
-            <View>
+            <View style={styles.mainContainer}>
                 <View style={styles.completeHeaderContainer}>
                     <Text style={styles.headline}> Congrats!{'\n'}  All the quentions are learned </Text>
                 </View>
@@ -111,13 +111,12 @@ export default class Main extends React.Component {
 
     render() {
         return (
-            <View style={styles.background}>
+            <View style={styles.page}>
                 {this.state.players != 0 ? this.play() : this.gameOver()}
                 <Button
                     style={{ padding: 10 }}
                     title={`View ${this.state.players[this.state.currentPlayerIndex].name}'s Report Card`}
-                    type="outline"
-                    color="#F4E4C1"
+                    titleStyle={{ color: "#000000" }}
                     onPress={() => this.props.navigation.navigate('LearnerRecord', { player: this.state.players[this.state.currentPlayerIndex] })}
                 />
             </View >
@@ -133,15 +132,17 @@ Main.propTypes = {
 
 
 const styles = StyleSheet.create({
-    container: {
-
-    },
-    background: {
+    page: {
         backgroundColor: '#080F5B',
         width: "100%",
         height: "100%",
     },
+    mainContainer: {
+        flex: 1,
+        flexDirection: "column",
+    },
     headerContainer: {
+        flex: 1,
         width: "100%",
         height: "15%",
         backgroundColor: '#0D19AA',
@@ -159,5 +160,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#F8E9A1',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    contentContainer: {
+        flex: 5,
     }
 });

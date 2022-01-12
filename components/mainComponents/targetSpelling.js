@@ -5,12 +5,58 @@
  */
 import React from "react";
 import { Button, ThemeConsumer } from 'react-native-elements';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import config from '../../config.json'
 import uuid from 'react-native-uuid';
+import Sounds from './sounds'
+
+class HeaderChar extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            char: "",
+            active: false
+        }
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        let newState = {
+            char: props.char,
+            active: props.active
+        }
+        return newState
+    }
 
 
-export default class TargetSpellingButton extends React.Component {
+    render() {
+        let charState
+        if (this.state.active) {
+            charState = {
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontSize: 60,
+                marginTop: 0,
+                color: "#FC3D14"
+            }
+        } else {
+            charState = {
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontSize: 60,
+                marginTop: 0,
+            }
+        }
+        return (
+            <Text style={charState}>
+                {this.state.char}
+            </Text >
+        )
+    }
+}
+
+
+export default class TargetSpelling extends React.Component {
     constructor(props) {
         super(props)
 
@@ -19,12 +65,14 @@ export default class TargetSpellingButton extends React.Component {
             correctTargets: "",
             incorrectTarget: "",
             correctStandardContent: "",
-            userID: ""
+            userID: "",
+            fillword: ""
         }
 
         this.answer = this.answer.bind(this)
         this.submitAnswer = this.submitAnswer.bind(this)
         this.createButtons = this.createButtons.bind(this)
+        this.createDynamicHeader = this.createDynamicHeader.bind(this)
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -34,7 +82,8 @@ export default class TargetSpellingButton extends React.Component {
             correctStandardContent: props.correctStandardContent,
             correctTargets: props.correctTarget,
             incorrectTarget: props.incorrectTargets,
-            userID: props.userID
+            userID: props.userID,
+            fullword: props.fullword
         }
         return newState
     }
@@ -77,6 +126,25 @@ export default class TargetSpellingButton extends React.Component {
         }
     }
 
+
+    createDynamicHeader() {
+        let textArray = []
+
+        let charArray = this.state.fullword.split("")
+        let keyCounter = 0
+        for (let char of charArray) {
+            let text = <HeaderChar
+                key={keyCounter}
+                active={keyCounter == this.state.currentCharIndex}
+                char={char}
+            >
+            </HeaderChar>
+            textArray.push(text)
+            keyCounter++
+        }
+        return textArray
+    }
+
     createButtons() {
         let buttonArray = []
         for (let content of this.state.correctTargets) {
@@ -86,8 +154,9 @@ export default class TargetSpellingButton extends React.Component {
                 color="#15DB95"
                 buttonStyle={{ backgroundColor: "#15DB95" }}
                 containerStyle={{
-                    width: 400,
+                    width: "90%",
                     marginHorizontal: 50,
+                    marginVertical: 10,
                 }}
                 titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                 style={styles.button}
@@ -103,10 +172,11 @@ export default class TargetSpellingButton extends React.Component {
                 color="#15DB95"
                 buttonStyle={{ backgroundColor: "#15DB95" }}
                 containerStyle={{
-                    width: 400,
+                    width: "90%",
                     marginHorizontal: 50,
+                    marginVertical: 10,
                 }}
-                titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                titleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 23 }}
                 style={styles.button}
                 title={incorrect.literal}
             />
@@ -118,19 +188,59 @@ export default class TargetSpellingButton extends React.Component {
     }
 
     render() {
-
         return (
-            <View >
-                {this.createButtons()}
+            <View style={styles.mainContainer}>
+                <Sounds sound={this.state.fullword}></Sounds>
+                <View style={styles.targetContainer}>
+                    <Text>
+                        {this.createDynamicHeader()}
+                        {/* <Text style={styles.matchFirstTarget}>
+                            {this.state.fullword}
+                        </Text>
+                        <Text style={styles.matchFirstRest}>
+                            {restOfWord}
+                        </Text> */}
+                    </Text>
+                </View>
+                <View style={styles.buttonsContainer}>
+                    {this.createButtons()}
+                </View>
             </View>
+
         )
     }
 }
 
 const styles = StyleSheet.create({
-    button: {
-        padding: '5%',
+    mainContainer: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    targetContainer: {
+        flex: 1,
+        width: "90%",
+        margin: "5%",
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "#E4C580",
+        textAlign: 'center'
+    },
+    targetText: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 60,
+        marginTop: 0,
+    },
+    buttonsContainer: {
+        flex: 4,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
-
+        marginVertical: 20,
     },
 });

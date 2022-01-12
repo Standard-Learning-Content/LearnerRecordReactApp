@@ -2,7 +2,7 @@ import React from "react";
 import uuid from 'react-native-uuid';
 import { StyleSheet, View, Text } from 'react-native';
 import Sounds from './sounds'
-import TargetSpellingButton from "./targetSpellingButtons";
+import TargetSpelling from "./targetSpelling";
 import TargetBtn from "./targetButtons";
 
 
@@ -18,7 +18,7 @@ export default class Level extends React.Component {
             currentPlayerId: "",
         }
         this.renderTargetButtons = this.renderTargetButtons.bind(this)
-        this.renderSpellingTargetButtons = this.renderSpellingTargetButtons.bind(this)
+        this.renderSpellingTarget = this.renderSpellingTarget.bind(this)
 
         this.renderLevel = this.renderLevel.bind(this)
         this.returnMatchLevel = this.returnMatchLevel.bind(this)
@@ -72,21 +72,23 @@ export default class Level extends React.Component {
         return shuffled
     }
 
-    renderSpellingTargetButtons(correctTargetsArray) {
-        let buttons = <TargetSpellingButton
+    renderSpellingTarget(correctTargetsArray, fullword) {
+        let buttons = <TargetSpelling
+
             changePlayer={this.props.changePlayer}
             updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
             userID={this.state.currentPlayerId}
             correctStandardContent={this.state.correctStandardContent}
             correctTarget={correctTargetsArray}
-            incorrectTargets={this.state.incorrect}>
-        </TargetSpellingButton>
+            incorrectTargets={this.state.incorrect}
+            fullword={fullword}>
+        </TargetSpelling>
         return buttons
     }
 
     returnMatchLevel() {
         return (
-            <View>
+            <View style={styles.mainContainer}>
                 <Sounds sound={this.state.correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text style={styles.targetText}>
@@ -106,7 +108,7 @@ export default class Level extends React.Component {
         let correctTarget = matches[1]
         let restOfWord = this.state.correctTarget.replace(matches[0], "")
         return (
-            <View>
+            <View style={styles.mainContainer}>
                 <Sounds sound={correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text>
@@ -117,8 +119,6 @@ export default class Level extends React.Component {
                             {restOfWord}
                         </Text>
                     </Text>
-
-
                 </View>
                 <View style={styles.buttonsContainer}>
                     {this.renderTargetButtons(correctTarget)}
@@ -127,25 +127,11 @@ export default class Level extends React.Component {
         )
     }
 
-    // TODO
     returnSpellingLevel() {
         let fullword = this.state.correctTarget.replace(/\|/g, "")
         let targetArray = this.state.correctTarget.split("|")
-        return (
-            <View>
-                <Sounds sound={fullword}></Sounds>
-                <View style={styles.targetContainer}>
-                    <Text>
-                        <Text style={styles.targetText}>
-                            {fullword}
-                        </Text>
-                    </Text>
-                </View>
-                <View style={styles.buttonsContainer}>
-                    {this.renderSpellingTargetButtons(targetArray)}
-                </View>
-            </View>
-        )
+        return this.renderSpellingTarget(targetArray, fullword)
+
     }
 
 
@@ -174,7 +160,7 @@ export default class Level extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.level}>
                 {this.renderLevel()}
             </View>
         )
@@ -182,23 +168,34 @@ export default class Level extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    level: {
+        width: "100%",
+        height: "100%",
+    },
+    mainContainer: {
+        flex: 1,
         flexDirection: "column",
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     targetContainer: {
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "20%",
+        flex: 1,
+        width: "90%",
+        margin: "5%",
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: "#E4C580",
         textAlign: 'center'
     },
     buttonsContainer: {
+        flex: 4,
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
+        marginVertical: 20,
     },
     targetText: {
         textAlign: 'center',

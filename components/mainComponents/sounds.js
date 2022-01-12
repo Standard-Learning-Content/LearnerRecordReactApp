@@ -117,19 +117,25 @@ export default class Sounds extends React.Component {
 
 
     static async getDerivedStateFromProps(props, state) {
-        Audio.setAudioModeAsync({
-            allowsRecordingIOS: false,
-            allowsRecordingAndroid: false,
-            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-            playsInSilentModeIOS: true,
-            interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-            shouldDuckAndroid: true,
-            staysActiveInBackground: true,
-            playThroughEarpieceAndroid: true
-        })
-        this.sound = new Audio.Sound()
-        await this.sound.loadAsync(soundsMap.get(props.sound.toLowerCase()))
-        await this.sound.playAsync()
+        try {
+            Audio.setAudioModeAsync({
+                allowsRecordingIOS: false,
+                allowsRecordingAndroid: false,
+                interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+                playsInSilentModeIOS: true,
+                interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+                shouldDuckAndroid: true,
+                staysActiveInBackground: true,
+                playThroughEarpieceAndroid: true
+            })
+            this.sound = new Audio.Sound()
+            await this.sound.loadAsync(soundsMap.get(props.sound.toLowerCase()))
+            await this.sound.playAsync()
+        } catch (error) {
+            console.log(props.sound.toLowerCase())
+            console.log(error)
+        }
+
     }
 
     render() {
