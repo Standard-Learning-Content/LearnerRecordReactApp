@@ -66,7 +66,12 @@ export default class AddPlayers extends React.Component {
                 }
                 // Currently we are sha256 hashing the first name for the id 
                 let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
-                let hashed_id = { "userID": hash }
+
+                let hashed_id
+                if (config["production"])
+                    hashed_id = { "userID": hash }
+                else
+                    hashed_id = { "userID": hash + "test" }
 
                 //Fetches for the Learner Record 
                 const res = await fetch(`${config["api-location"]}/readFromLearnerRecord`, {

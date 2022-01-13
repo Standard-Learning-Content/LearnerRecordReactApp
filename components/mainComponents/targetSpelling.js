@@ -29,6 +29,7 @@ class HeaderChar extends React.Component {
     }
 
 
+
     render() {
         let charState
         if (this.state.active) {
@@ -90,7 +91,7 @@ export default class TargetSpelling extends React.Component {
 
     async submitAnswer() {
         let answerData = {
-            userID: this.state.userID,
+            userID: this.state.userID + "test",
             standardLearnedContent: this.state.correctStandardContent.replace("<", "").replace(">", ""),
             correct: true,
             timestamp: Date.now()
