@@ -2,7 +2,7 @@ import React from "react"
 import { Audio } from "expo-av"
 import { View } from "react-native"
 
-const soundsMap = new Map([
+export const soundsMap = new Map([
     ["a", require('../../assets/audio/a.mp3')],
     ["ade", require('../../assets/audio/ade.mp3')],
     ["ake", require('../../assets/audio/ake.mp3')],

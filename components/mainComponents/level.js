@@ -73,16 +73,23 @@ export default class Level extends React.Component {
     }
 
     renderSpellingTarget(correctTargetsArray, fullword) {
-        let buttons = <TargetSpelling
+        let buttons = <View style={styles.mainContainer}>
+            <Sounds sound={fullword}></Sounds>
+            <TargetSpelling
 
-            changePlayer={this.props.changePlayer}
-            updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
-            userID={this.state.currentPlayerId}
-            correctStandardContent={this.state.correctStandardContent}
-            correctTarget={correctTargetsArray}
-            incorrectTargets={this.state.incorrect}
-            fullword={fullword}>
-        </TargetSpelling>
+                changePlayer={this.props.changePlayer}
+                updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
+                userID={this.state.currentPlayerId}
+                correctStandardContent={this.state.correctStandardContent}
+                correctTarget={correctTargetsArray}
+                incorrectTargets={this.state.incorrect}
+                fullword={fullword}>
+            </TargetSpelling>
+        </View>
+
+
+
+
         return buttons
     }
 

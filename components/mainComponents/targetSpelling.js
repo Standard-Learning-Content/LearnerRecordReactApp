@@ -5,10 +5,22 @@
  */
 import React from "react";
 import { Button, ThemeConsumer } from 'react-native-elements';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, SegmentedControlIOSComponent } from 'react-native';
 import config from '../../config.json'
 import uuid from 'react-native-uuid';
 import Sounds from './sounds'
+import { Audio } from "expo-av"
+
+Audio.setAudioModeAsync({
+    allowsRecordingIOS: false,
+    allowsRecordingAndroid: false,
+    interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+    playsInSilentModeIOS: true,
+    interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+    shouldDuckAndroid: true,
+    staysActiveInBackground: true,
+    playThroughEarpieceAndroid: true
+})
 
 class HeaderChar extends React.Component {
     constructor(props) {
@@ -62,7 +74,7 @@ export default class TargetSpelling extends React.Component {
         super(props)
 
         this.state = {
-            currentCharIndex: 0,
+            currentCharIndex: "",
             correctTargets: "",
             incorrectTarget: "",
             correctStandardContent: "",
@@ -77,16 +89,20 @@ export default class TargetSpelling extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-
-        let newState = {
-            currentCharIndex: 0,
-            correctStandardContent: props.correctStandardContent,
-            correctTargets: props.correctTarget,
-            incorrectTarget: props.incorrectTargets,
-            userID: props.userID,
-            fullword: props.fullword
+        if (state.currentCharIndex == "") {
+            let newState = {
+                currentCharIndex: 0,
+                correctStandardContent: props.correctStandardContent,
+                correctTargets: props.correctTarget,
+                incorrectTarget: props.incorrectTargets,
+                userID: props.userID,
+                fullword: props.fullword
+            }
+            return newState
+        } else {
+            return null
         }
-        return newState
+
     }
 
     async submitAnswer() {
@@ -110,16 +126,35 @@ export default class TargetSpelling extends React.Component {
             throw new Error('Request returned a non 200 response code')
         }
 
+
         const data = await res.text()
         if (config["debug-mode"]) console.log(data)
+
+        this.setState({
+            currentCharIndex: "",
+            correctTargets: "",
+            incorrectTarget: "",
+            correctStandardContent: "",
+            userID: "",
+            fillword: ""
+        })
         this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
         this.props.changePlayer()
 
     }
 
-    answer(content) {
+    async answer(content) {
         if (content == this.state.correctTargets[this.state.currentCharIndex]) {
-            this.state.currentCharIndex++
+            this.sound = new Audio.Sound()
+            await this.sound.loadAsync(require('../../assets/audio/feedback/Correct.mp3'))
+            await this.sound.playAsync()
+            let temp = this.state.currentCharIndex++
+            let newIndex = temp + 1
+            this.setState({
+                currentCharIndex: newIndex
+            })
+
+
         }
 
         if (this.state.currentCharIndex == this.state.correctTargets.length) {
@@ -191,7 +226,6 @@ export default class TargetSpelling extends React.Component {
     render() {
         return (
             <View style={styles.mainContainer}>
-                <Sounds sound={this.state.fullword}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text>
                         {this.createDynamicHeader()}
@@ -214,6 +248,7 @@ export default class TargetSpelling extends React.Component {
 
 const styles = StyleSheet.create({
     mainContainer: {
+        width: "100%",
         flex: 1,
         flexDirection: "column",
         justifyContent: 'center',
