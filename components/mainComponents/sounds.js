@@ -2,6 +2,17 @@ import React from "react"
 import { Audio } from "expo-av"
 import { View } from "react-native"
 
+Audio.setAudioModeAsync({
+    allowsRecordingIOS: false,
+    allowsRecordingAndroid: false,
+    interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+    playsInSilentModeIOS: true,
+    interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+    shouldDuckAndroid: true,
+    staysActiveInBackground: true,
+    playThroughEarpieceAndroid: true
+})
+
 export const soundsMap = new Map([
     ["a", require('../../assets/audio/a.mp3')],
     ["ade", require('../../assets/audio/ade.mp3')],
@@ -118,19 +129,14 @@ export default class Sounds extends React.Component {
 
     static async getDerivedStateFromProps(props, state) {
         try {
-            Audio.setAudioModeAsync({
-                allowsRecordingIOS: false,
-                allowsRecordingAndroid: false,
-                interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-                playsInSilentModeIOS: true,
-                interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-                shouldDuckAndroid: true,
-                staysActiveInBackground: true,
-                playThroughEarpieceAndroid: true
-            })
             this.sound = new Audio.Sound()
             await this.sound.loadAsync(soundsMap.get(props.sound.toLowerCase()))
             await this.sound.playAsync()
+
+            setTimeout(async () => {
+                console.log("Unloaded")
+                await this.sound.unloadAsync();
+            }, 1000);
         } catch (error) {
             console.log(props.sound.toLowerCase())
             console.log(error)

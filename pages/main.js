@@ -162,6 +162,6 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     contentContainer: {
-        flex: 5,
+        flex: 7,
     }
 });

@@ -4,12 +4,12 @@
  * @CR
  */
 import React from "react";
-import { Button, ThemeConsumer } from 'react-native-elements';
-import { StyleSheet, View, Text, SegmentedControlIOSComponent } from 'react-native';
+import { Button } from 'react-native-elements';
+import { StyleSheet, View, Text, mage } from 'react-native';
 import config from '../../config.json'
 import uuid from 'react-native-uuid';
-import Sounds from './sounds'
 import { Audio } from "expo-av"
+import Images from './images'
 
 Audio.setAudioModeAsync({
     allowsRecordingIOS: false,
@@ -58,6 +58,7 @@ class HeaderChar extends React.Component {
                 fontWeight: 'bold',
                 fontSize: 60,
                 marginTop: 0,
+                color: "#000000"
             }
         }
         return (
@@ -79,7 +80,7 @@ export default class TargetSpelling extends React.Component {
             incorrectTarget: "",
             correctStandardContent: "",
             userID: "",
-            fillword: ""
+            fullword: ""
         }
 
         this.answer = this.answer.bind(this)
@@ -136,7 +137,7 @@ export default class TargetSpelling extends React.Component {
             incorrectTarget: "",
             correctStandardContent: "",
             userID: "",
-            fillword: ""
+            fullword: ""
         })
         this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
         this.props.changePlayer()
@@ -179,6 +180,7 @@ export default class TargetSpelling extends React.Component {
             keyCounter++
         }
         return textArray
+
     }
 
     createButtons() {
@@ -227,15 +229,10 @@ export default class TargetSpelling extends React.Component {
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.targetContainer}>
-                    <Text>
+                    <Text style={styles.targetTextContainer} >
                         {this.createDynamicHeader()}
-                        {/* <Text style={styles.matchFirstTarget}>
-                            {this.state.fullword}
-                        </Text>
-                        <Text style={styles.matchFirstRest}>
-                            {restOfWord}
-                        </Text> */}
                     </Text>
+                    <Images image={this.state.fullword}></Images>
                 </View>
                 <View style={styles.buttonsContainer}>
                     {this.createButtons()}
@@ -249,6 +246,7 @@ export default class TargetSpelling extends React.Component {
 const styles = StyleSheet.create({
     mainContainer: {
         width: "100%",
+        height: "100%",
         flex: 1,
         flexDirection: "column",
         justifyContent: 'center',
@@ -256,12 +254,17 @@ const styles = StyleSheet.create({
     },
     targetContainer: {
         flex: 1,
+        height: "100%",
         width: "90%",
+        flexDirection: "row",
         margin: "5%",
         borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: "#E4C580",
+        textAlign: 'center'
+    },
+    targetTextContainer: {
+        flex: 1,
+        width: "100%",
         textAlign: 'center'
     },
     targetText: {
@@ -277,6 +280,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        marginVertical: 20,
+        // marginVertical: 20,
     },
 });
