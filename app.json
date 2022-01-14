@@ -2,7 +2,7 @@
   "expo": {
     "name": "Multi Learner Questions",
     "slug": "learnerRecord",
-    "version": "1.0.2",
+    "version": "1.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "updates": {
@@ -18,7 +18,7 @@
     },
     "android": {
       "package": "com.knowledgeGraphsForLearning.mlq",
-      "versionCode": 6,
+      "versionCode": 7,
       "useNextNotificationsApi": true,
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.knowledgeGraphsForLearning.mlq"
     },
