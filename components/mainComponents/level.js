@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import Sounds from './sounds'
 import TargetSpelling from "./targetSpelling";
 import TargetBtn from "./targetButtons";
-
+import * as StoreReview from 'expo-store-review';
 
 export default class Level extends React.Component {
     constructor(props) {
@@ -28,6 +28,9 @@ export default class Level extends React.Component {
 
     static getDerivedStateFromProps(props, state) {
         let questionIndex = props.currentPlayer.questionIndex
+        if (questionIndex == 20) {
+            StoreReview.requestReview()
+        }
 
         let newState = {
             levelID: props.currentPlayer.questions[questionIndex].levelID,

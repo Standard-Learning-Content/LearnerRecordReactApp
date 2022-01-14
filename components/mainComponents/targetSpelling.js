@@ -108,7 +108,7 @@ export default class TargetSpelling extends React.Component {
 
     async submitAnswer() {
         let answerData = {
-            userID: this.state.userID + "test",
+            userID: this.state.userID,
             standardLearnedContent: this.state.correctStandardContent.replace("<", "").replace(">", ""),
             correct: true,
             timestamp: Date.now()

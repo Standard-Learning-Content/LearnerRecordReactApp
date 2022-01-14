@@ -8,6 +8,8 @@ import { Button } from 'react-native-elements';
 import config from '../../config.json'
 import { Audio } from "expo-av"
 
+
+
 Audio.setAudioModeAsync({
     allowsRecordingIOS: false,
     allowsRecordingAndroid: false,
@@ -29,8 +31,9 @@ export default class TargetBtn extends React.Component {
     }
 
     async answer() {
+
         let answerData = {
-            userID: this.props.userID + "test",
+            userID: this.props.userID,
             standardLearnedContent: this.props.content.replace("<", "").replace(">", ""),
             correct: this.props.correct,
             timestamp: Date.now()
