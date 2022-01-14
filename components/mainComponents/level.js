@@ -28,7 +28,7 @@ export default class Level extends React.Component {
 
     static getDerivedStateFromProps(props, state) {
         let questionIndex = props.currentPlayer.questionIndex
-        if (questionIndex == 20) {
+        if (questionIndex == 38) {
             StoreReview.requestReview()
         }
 
