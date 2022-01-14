@@ -117,7 +117,6 @@ export default class TargetBtn extends React.Component {
                     marginVertical: 10,
                 }}
                 titleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 23 }}
-                style={styles.button}
                 title={this.props.value}
             />
         )
