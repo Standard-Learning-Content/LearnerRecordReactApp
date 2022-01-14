@@ -134,7 +134,6 @@ export default class Sounds extends React.Component {
             await this.sound.playAsync()
 
             setTimeout(async () => {
-                console.log("Unloaded")
                 await this.sound.unloadAsync();
             }, 1000);
         } catch (error) {

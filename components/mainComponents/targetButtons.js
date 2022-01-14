@@ -44,7 +44,10 @@ export default class TargetBtn extends React.Component {
             await this.sound.loadAsync(require('../../assets/audio/feedback/Correct.mp3'))
             await this.sound.playAsync()
 
+
+
             setTimeout(async () => {
+                await this.sound.unloadAsync();
                 const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
                     method: 'PUT',
                     headers: {

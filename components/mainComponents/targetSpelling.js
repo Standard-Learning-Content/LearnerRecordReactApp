@@ -149,6 +149,11 @@ export default class TargetSpelling extends React.Component {
             this.sound = new Audio.Sound()
             await this.sound.loadAsync(require('../../assets/audio/feedback/Correct.mp3'))
             await this.sound.playAsync()
+
+            setTimeout(async () => {
+                await this.sound.unloadAsync();
+            }, 1000);
+
             let temp = this.state.currentCharIndex++
             let newIndex = temp + 1
             this.setState({
