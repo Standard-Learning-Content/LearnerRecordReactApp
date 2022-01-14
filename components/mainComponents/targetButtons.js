@@ -5,7 +5,6 @@
  */
 import React from "react";
 import { Button } from 'react-native-elements';
-import { StyleSheet, View } from 'react-native';
 import config from '../../config.json'
 import { Audio } from "expo-av"
 
@@ -40,9 +39,17 @@ export default class TargetBtn extends React.Component {
             this.setState({
                 buttonColor: "#34c0eb"
             })
+
             this.sound = new Audio.Sound()
             await this.sound.loadAsync(require('../../assets/audio/feedback/Correct.mp3'))
             await this.sound.playAsync()
+
+            setTimeout(() => {
+                this.setState({
+                    buttonColor: "#15DB95"
+                })
+            }, 1000);
+
 
 
 
@@ -77,9 +84,21 @@ export default class TargetBtn extends React.Component {
             this.setState({
                 buttonColor: "#eb4034"
             })
+
+            setTimeout(() => {
+                this.setState({
+                    buttonColor: "#15DB95"
+                })
+            }, 1000);
+
+
             this.sound = new Audio.Sound()
             await this.sound.loadAsync(require('../../assets/audio/feedback/Incorrect.mp3'))
             await this.sound.playAsync()
+
+            setTimeout(async () => {
+                await this.sound.unloadAsync();
+            }, 1000);
             this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
         }
     }
@@ -104,7 +123,3 @@ export default class TargetBtn extends React.Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-
-});
