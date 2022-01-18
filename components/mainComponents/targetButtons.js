@@ -1,26 +1,18 @@
 /**
- * Selects how many users are learning 
+ * Creates a target button for match and match first gamemodes 
  * 05 Jaunuary 2022
  * @CR
  */
 import React from "react";
 import { Button } from 'react-native-elements';
 import config from '../../config.json'
-import { Audio } from "expo-av"
+import { playCorrectSound, playIncorrectSound } from '../sounds'
+import PropTypes from 'prop-types';
 
 
-
-Audio.setAudioModeAsync({
-    allowsRecordingIOS: false,
-    allowsRecordingAndroid: false,
-    interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-    playsInSilentModeIOS: true,
-    interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-    shouldDuckAndroid: true,
-    staysActiveInBackground: true,
-    playThroughEarpieceAndroid: true
-})
-
+//////////////////////
+// Component Class
+/////////////////////
 export default class TargetBtn extends React.Component {
     constructor(props) {
         super(props)
@@ -31,7 +23,6 @@ export default class TargetBtn extends React.Component {
     }
 
     async answer() {
-
         let answerData = {
             userID: this.props.userID,
             standardLearnedContent: this.props.content.replace("<", "").replace(">", ""),
@@ -43,21 +34,12 @@ export default class TargetBtn extends React.Component {
                 buttonColor: "#34c0eb"
             })
 
-            this.sound = new Audio.Sound()
-            await this.sound.loadAsync(require('../../assets/audio/feedback/Correct.mp3'))
-            await this.sound.playAsync()
+            playCorrectSound()
 
-            setTimeout(() => {
+            setTimeout(async () => {
                 this.setState({
                     buttonColor: "#15DB95"
                 })
-            }, 1000);
-
-
-
-
-            setTimeout(async () => {
-                await this.sound.unloadAsync();
                 const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
                     method: 'PUT',
                     headers: {
@@ -76,32 +58,19 @@ export default class TargetBtn extends React.Component {
                 if (config["debug-mode"]) console.log(data)
                 this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
                 this.props.changePlayer()
-
             }, 1000);
 
-
-
         } else {
-            //Play incorrect sounds
-            if (config["debug-mode"]) console.log("Incorrect")
             this.setState({
                 buttonColor: "#eb4034"
             })
-
+            playIncorrectSound()
             setTimeout(() => {
                 this.setState({
                     buttonColor: "#15DB95"
                 })
             }, 1000);
 
-
-            this.sound = new Audio.Sound()
-            await this.sound.loadAsync(require('../../assets/audio/feedback/Incorrect.mp3'))
-            await this.sound.playAsync()
-
-            setTimeout(async () => {
-                await this.sound.unloadAsync();
-            }, 1000);
             this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
         }
     }
@@ -124,4 +93,16 @@ export default class TargetBtn extends React.Component {
             />
         )
     }
+}
+
+///////////////////////
+// Prop Validation
+/////////////////////
+TargetBtn.propTypes = {
+    userID: PropTypes.string,
+    content: PropTypes.string,
+    value: PropTypes.string,
+    correct: PropTypes.bool,
+    updateLocalLearnerRecord: PropTypes.func,
+    changePlayer: PropTypes.func
 }

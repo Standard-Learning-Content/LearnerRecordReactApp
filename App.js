@@ -1,3 +1,9 @@
+/**
+ * Starting point for Multi-Learner Questions App
+ * 
+ * @CaseyRock
+ */
+
 import React from 'react';
 import Routes from './Routes';
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,7 +14,6 @@ export default class App extends React.Component {
       <NavigationContainer>
         <Routes />
       </NavigationContainer>
-
     );
   }
 }

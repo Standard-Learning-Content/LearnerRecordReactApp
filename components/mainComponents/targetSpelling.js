@@ -1,75 +1,23 @@
 /**
- * Selects how many users are learning 
- * 05 Jaunuary 2022
+ * Handles the spelling gamemode 
+ * 
  * @CR
  */
 import React from "react";
-import { Button } from 'react-native-elements';
-import { StyleSheet, View, Text, mage } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import config from '../../config.json'
 import uuid from 'react-native-uuid';
-import { Audio } from "expo-av"
-import Images from './images'
-
-Audio.setAudioModeAsync({
-    allowsRecordingIOS: false,
-    allowsRecordingAndroid: false,
-    interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-    playsInSilentModeIOS: true,
-    interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-    shouldDuckAndroid: true,
-    staysActiveInBackground: true,
-    playThroughEarpieceAndroid: true
-})
-
-class HeaderChar extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            char: "",
-            active: false
-        }
-    }
-
-    static getDerivedStateFromProps(props, state) {
-        let newState = {
-            char: props.char,
-            active: props.active
-        }
-        return newState
-    }
+import Images from '../images'
+import { playCorrectSound, playIncorrectSound } from '../sounds'
+import HeaderChar from './targetSpellingHeader'
+import SpellingBtn from './targetSpellingButtons'
+import PropTypes from 'prop-types';
 
 
 
-    render() {
-        let charState
-        if (this.state.active) {
-            charState = {
-                textAlign: 'center',
-                fontWeight: 'bold',
-                fontSize: 60,
-                marginTop: 0,
-                color: "#FC3D14"
-            }
-        } else {
-            charState = {
-                textAlign: 'center',
-                fontWeight: 'bold',
-                fontSize: 60,
-                marginTop: 0,
-                color: "#000000"
-            }
-        }
-        return (
-            <Text style={charState}>
-                {this.state.char}
-            </Text >
-        )
-    }
-}
-
-
+//////////////////////
+// Component Class
+/////////////////////
 export default class TargetSpelling extends React.Component {
     constructor(props) {
         super(props)
@@ -146,28 +94,20 @@ export default class TargetSpelling extends React.Component {
 
     async answer(content) {
         if (content == this.state.correctTargets[this.state.currentCharIndex]) {
-            this.sound = new Audio.Sound()
-            await this.sound.loadAsync(require('../../assets/audio/feedback/Correct.mp3'))
-            await this.sound.playAsync()
-
-            setTimeout(async () => {
-                await this.sound.unloadAsync();
-            }, 1000);
-
+            playCorrectSound()
             let temp = this.state.currentCharIndex++
             let newIndex = temp + 1
             this.setState({
                 currentCharIndex: newIndex
             })
-
-
+        } else {
+            playIncorrectSound()
         }
 
         if (this.state.currentCharIndex == this.state.correctTargets.length) {
             this.submitAnswer()
         }
     }
-
 
     createDynamicHeader() {
         let textArray = []
@@ -191,38 +131,24 @@ export default class TargetSpelling extends React.Component {
     createButtons() {
         let buttonArray = []
         for (let content of this.state.correctTargets) {
-            let button = <Button
+            let button = <SpellingBtn
                 key={content + uuid.v4()}
-                onPress={() => this.answer(content)}
-                color="#15DB95"
-                buttonStyle={{ backgroundColor: "#15DB95" }}
-                containerStyle={{
-                    width: "90%",
-                    marginHorizontal: 50,
-                    marginVertical: 10,
-                }}
-                titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
-                style={styles.button}
-                title={content}
-            />
+                answer={this.answer}
+                content={content}
+                correct={content == this.state.correctTargets[this.state.currentCharIndex]}
+            >
+            </SpellingBtn>
             buttonArray.push(button)
         }
 
         for (let incorrect of this.state.incorrectTarget) {
-            let button = <Button
-                key={incorrect.literal + uuid.v4()}
-                onPress={() => console.log("Incorrect")}
-                color="#15DB95"
-                buttonStyle={{ backgroundColor: "#15DB95" }}
-                containerStyle={{
-                    width: "90%",
-                    marginHorizontal: 50,
-                    marginVertical: 10,
-                }}
-                titleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 23 }}
-                style={styles.button}
-                title={incorrect.literal}
-            />
+            let button = <SpellingBtn
+                key={incorrect + uuid.v4()}
+                answer={this.answer}
+                content={incorrect.literal}
+                correct={false}
+            >
+            </SpellingBtn>
             buttonArray.push(button)
         }
 
@@ -248,6 +174,22 @@ export default class TargetSpelling extends React.Component {
     }
 }
 
+///////////////////////
+// Prop Validation
+/////////////////////
+TargetSpelling.propTypes = {
+    correctStandardContent: PropTypes.string,
+    incorrectTargets: PropTypes.array,
+    userID: PropTypes.string,
+    fullword: PropTypes.string,
+    updateLocalLearnerRecord: PropTypes.func,
+    changePlayer: PropTypes.func,
+    correctTarget: PropTypes.array
+}
+
+//////////////////////
+// Component Styling
+/////////////////////
 const styles = StyleSheet.create({
     mainContainer: {
         width: "100%",

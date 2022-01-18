@@ -1,11 +1,22 @@
+/**
+ * The main handler for a creating level and rendering a level. 
+ * 
+ * @CaseyRock
+ */
+
+
 import React from "react";
 import uuid from 'react-native-uuid';
 import { StyleSheet, View, Text } from 'react-native';
-import Sounds from './sounds'
+import Sounds from '../sounds'
 import TargetSpelling from "./targetSpelling";
 import TargetBtn from "./targetButtons";
 import * as StoreReview from 'expo-store-review';
+import PropTypes from 'prop-types';
 
+//////////////////////
+// Component Class
+/////////////////////
 export default class Level extends React.Component {
     constructor(props) {
         super(props)
@@ -26,7 +37,7 @@ export default class Level extends React.Component {
         this.returnSpellingLevel = this.returnSpellingLevel.bind(this)
     }
 
-    static getDerivedStateFromProps(props, state) {
+    static getDerivedStateFromProps(props) {
         let questionIndex = props.currentPlayer.questionIndex
         if (questionIndex == 38) {
             StoreReview.requestReview()
@@ -42,8 +53,6 @@ export default class Level extends React.Component {
         }
         return newState
     }
-
-
 
     renderTargetButtons(correctTarget) {
         let buttonArray = []
@@ -144,8 +153,6 @@ export default class Level extends React.Component {
 
     }
 
-
-
     renderLevel() {
         switch (this.state.levelType) {
             case "match":
@@ -167,7 +174,6 @@ export default class Level extends React.Component {
         }
     }
 
-
     render() {
         return (
             <View style={styles.level}>
@@ -177,6 +183,19 @@ export default class Level extends React.Component {
     }
 }
 
+
+///////////////////////
+// Prop Validation
+/////////////////////
+Level.propTypes = {
+    currentPlayer: PropTypes.object,
+    changePlayer: PropTypes.func,
+    updateLocalLearnerRecord: PropTypes.func
+}
+
+//////////////////////
+// Component Styling
+/////////////////////
 const styles = StyleSheet.create({
     level: {
         width: "100%",

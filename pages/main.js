@@ -85,7 +85,7 @@ export default class Main extends React.Component {
             <View style={styles.mainContainer}>
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
-                        {this.state.players[this.state.currentPlayerIndex].name}'s Turn {'\n'}
+                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn {'\n'}
                         Question #:{this.state.players[this.state.currentPlayerIndex].questionIndex + 1}
                     </Text>
                 </View>

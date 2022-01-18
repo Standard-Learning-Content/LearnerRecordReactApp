@@ -1,8 +1,17 @@
+/**
+ * Componet that created the name input boxed 
+ * 
+ * @CaseyRock
+ */
+
 import React from "react";
 import { TextInput, View, StyleSheet, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
 
-
+//////////////////////
+// Component Class
+/////////////////////
 export default class NameInput extends React.Component {
     constructor(props) {
         super(props);
@@ -13,6 +22,13 @@ export default class NameInput extends React.Component {
     }
 
 
+    /**
+     * 
+     * @param {Event} e One text change event 
+     * 
+     * Set the state to the new name in the input box
+     * @CR
+     */
     handleChange = e => {
         let key = `player_${this.props.number}_name`
         this.setState({ [key]: e }, () => {
@@ -25,7 +41,7 @@ export default class NameInput extends React.Component {
     render() {
         return (
             <View style={{ padding: 10 }}>
-                <Text style={styles.title}>Add Player {this.props.number}'s Name</Text>
+                <Text style={styles.title}>Add Player {this.props.number}&apos;s Name</Text>
                 <TextInput
                     style={styles.input}
                     key={this.props.number}
@@ -39,6 +55,18 @@ export default class NameInput extends React.Component {
     }
 }
 
+///////////////////////
+// Prop Validation
+/////////////////////
+NameInput.propTypes = {
+    number: PropTypes.number,
+    onChange: PropTypes.func,
+}
+
+
+//////////////////////
+// Component Styling
+/////////////////////
 const styles = StyleSheet.create({
     title: {
         color: "#FFFFFF",

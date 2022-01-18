@@ -1,3 +1,9 @@
+/**
+ * Creates Routes for all the MLQ Pages. 
+ * 
+ * @CaseyRock
+ */
+
 import React from 'react'
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';

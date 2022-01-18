@@ -14,7 +14,9 @@ import { JSHash, CONSTANTS } from 'react-native-hash';
 import config from '../config.json'
 import PropTypes from 'prop-types';
 
-
+//////////////////////
+// Component Class
+/////////////////////
 export default class AddPlayers extends React.Component {
     constructor(props) {
         super(props);
@@ -48,22 +50,20 @@ export default class AddPlayers extends React.Component {
      * @CR
      */
     async goToHome() {
-
-
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
             let completedPlayers = []
-            let GamePlayer = function (id, name, learnerRecord, quentions) {
-                this.questionIndex = 0
-                this.id = id
-                this.name = name
-                this.learnerRecord = learnerRecord
-                this.questions = quentions
-            }
-            for (let player in this.inputValue) {
-                if (player == "") {
-                    console.log("yooo")
+            let GamePlayer = class {
+                constructor(id, name, learnerRecord, quentions) {
+                    this.questionIndex = 0
+                    this.id = id
+                    this.name = name
+                    this.learnerRecord = learnerRecord
+                    this.questions = quentions
                 }
+            }
+
+            for (let player in this.inputValue) {
                 // Currently we are sha256 hashing the first name for the id 
                 let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
 

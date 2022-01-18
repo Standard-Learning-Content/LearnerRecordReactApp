@@ -1,30 +1,30 @@
 /**
- * Selects how many users are learning 
+ * Creates the Record for a specifc content in the learner Record
+ * 
  * 05 Jaunuary 2022
- * @CR
+ * @CaseyRocl
  */
 import React from "react";
 import { StyleSheet, View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
-
+//////////////////////
+// Component Class
+/////////////////////
 export default class Record extends React.Component {
     constructor(props) {
         super(props)
-        this.countsCorrect = this.props.countsCorrect
-        this.totalCounts = this.props.totalCounts
-        this.literalValue = this.props.literalValue
     }
 
     render() {
-
         return (
             <View style={styles.item} >
                 <View style={styles.content}>
-                    <Text style={styles.title}>{this.literalValue}</Text>
+                    <Text style={styles.title}>{this.props.literalValue}</Text>
                 </View>
                 <View style={styles.counts}>
-                    <Text style={styles.countsTitle}>Correct: {this.countsCorrect}</Text>
-                    <Text style={styles.countsTitle}>Attempts: {this.totalCounts}</Text>
+                    <Text style={styles.countsTitle}>Correct: {this.props.countsCorrect}</Text>
+                    <Text style={styles.countsTitle}>Attempts: {this.props.totalCounts}</Text>
                 </View>
 
             </View >
@@ -33,6 +33,19 @@ export default class Record extends React.Component {
 }
 
 
+///////////////////////
+// Prop Validation
+/////////////////////
+Record.propTypes = {
+    literalValue: PropTypes.string,
+    countsCorrect: PropTypes.number,
+    totalCounts: PropTypes.number,
+}
+
+
+//////////////////////
+// Component Styling
+/////////////////////
 const styles = StyleSheet.create({
     item: {
         flex: 1,
