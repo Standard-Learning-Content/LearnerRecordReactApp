@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Button, View, Text } from 'react-native';
-import Level from "../components/mainComponents/level";
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import LevelButton from '../components/mainComponents/levelButton'
 import config from '../config.json'
 import PropTypes from 'prop-types';
 
@@ -8,92 +8,92 @@ export default class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            "currentPlayerIndex": 0,
+            "currentPlayerIndex": -1,
             "players": this.props.route.params.players,
         }
         if (config['debug-mode']) console.log(this.state)
-        this.changeCurrentPlayer = this.changeCurrentPlayer.bind(this)
-        this.updateLocalLearnerRecord = this.updateLocalLearnerRecord.bind(this)
         this.play = this.play.bind(this)
         this.gameOver = this.gameOver.bind(this)
+        this.playLevel = this.playLevel.bind(this)
     }
 
-
-    updateLocalLearnerRecord(literal, standardLearnedContent, correct) {
-        let learnerRecord = this.state.players[this.state.currentPlayerIndex].learnerRecord
-        if (Object.keys(learnerRecord).length == 0 || learnerRecord[standardLearnedContent] == undefined) {
-            if (correct) {
-                Object.assign(learnerRecord,
-                    {
-                        [standardLearnedContent]: {
-                            "countsCorrect": 1,
-                            "literal": literal,
-                            "totalCounts": 1,
-                        }
-                    })
-            } else {
-                Object.assign(learnerRecord,
-                    {
-                        [standardLearnedContent]: {
-                            "countsCorrect": 0,
-                            "literal": literal,
-                            "totalCounts": 1,
-                        }
-                    })
-            }
-
+    static getDerivedStateFromProps(props, state) {
+        let players_len = state.players.length
+        let currentPlayerIndex = (state.currentPlayerIndex + 1) % players_len
+        if (state.currentPlayerIndex == -1) {
+            return ({
+                "currentPlayerIndex": currentPlayerIndex,
+                "players": props.route.params.players
+            })
         } else {
-            let indexedContent = learnerRecord[standardLearnedContent]
-            if (correct) {
-                indexedContent.countsCorrect = indexedContent.countsCorrect + 1
-            }
-            indexedContent.totalCounts = indexedContent.totalCounts + 1
+            return ({
+                "currentPlayerIndex": currentPlayerIndex,
+                "players": state.players
+            })
         }
-
     }
 
-    changeCurrentPlayer() {
-        let currentPlayer = this.state.players[this.state.currentPlayerIndex]
-        let questionLen = this.state.players[this.state.currentPlayerIndex].questions.length
 
-        if (this.state.players[this.state.currentPlayerIndex].questionIndex + 1 == questionLen) {
-            if (config['debug-mode']) console.log("Current Player: " + currentPlayer.id + " has finished their questions!")
-        }
+    playLevel(levelIndex) {
+        let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
+        let currentQuestion = currentPlayerObj.getQuestionByID(levelIndex)
+        this.props.navigation.navigate('Learn', {
+            "levelID": currentQuestion.levelID,
+            "levelType": currentQuestion.levelType,
+            "correctStandardContent": currentQuestion.correctStandardContent,
+            "correctTarget": currentQuestion.correctTarget,
+            "incorrect": currentQuestion.incorrect,
+            "currentPlayerId": currentPlayerObj.id,
+            "currentPlayerName": currentPlayerObj.name,
+            "questionIndex": currentPlayerObj.questionIndex,
+            "currentPlayer": currentPlayerObj,
 
-        let newQuestionIndex = (this.state.players[this.state.currentPlayerIndex].questionIndex + 1) % questionLen
-        let all_players = [
-            ...this.state.players.slice(0, this.state.currentPlayerIndex),
-            Object.assign(currentPlayer, { "questionIndex": newQuestionIndex }),
-            ...this.state.players.slice(this.state.currentPlayerIndex + 1)
-        ]
-
-        let players_len = this.state.players.length
-        let currentPlayerIndex = (this.state.currentPlayerIndex + 1) % players_len
-        this.setState({
-            "currentPlayerIndex": currentPlayerIndex,
-            "players": all_players
         })
-        if (config['debug-mode']) {
-            console.log("============================")
-            console.log(this.state)
-            console.log("============================")
-        }
     }
 
     play() {
+        let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
+        let allLevelButtons = []
+
+        for (let level in currentPlayerObj.questions) {
+            let levelBtn = <LevelButton
+                key={level}
+                level={level}
+                currentPlayer={this.state.players[this.state.currentPlayerIndex]}
+                currentQuestion={currentPlayerObj.getQuestionByID(level)}
+                navigation={this.props.navigation}
+            >
+            </LevelButton>
+            // let levelBtn = <Button
+            //     key={level}
+            //     buttonStyle={{
+            //         backgroundColor: "#15DB95",
+            //         borderRadius: 3,
+            //     }}
+            //     containerStyle={{
+            //         width: "20%",
+            //         marginHorizontal: 5,
+            //         marginVertical: 20,
+            //     }}
+            //     title={level}
+            //     titleStyle={{ color: "#000000" }}
+            //     onPress={() => this.playLevel(level)}
+            // />
+            allLevelButtons.push(levelBtn)
+        }
         return (
-            <View style={styles.mainContainer}>
+            <View style={styles.page}>
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
-                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn {'\n'}
-                        Question #:{this.state.players[this.state.currentPlayerIndex].questionIndex + 1}
+                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn {'\n'} Pick a level!
                     </Text>
                 </View>
-                <View style={styles.contentContainer}>
-                    {this.state.players[this.state.currentPlayerIndex].questions.length > 0 ? <Level updateLocalLearnerRecord={this.updateLocalLearnerRecord} currentPlayer={this.state.players[this.state.currentPlayerIndex]} changePlayer={this.changeCurrentPlayer}></Level> : this.changeCurrentPlayer()}
-                </View>
+                <ScrollView >
+                    <View style={styles.mainContainer}>
+                        {allLevelButtons}
+                    </View >
+                </ScrollView>
             </View>
-
         )
     }
 
@@ -113,12 +113,12 @@ export default class Main extends React.Component {
         return (
             <View style={styles.page}>
                 {this.state.players != 0 ? this.play() : this.gameOver()}
-                <Button
+                {/* <Button
                     style={{ padding: 10 }}
                     title={`View ${this.state.players[this.state.currentPlayerIndex].name}'s Report Card`}
                     titleStyle={{ color: "#000000" }}
                     onPress={() => this.props.navigation.navigate('LearnerRecord', { player: this.state.players[this.state.currentPlayerIndex] })}
-                />
+                /> */}
             </View >
 
         )
@@ -137,22 +137,25 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
     },
-    mainContainer: {
-        flex: 1,
-        flexDirection: "column",
-    },
     headerContainer: {
-        flex: 1,
         width: "100%",
         height: "15%",
         backgroundColor: '#0D19AA',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        textAlign: "auto"
+    },
+    mainContainer: {
+        flex: 1,
+        flexDirection: "row",
+        flexWrap: 'wrap',
+        justifyContent: "center"
     },
     headline: {
         fontWeight: 'bold',
         color: "#FFFFFF",
         fontSize: 30,
+
     },
     completeHeaderContainer: {
         width: "100%",

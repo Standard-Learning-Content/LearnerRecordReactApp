@@ -88,7 +88,6 @@ export default class Level extends React.Component {
         let buttons = <View style={styles.mainContainer}>
             <Sounds sound={fullword}></Sounds>
             <TargetSpelling
-
                 changePlayer={this.props.changePlayer}
                 updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
                 userID={this.state.currentPlayerId}

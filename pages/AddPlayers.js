@@ -10,6 +10,7 @@ import React from "react";
 import { View, Button, Alert, StyleSheet, Text } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
 import all_levels from '../levels/levels.json'
+import GamePlayer from "../components/gamePlayer";
 import { JSHash, CONSTANTS } from 'react-native-hash';
 import config from '../config.json'
 import PropTypes from 'prop-types';
@@ -53,15 +54,6 @@ export default class AddPlayers extends React.Component {
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
             let completedPlayers = []
-            let GamePlayer = class {
-                constructor(id, name, learnerRecord, quentions) {
-                    this.questionIndex = 0
-                    this.id = id
-                    this.name = name
-                    this.learnerRecord = learnerRecord
-                    this.questions = quentions
-                }
-            }
 
             for (let player in this.inputValue) {
                 // Currently we are sha256 hashing the first name for the id 
@@ -90,37 +82,44 @@ export default class AddPlayers extends React.Component {
 
                 const data = await res.json()
                 let contentArray = data
-                let playerLevels = []
+                let playerLevels = {}
 
                 // If the player has leared the contentless then 10 time, we add it to the set of questions
                 for (let level of all_levels) {
                     if (contentArray[level.correctStandardContent] == undefined) {
-                        playerLevels.push(level)
-                    } else if (contentArray[level.correctStandardContent].countsCorrect < 30) {
-                        playerLevels.push(level)
+                        let tempLevel = {
+                            [level.levelID]: level
+                        }
+                        Object.assign(playerLevels, tempLevel)
+                    } else if (contentArray[level.correctStandardContent].countsCorrect < 300) {
+                        let tempLevel = {
+                            [level.levelID]: level
+                        }
+                        Object.assign(playerLevels, tempLevel)
                     }
                 }
                 let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
-                if (playerLevels.length > 0) {
-                    allPlayers.push(tempPlayer)
-                } else {
-                    Alert.alert(
-                        this.inputValue[player],
-                        "Has completed all the questions before!",
-                        [
-                            {
-                                text: "Cancel",
-                                style: "cancel"
-                            },
-                            { text: "OK" }
-                        ]
-                    )
+                allPlayers.push(tempPlayer)
+                // if (playerLevels.length > 0) {
+                //     allPlayers.push(tempPlayer)
+                // } else {
+                //     Alert.alert(
+                //         this.inputValue[player],
+                //         "Has completed all the questions before!",
+                //         [
+                //             {
+                //                 text: "Cancel",
+                //                 style: "cancel"
+                //             },
+                //             { text: "OK" }
+                //         ]
+                //     )
 
-                    if (config["debug-mode"]) console.log(this.inputValue[player] + " has Completed the app")
-                    completedPlayers.push(tempPlayer)
-                }
+                //     if (config["debug-mode"]) console.log(this.inputValue[player] + " has Completed the app")
+                //     completedPlayers.push(tempPlayer)
+                // }
             }
-            this.props.navigation.navigate('Learn', { "players": allPlayers, "completedPlayer": completedPlayers })
+            this.props.navigation.navigate('Map', { "players": allPlayers, "completedPlayer": completedPlayers })
         } else {
             Alert.alert(
                 "Missing Learner's Names",

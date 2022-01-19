@@ -56,8 +56,9 @@ export default class TargetBtn extends React.Component {
 
                 const data = await res.text()
                 if (config["debug-mode"]) console.log(data)
-                this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
-                this.props.changePlayer()
+                this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
+                this.props.navigation.navigate('Map', {})
+                // this.props.changePlayer()
             }, 1000);
 
         } else {
@@ -71,7 +72,7 @@ export default class TargetBtn extends React.Component {
                 })
             }, 1000);
 
-            this.props.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
+            this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
         }
     }
 
@@ -100,9 +101,11 @@ export default class TargetBtn extends React.Component {
 /////////////////////
 TargetBtn.propTypes = {
     userID: PropTypes.string,
+    currentPlayer: PropTypes.object,
     content: PropTypes.string,
     value: PropTypes.string,
     correct: PropTypes.bool,
     updateLocalLearnerRecord: PropTypes.func,
-    changePlayer: PropTypes.func
+    changePlayer: PropTypes.func,
+    navigation: PropTypes.object
 }
