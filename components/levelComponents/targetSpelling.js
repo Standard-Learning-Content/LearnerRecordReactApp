@@ -24,6 +24,7 @@ export default class TargetSpelling extends React.Component {
 
         this.state = {
             currentCharIndex: "",
+            currentPlayer: '',
             correctTargets: "",
             incorrectTarget: "",
             correctStandardContent: "",
@@ -41,6 +42,7 @@ export default class TargetSpelling extends React.Component {
         if (state.currentCharIndex == "") {
             let newState = {
                 currentCharIndex: 0,
+                currentPlayer: props.currentPlayer,
                 correctStandardContent: props.correctStandardContent,
                 correctTargets: props.correctTarget,
                 incorrectTarget: props.incorrectTargets,
@@ -78,35 +80,39 @@ export default class TargetSpelling extends React.Component {
 
         const data = await res.text()
         if (config["debug-mode"]) console.log(data)
-
+        this.props.currentPlayer.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
         this.setState({
             currentCharIndex: "",
+            currentPlayer: "",
             correctTargets: "",
             incorrectTarget: "",
             correctStandardContent: "",
             userID: "",
             fullword: ""
-        })
-        this.props.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
-        this.props.changePlayer()
-
+        }, () => {
+            this.props.changeQuestion()
+        });
     }
 
     async answer(content) {
         if (content == this.state.correctTargets[this.state.currentCharIndex]) {
             playCorrectSound()
-            let temp = this.state.currentCharIndex++
-            let newIndex = temp + 1
-            this.setState({
-                currentCharIndex: newIndex
-            })
+            let newIndex = this.state.currentCharIndex + 1
+            setTimeout(() => {
+                this.setState({
+                    currentCharIndex: newIndex
+                })
+                if (newIndex == this.state.correctTargets.length) {
+                    this.submitAnswer()
+                }
+            }, 500)
+
+
         } else {
             playIncorrectSound()
         }
 
-        if (this.state.currentCharIndex == this.state.correctTargets.length) {
-            this.submitAnswer()
-        }
+
     }
 
     createDynamicHeader() {
@@ -184,7 +190,10 @@ TargetSpelling.propTypes = {
     fullword: PropTypes.string,
     updateLocalLearnerRecord: PropTypes.func,
     changePlayer: PropTypes.func,
-    correctTarget: PropTypes.array
+    correctTarget: PropTypes.array,
+    navigation: PropTypes.object,
+    currentPlayer: PropTypes.object,
+    changeQuestion: PropTypes.func,
 }
 
 //////////////////////

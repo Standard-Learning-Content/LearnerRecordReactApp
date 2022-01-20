@@ -33,7 +33,7 @@ let GamePlayer = class {
         return this._questions
     }
 
-    getQuestionByID(levelId) {
+    getQuestionSetByID(levelId) {
         return this._questions[levelId]
     }
 

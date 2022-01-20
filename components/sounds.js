@@ -125,7 +125,7 @@ export const playCorrectSound = async () => {
 
     setTimeout(async () => {
         await sound.unloadAsync();
-    }, 1000);
+    }, 500);
 }
 
 export const playIncorrectSound = async () => {
@@ -135,8 +135,19 @@ export const playIncorrectSound = async () => {
 
     setTimeout(async () => {
         await sound.unloadAsync();
+    }, 500);
+}
+
+export const playContentSounds = async (content) => {
+    let sound = new Audio.Sound()
+    await sound.loadAsync(soundsMap.get(content.toLowerCase()))
+    await sound.playAsync()
+
+    setTimeout(async () => {
+        await sound.unloadAsync();
     }, 1000);
 }
+
 
 export default class Sounds extends React.Component {
     constructor(props) {
@@ -156,7 +167,7 @@ export default class Sounds extends React.Component {
 
             setTimeout(async () => {
                 await this.sound.unloadAsync();
-            }, 1000);
+            }, 500);
         } catch (error) {
             console.log(props.sound.toLowerCase())
             console.log(error)

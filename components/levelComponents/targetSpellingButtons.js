@@ -31,6 +31,7 @@ export default class SpellingBtn extends React.Component {
             this.setState({
                 buttonColor: "#34c0eb"
             })
+            this.props.answer(this.state.content)
         } else {
             this.setState({
                 buttonColor: "#eb4034"
@@ -40,8 +41,10 @@ export default class SpellingBtn extends React.Component {
                     buttonColor: "#15DB95"
                 })
             }, 1000);
+            this.props.answer(this.state.content)
+
         }
-        this.props.answer(this.state.content)
+
     }
 
     render() {

@@ -6,6 +6,7 @@
  */
 import React from "react";
 import { Button } from 'react-native-elements'
+import { StyleSheet, View, Text, } from 'react-native';
 import PropTypes from 'prop-types';
 
 //////////////////////
@@ -19,40 +20,45 @@ export default class LevelButton extends React.Component {
 
     playLevel() {
         let currentPlayerObj = this.props.currentPlayer
-        let currentQuestion = this.props.currentQuestion
+        let currentQuestionSet = this.props.currentQuestionSet
+        let levelID = this.props.level
         this.props.navigation.navigate('Learn', {
-            "levelID": currentQuestion.levelID,
-            "levelType": currentQuestion.levelType,
-            "correctStandardContent": currentQuestion.correctStandardContent,
-            "correctTarget": currentQuestion.correctTarget,
-            "incorrect": currentQuestion.incorrect,
+            "levelID": levelID,
+            "currentQuestionSet": currentQuestionSet,
+            "currentQuestionSetLength": currentQuestionSet.length,
             "currentPlayerId": currentPlayerObj.id,
             "currentPlayerName": currentPlayerObj.name,
             "questionIndex": currentPlayerObj.questionIndex,
             "currentPlayer": currentPlayerObj,
-
         })
     }
 
 
     render() {
-        console.log(this.props.level)
         return (
-            <Button
-                key={this.props.level}
-                buttonStyle={{
-                    backgroundColor: "#15DB95",
-                    borderRadius: 3,
-                }}
-                containerStyle={{
-                    width: "20%",
-                    marginHorizontal: 5,
-                    marginVertical: 20,
-                }}
-                title={this.props.level}
-                titleStyle={{ color: "#000000" }}
-                onPress={() => this.playLevel()}
-            />
+            <View style={styles.container}>
+                <View style={styles.pointContianer}>
+                    <Text style={styles.point} > X </Text>
+                    <Text style={styles.point}> X </Text>
+                    <Text style={styles.point}> X </Text>
+                </View>
+                <View style={styles.buttonContianer}>
+                    <Button
+                        key={this.props.level}
+                        title={this.props.level}
+                        buttonStyle={{
+                            borderRadius: 50,
+                            // width: "80%",
+                            justifyContent: "center",
+                            alignContent: "center",
+                            backgroundColor: "#15DB95"
+                        }}
+                        titleStyle={{ color: "#000000" }}
+                        onPress={() => this.playLevel()}
+                    />
+                </View>
+            </View>
+
         )
     }
 }
@@ -60,9 +66,9 @@ export default class LevelButton extends React.Component {
 LevelButton.propTypes = {
     navigation: PropTypes.object,
     route: PropTypes.object,
-    level: PropTypes.number,
+    level: PropTypes.string,
     currentPlayer: PropTypes.object,
-    currentQuestion: PropTypes.object,
+    currentQuestionSet: PropTypes.array,
 }
 
 ///////////////////////
@@ -74,3 +80,35 @@ LevelButton.propTypes = {
 //////////////////////
 // Component Styling
 /////////////////////
+
+const styles = StyleSheet.create({
+    container: {
+        // flex: 1,
+        borderRadius: 20,
+        width: "20%",
+        flexDirection: "column",
+        marginHorizontal: 20,
+        marginVertical: 20,
+        backgroundColor: "#0D19AA",
+
+    },
+    pointContianer: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignContent: "center"
+    },
+    buttonContianer: {
+        flex: 1,
+        width: "80%",
+        textAlign: "center",
+        justifyContent: "center",
+        alignContent: "center"
+        // marginHorizontal: 20,
+        // marginVertical: 20,
+    },
+    point: {
+        color: "#FFFFFF",
+        textAlign: "center"
+    }
+});

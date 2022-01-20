@@ -8,7 +8,7 @@
 import React from "react";
 import uuid from 'react-native-uuid';
 import { StyleSheet, View, Text } from 'react-native';
-import Sounds from '../components/sounds'
+import { playContentSounds } from '../components/sounds'
 import TargetSpelling from "../components/levelComponents/targetSpelling";
 import TargetBtn from "../components/levelComponents/targetButtons";
 import * as StoreReview from 'expo-store-review';
@@ -21,63 +21,79 @@ export default class Level extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            currentQuestionSetLength: "",
             levelID: "",
-            levelType: "",
-            correctStandardContent: "",
-            correctTarget: "",
-            incorrect: "",
+            currentQuestionSetIndex: -1,
+            currentQuestionSet: "",
             currentPlayerId: "",
             currentPlayerName: "",
             currentPlayer: "",
         }
         this.renderTargetButtons = this.renderTargetButtons.bind(this)
         this.renderSpellingTarget = this.renderSpellingTarget.bind(this)
-
         this.renderLevel = this.renderLevel.bind(this)
         this.returnMatchLevel = this.returnMatchLevel.bind(this)
         this.returnMatchFirstLevel = this.returnMatchFirstLevel.bind(this)
         this.returnSpellingLevel = this.returnSpellingLevel.bind(this)
+        this.changeQuestion = this.changeQuestion.bind(this)
     }
 
-    static getDerivedStateFromProps(props) {
+    static getDerivedStateFromProps(props, state) {
         let questionIndex = props.route.params.questionIndex
 
         if (questionIndex == 38) {
             StoreReview.requestReview()
         }
+        if (state.currentQuestionSetIndex == -1) {
+            let currentIndex = state.currentQuestionSetIndex + 1
 
-        let newState = {
-            levelID: props.route.params.levelID,
-            levelType: props.route.params.levelType,
-            correctStandardContent: props.route.params.correctStandardContent,
-            correctTarget: props.route.params.correctTarget,
-            incorrect: props.route.params.incorrect,
-            currentPlayerId: props.route.params.currentPlayerId,
-            currentPlayerName: props.route.params.currentPlayerName,
-            currentPlayer: props.route.params.currentPlayer
+            let newState = {
+                currentQuestionSetLength: props.route.params.currentQuestionSetLength,
+                levelID: props.route.params.levelID,
+                currentQuestionSetIndex: currentIndex,
+                currentQuestionSet: props.route.params.currentQuestionSet,
+                currentPlayerId: props.route.params.currentPlayerId,
+                currentPlayerName: props.route.params.currentPlayerName,
+                currentPlayer: props.route.params.currentPlayer
+            }
+            return newState
+        } else {
+            return null
         }
-        return newState
+
     }
 
-    renderTargetButtons(correctTarget) {
+
+    changeQuestion() {
+        let newIndex = this.state.currentQuestionSetIndex + 1
+        if (newIndex == this.state.currentQuestionSetLength) {
+            this.props.navigation.navigate('Map', {})
+        } else {
+            this.setState({
+                currentQuestionSetIndex: newIndex
+            })
+        }
+    }
+
+
+    renderTargetButtons(currentLevel, correctTarget) {
         let buttonArray = []
         let correct = <TargetBtn
             key={correctTarget + uuid.v4()}
             value={correctTarget}
             navigation={this.props.navigation}
-            // changePlayer={this.props.changePlayer}
+            changeQuestion={this.changeQuestion}
             currentPlayer={this.state.currentPlayer}
             userID={this.state.currentPlayerId}
             correct={true}
-            content={this.state.correctStandardContent}>
+            content={currentLevel.correctStandardContent}>
         </TargetBtn>
         buttonArray.push(correct)
 
-        for (let attempt of this.state.incorrect) {
+        for (let attempt of currentLevel.incorrect) {
             let incorrect = <TargetBtn
                 key={attempt.literal + uuid.v4()}
                 navigation={this.props.navigation}
-                // changePlayer={this.props.changePlayer}
                 currentPlayer={this.state.currentPlayer}
                 userID={this.state.currentPlayerId}
                 correct={false}
@@ -91,17 +107,16 @@ export default class Level extends React.Component {
         return shuffled
     }
 
-    renderSpellingTarget(correctTargetsArray, fullword) {
+    renderSpellingTarget(correctTargetsArray, fullword, currentLevel) {
         let buttons = <View style={styles.mainContainer}>
-            <Sounds sound={fullword}></Sounds>
             <TargetSpelling
-
-                changePlayer={this.props.changePlayer}
-                updateLocalLearnerRecord={this.props.updateLocalLearnerRecord}
+                changeQuestion={this.changeQuestion}
+                navigation={this.props.navigation}
+                currentPlayer={this.state.currentPlayer}
                 userID={this.state.currentPlayerId}
-                correctStandardContent={this.state.correctStandardContent}
+                correctStandardContent={currentLevel.correctStandardContent}
                 correctTarget={correctTargetsArray}
-                incorrectTargets={this.state.incorrect}
+                incorrectTargets={currentLevel.incorrect}
                 fullword={fullword}>
             </TargetSpelling>
         </View>
@@ -112,30 +127,36 @@ export default class Level extends React.Component {
         return buttons
     }
 
+
+    ///////////////////
+    // Returns the level
+    ////////////////////
     returnMatchLevel() {
+        let currentLevel = this.state.currentQuestionSet[this.state.currentQuestionSetIndex]
+        playContentSounds(currentLevel.correctTarget)
         return (
             <View style={styles.mainContainer}>
-                <Sounds sound={this.state.correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text style={styles.targetText}>
-                        {this.state.correctTarget}
+                        {currentLevel.correctTarget}
                     </Text>
                 </View>
                 <View style={styles.buttonsContainer}>
-                    {this.renderTargetButtons(this.state.correctTarget)}
+                    {this.renderTargetButtons(currentLevel, currentLevel.correctTarget)}
                 </View>
             </View>
         )
     }
 
     returnMatchFirstLevel() {
+        let currentLevel = this.state.currentQuestionSet[this.state.currentQuestionSetIndex]
         let regex = /\(([^)]+)\)/
-        var matches = regex.exec(this.state.correctTarget)
+        var matches = regex.exec(currentLevel.correctTarget)
         let correctTarget = matches[1]
-        let restOfWord = this.state.correctTarget.replace(matches[0], "")
+        let restOfWord = currentLevel.correctTarget.replace(matches[0], "")
+        playContentSounds(correctTarget)
         return (
             <View style={styles.mainContainer}>
-                <Sounds sound={correctTarget}></Sounds>
                 <View style={styles.targetContainer}>
                     <Text>
                         <Text style={styles.matchFirstTarget}>
@@ -147,21 +168,24 @@ export default class Level extends React.Component {
                     </Text>
                 </View>
                 <View style={styles.buttonsContainer}>
-                    {this.renderTargetButtons(correctTarget)}
+                    {this.renderTargetButtons(currentLevel, correctTarget)}
                 </View>
             </View>
         )
     }
 
     returnSpellingLevel() {
-        let fullword = this.state.correctTarget.replace(/\|/g, "")
-        let targetArray = this.state.correctTarget.split("|")
-        return this.renderSpellingTarget(targetArray, fullword)
+        let currentLevel = this.state.currentQuestionSet[this.state.currentQuestionSetIndex]
+        let fullword = currentLevel.correctTarget.replace(/\|/g, "")
+        let targetArray = currentLevel.correctTarget.split("|")
+        playContentSounds(fullword)
+        return this.renderSpellingTarget(targetArray, fullword, currentLevel)
 
     }
 
     renderLevel() {
-        switch (this.state.levelType) {
+        let currentLevel = this.state.currentQuestionSet[this.state.currentQuestionSetIndex]
+        switch (currentLevel.levelType) {
             case "match":
                 return this.returnMatchLevel()
             case "matchfirst":
@@ -172,7 +196,7 @@ export default class Level extends React.Component {
                 return (<View>
                     <View style={styles.targetContainer}>
                         <Text style={styles.targetText}>
-                            {console.log(this.state.levelType)}
+                            {currentLevel.levelType}
                         </Text>
                     </View>
 
@@ -187,7 +211,7 @@ export default class Level extends React.Component {
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
                         {this.state.currentPlayerName}&apos;s Turn {'\n'}
-                        {/* Question #:{this.state.players[this.state.currentPlayerIndex].questionIndex + 1} */}
+                        Question #: {this.state.levelID}
                     </Text>
                 </View>
                 <View style={styles.contentContainer}>

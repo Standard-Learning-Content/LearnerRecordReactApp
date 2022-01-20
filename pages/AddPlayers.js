@@ -53,7 +53,6 @@ export default class AddPlayers extends React.Component {
     async goToHome() {
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
-            let completedPlayers = []
 
             for (let player in this.inputValue) {
                 // Currently we are sha256 hashing the first name for the id 
@@ -84,20 +83,10 @@ export default class AddPlayers extends React.Component {
                 let contentArray = data
                 let playerLevels = {}
 
-                // If the player has leared the contentless then 10 time, we add it to the set of questions
-                for (let level of all_levels) {
-                    if (contentArray[level.correctStandardContent] == undefined) {
-                        let tempLevel = {
-                            [level.levelID]: level
-                        }
-                        Object.assign(playerLevels, tempLevel)
-                    } else if (contentArray[level.correctStandardContent].countsCorrect < 300) {
-                        let tempLevel = {
-                            [level.levelID]: level
-                        }
-                        Object.assign(playerLevels, tempLevel)
-                    }
+                for (let level in all_levels) {
+                    Object.assign(playerLevels, all_levels[level])
                 }
+
                 let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
                 allPlayers.push(tempPlayer)
                 // if (playerLevels.length > 0) {
@@ -119,7 +108,7 @@ export default class AddPlayers extends React.Component {
                 //     completedPlayers.push(tempPlayer)
                 // }
             }
-            this.props.navigation.navigate('Map', { "players": allPlayers, "completedPlayer": completedPlayers })
+            this.props.navigation.navigate('Map', { "players": allPlayers })
         } else {
             Alert.alert(
                 "Missing Learner's Names",

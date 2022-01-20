@@ -14,7 +14,6 @@ export default class Main extends React.Component {
         if (config['debug-mode']) console.log(this.state)
         this.play = this.play.bind(this)
         this.gameOver = this.gameOver.bind(this)
-        this.playLevel = this.playLevel.bind(this)
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -34,23 +33,6 @@ export default class Main extends React.Component {
     }
 
 
-    playLevel(levelIndex) {
-        let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
-        let currentQuestion = currentPlayerObj.getQuestionByID(levelIndex)
-        this.props.navigation.navigate('Learn', {
-            "levelID": currentQuestion.levelID,
-            "levelType": currentQuestion.levelType,
-            "correctStandardContent": currentQuestion.correctStandardContent,
-            "correctTarget": currentQuestion.correctTarget,
-            "incorrect": currentQuestion.incorrect,
-            "currentPlayerId": currentPlayerObj.id,
-            "currentPlayerName": currentPlayerObj.name,
-            "questionIndex": currentPlayerObj.questionIndex,
-            "currentPlayer": currentPlayerObj,
-
-        })
-    }
-
     play() {
         let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
         let allLevelButtons = []
@@ -60,27 +42,13 @@ export default class Main extends React.Component {
                 key={level}
                 level={level}
                 currentPlayer={this.state.players[this.state.currentPlayerIndex]}
-                currentQuestion={currentPlayerObj.getQuestionByID(level)}
+                currentQuestionSet={currentPlayerObj.getQuestionSetByID(level)}
                 navigation={this.props.navigation}
             >
             </LevelButton>
-            // let levelBtn = <Button
-            //     key={level}
-            //     buttonStyle={{
-            //         backgroundColor: "#15DB95",
-            //         borderRadius: 3,
-            //     }}
-            //     containerStyle={{
-            //         width: "20%",
-            //         marginHorizontal: 5,
-            //         marginVertical: 20,
-            //     }}
-            //     title={level}
-            //     titleStyle={{ color: "#000000" }}
-            //     onPress={() => this.playLevel(level)}
-            // />
             allLevelButtons.push(levelBtn)
         }
+
         return (
             <View style={styles.page}>
                 <View style={styles.headerContainer}>

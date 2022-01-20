@@ -51,15 +51,16 @@ export default class TargetBtn extends React.Component {
                 })
 
                 if (!res.ok) {
-                    throw new Error('Request returned a non 200 response code')
+                    throw new Error('Request returned af non 200 response code')
                 }
 
                 const data = await res.text()
                 if (config["debug-mode"]) console.log(data)
                 this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
-                this.props.navigation.navigate('Map', {})
-                // this.props.changePlayer()
-            }, 1000);
+                setTimeout(async () => {
+                    this.props.changeQuestion()
+                }, 500);
+            }, 500);
 
         } else {
             this.setState({
@@ -106,6 +107,6 @@ TargetBtn.propTypes = {
     value: PropTypes.string,
     correct: PropTypes.bool,
     updateLocalLearnerRecord: PropTypes.func,
-    changePlayer: PropTypes.func,
+    changeQuestion: PropTypes.func,
     navigation: PropTypes.object
 }
