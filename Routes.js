@@ -20,14 +20,25 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator >
             {/* <Stack.Screen name="Multi-Learner Questions" component={title} /> */}
-            <Stack.Screen name="HowManyLearners" component={NumLearners} />
-            <Stack.Screen name="AddPlayers" component={AddPlayer} />
-            <Stack.Screen name="Map" component={Main} />
-            <Stack.Screen name="Learn" component={Level} />
-            <Stack.Screen name="levelComplete" component={LevelComplete} />
-            <Stack.Screen name="LearnerRecord" component={LearnerRecord} />
+            <Stack.Screen name="HowManyLearners" component={NumLearners} options={{
+                title: 'How Many Learners', headerStyle: {
+                    backgroundColor: '#fff',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
+            <Stack.Screen name="AddPlayers" component={AddPlayer} options={{ title: 'Add Players' }} />
+            <Stack.Screen name="Map" component={Main} options={{ title: 'Select a Level' }} />
+            <Stack.Screen name="Learn" component={Level} options={{
+                title: 'Answer The Questions',
+                "headerLeft": null
+            }} />
+            <Stack.Screen name="levelComplete" component={LevelComplete} options={{ title: 'Level Complete', "headerLeft": null }} />
+            <Stack.Screen name="LearnerRecord" component={LearnerRecord} options={{ title: 'Report Card' }} />
         </Stack.Navigator>
     )
 }

@@ -21,7 +21,7 @@ export default class Level extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            corretCount: 0,
+            correctCount: 0,
             currentQuestionSetLength: "",
             levelID: "",
             currentQuestionSetIndex: -1,
@@ -49,7 +49,7 @@ export default class Level extends React.Component {
         //Only updates the state when navigating from main
         if (state.currentQuestionSetIndex == -1) {
             let newState = {
-                currentCount: 0,
+                correctCount: 0,
                 currentQuestionSetLength: props.route.params.currentQuestionSetLength,
                 levelID: props.route.params.levelID,
                 currentQuestionSetIndex: 0,
@@ -69,14 +69,16 @@ export default class Level extends React.Component {
     changeQuestion(correct) {
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
-            this.props.navigation.navigate('levelComplete', { correctCount: this.state.corretCount })
+            this.props.navigation.navigate('levelComplete', { correctCount: this.state.correctCount + 1 })
         } else {
-            let newCount = this.state.corretCount
+            let newCount
             if (correct) {
-                newCount + 1
+                newCount = this.state.correctCount + 1
+            } else {
+                newCount = this.state.correctCount
             }
             this.setState({
-                currentCount: newCount,
+                correctCount: newCount,
                 currentQuestionSetIndex: newIndex
             })
         }
