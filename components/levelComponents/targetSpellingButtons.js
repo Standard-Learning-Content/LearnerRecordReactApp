@@ -11,37 +11,25 @@ export default class SpellingBtn extends React.Component {
         super(props)
 
         this.state = {
-            content: "",
-            correct: false,
             buttonColor: "#15DB95"
         }
         this.pressHandler = this.pressHandler.bind(this)
     }
 
-    static getDerivedStateFromProps(props) {
-        let newState = {
-            content: props.content,
-            correct: props.correct,
-        }
-        return newState
-    }
 
     pressHandler() {
-        if (this.state.correct) {
+        if (this.props.correct) {
             this.setState({
                 buttonColor: "#34c0eb"
             })
-            this.props.answer(this.state.content)
+            this.props.answer(this.props.content)
         } else {
             this.setState({
                 buttonColor: "#eb4034"
             })
-            setTimeout(() => {
-                this.setState({
-                    buttonColor: "#15DB95"
-                })
-            }, 1000);
-            this.props.answer(this.state.content)
+
+            this.props.answer(this.props.content)
+
 
         }
 
@@ -59,7 +47,7 @@ export default class SpellingBtn extends React.Component {
                     marginVertical: 10,
                 }}
                 titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
-                title={this.state.content}
+                title={this.props.content}
             />
         )
     }

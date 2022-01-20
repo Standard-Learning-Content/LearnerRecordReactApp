@@ -12,6 +12,7 @@ import Main from './pages/main'
 import NumLearners from './pages/numLearners'
 import LearnerRecord from './pages/learnerRecord';
 import Level from './pages/level';
+import LevelComplete from './pages/levelComplete';
 
 
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ const Routes = () => {
             <Stack.Screen name="AddPlayers" component={AddPlayer} />
             <Stack.Screen name="Map" component={Main} />
             <Stack.Screen name="Learn" component={Level} />
+            <Stack.Screen name="levelComplete" component={LevelComplete} />
             <Stack.Screen name="LearnerRecord" component={LearnerRecord} />
         </Stack.Navigator>
     )

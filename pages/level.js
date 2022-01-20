@@ -21,6 +21,7 @@ export default class Level extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            corretCount: 0,
             currentQuestionSetLength: "",
             levelID: "",
             currentQuestionSetIndex: -1,
@@ -44,13 +45,14 @@ export default class Level extends React.Component {
         if (questionIndex == 38) {
             StoreReview.requestReview()
         }
-        if (state.currentQuestionSetIndex == -1) {
-            let currentIndex = state.currentQuestionSetIndex + 1
 
+        //Only updates the state when navigating from main
+        if (state.currentQuestionSetIndex == -1) {
             let newState = {
+                currentCount: 0,
                 currentQuestionSetLength: props.route.params.currentQuestionSetLength,
                 levelID: props.route.params.levelID,
-                currentQuestionSetIndex: currentIndex,
+                currentQuestionSetIndex: 0,
                 currentQuestionSet: props.route.params.currentQuestionSet,
                 currentPlayerId: props.route.params.currentPlayerId,
                 currentPlayerName: props.route.params.currentPlayerName,
@@ -64,12 +66,17 @@ export default class Level extends React.Component {
     }
 
 
-    changeQuestion() {
+    changeQuestion(correct) {
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
-            this.props.navigation.navigate('Map', {})
+            this.props.navigation.navigate('levelComplete', { correctCount: this.state.corretCount })
         } else {
+            let newCount = this.state.corretCount
+            if (correct) {
+                newCount + 1
+            }
             this.setState({
+                currentCount: newCount,
                 currentQuestionSetIndex: newIndex
             })
         }
@@ -93,12 +100,13 @@ export default class Level extends React.Component {
         for (let attempt of currentLevel.incorrect) {
             let incorrect = <TargetBtn
                 key={attempt.literal + uuid.v4()}
+                value={attempt.literal}
                 navigation={this.props.navigation}
+                changeQuestion={this.changeQuestion}
                 currentPlayer={this.state.currentPlayer}
                 userID={this.state.currentPlayerId}
                 correct={false}
-                content={attempt.iri}
-                value={attempt.literal}>
+                content={attempt.iri}>
             </TargetBtn>
             buttonArray.push(incorrect)
         }

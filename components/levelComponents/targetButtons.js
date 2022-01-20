@@ -58,7 +58,7 @@ export default class TargetBtn extends React.Component {
                 if (config["debug-mode"]) console.log(data)
                 this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
                 setTimeout(async () => {
-                    this.props.changeQuestion()
+                    this.props.changeQuestion(true)
                 }, 500);
             }, 500);
 
@@ -67,13 +67,17 @@ export default class TargetBtn extends React.Component {
                 buttonColor: "#eb4034"
             })
             playIncorrectSound()
+            this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
             setTimeout(() => {
                 this.setState({
                     buttonColor: "#15DB95"
                 })
-            }, 1000);
+                setTimeout(async () => {
+                    this.props.changeQuestion(false)
+                }, 500);
+            }, 500);
 
-            this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
+
         }
     }
 
