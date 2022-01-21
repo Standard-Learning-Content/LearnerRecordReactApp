@@ -14,6 +14,7 @@ import GamePlayer from "../components/gamePlayer";
 import { JSHash, CONSTANTS } from 'react-native-hash';
 import config from '../config.json'
 import PropTypes from 'prop-types';
+import GameLevel from "../components/gameLevel";
 
 //////////////////////
 // Component Class
@@ -81,32 +82,15 @@ export default class AddPlayers extends React.Component {
 
                 const data = await res.json()
                 let contentArray = data
-                let playerLevels = {}
+                let playerLevels = []
 
                 for (let level in all_levels) {
-                    Object.assign(playerLevels, all_levels[level])
+                    let keys = Object.keys(all_levels[level])
+                    let gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]])
+                    playerLevels.push(gameLevel)
                 }
-
                 let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
                 allPlayers.push(tempPlayer)
-                // if (playerLevels.length > 0) {
-                //     allPlayers.push(tempPlayer)
-                // } else {
-                //     Alert.alert(
-                //         this.inputValue[player],
-                //         "Has completed all the questions before!",
-                //         [
-                //             {
-                //                 text: "Cancel",
-                //                 style: "cancel"
-                //             },
-                //             { text: "OK" }
-                //         ]
-                //     )
-
-                //     if (config["debug-mode"]) console.log(this.inputValue[player] + " has Completed the app")
-                //     completedPlayers.push(tempPlayer)
-                // }
             }
             this.props.navigation.navigate('Map', { "players": allPlayers })
         } else {

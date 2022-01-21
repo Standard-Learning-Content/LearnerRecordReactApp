@@ -14,14 +14,16 @@ export default class LevelComplete extends React.Component {
     }
 
     backToMap() {
+        this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount)
+        this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount)
         this.props.navigation.navigate("Map", {})
     }
 
     render() {
         return (
             <View style={styles.background}>
-                <Text style={styles.headline}> Level Complete</Text>
-                <Text style={styles.headline}> {this.props.route.params.correctCount}</Text>
+                <Text style={styles.headline}> Level Complete! </Text>
+                <Text style={styles.headline}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint} + {this.props.route.params.correctCount}  </Text>
                 <Button
                     onPress={() => this.backToMap()}
                     color="#15DB95"
@@ -32,7 +34,7 @@ export default class LevelComplete extends React.Component {
                         marginVertical: 10,
                     }}
                     titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
-                    title={"-->"}
+                    title={"Next"}
                 />
             </View>
         )
@@ -42,7 +44,8 @@ export default class LevelComplete extends React.Component {
 LevelComplete.propTypes = {
     route: PropTypes.object,
     navigation: PropTypes.object,
-    correctCount: PropTypes.number
+    correctCount: PropTypes.number,
+    currentPlayer: PropTypes.object
 }
 
 

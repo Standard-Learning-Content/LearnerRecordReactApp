@@ -37,12 +37,14 @@ export default class Main extends React.Component {
         let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
         let allLevelButtons = []
 
-        for (let level in currentPlayerObj.questions) {
+        for (let level of currentPlayerObj.questions) {
             let levelBtn = <LevelButton
-                key={level}
+                key={level.levelId}
+                correctPoints={level.correctPoints}
+                levelId={level.levelId}
                 level={level}
                 currentPlayer={this.state.players[this.state.currentPlayerIndex]}
-                currentQuestionSet={currentPlayerObj.getQuestionSetByID(level)}
+                currentQuestionSet={level.levels}
                 navigation={this.props.navigation}
             >
             </LevelButton>

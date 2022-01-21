@@ -29,6 +29,7 @@ export default class Level extends React.Component {
             currentPlayerId: "",
             currentPlayerName: "",
             currentPlayer: "",
+            level: "",
         }
         this.renderTargetButtons = this.renderTargetButtons.bind(this)
         this.renderSpellingTarget = this.renderSpellingTarget.bind(this)
@@ -52,6 +53,7 @@ export default class Level extends React.Component {
                 correctCount: 0,
                 currentQuestionSetLength: props.route.params.currentQuestionSetLength,
                 levelID: props.route.params.levelID,
+                level: props.route.params.level,
                 currentQuestionSetIndex: 0,
                 currentQuestionSet: props.route.params.currentQuestionSet,
                 currentPlayerId: props.route.params.currentPlayerId,
@@ -67,16 +69,11 @@ export default class Level extends React.Component {
 
 
     changeQuestion(correct) {
+        let newCount = correct ? this.state.correctCount + 1 : this.state.correctCount
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
-            this.props.navigation.navigate('levelComplete', { correctCount: this.state.correctCount + 1 })
+            this.props.navigation.navigate('levelComplete', { correctCount: newCount, currentPlayer: this.state.currentPlayer, level: this.state.level })
         } else {
-            let newCount
-            if (correct) {
-                newCount = this.state.correctCount + 1
-            } else {
-                newCount = this.state.correctCount
-            }
             this.setState({
                 correctCount: newCount,
                 currentQuestionSetIndex: newIndex

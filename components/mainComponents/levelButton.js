@@ -8,6 +8,7 @@ import React from "react";
 import { Button } from 'react-native-elements'
 import { StyleSheet, View, Text, } from 'react-native';
 import PropTypes from 'prop-types';
+import uuid from 'react-native-uuid';
 
 //////////////////////
 // Component Class
@@ -16,21 +17,32 @@ export default class LevelButton extends React.Component {
     constructor(props) {
         super(props)
         this.playLevel = this.playLevel.bind(this)
+        this.getStars = this.getStars.bind(this)
     }
 
     playLevel() {
         let currentPlayerObj = this.props.currentPlayer
         let currentQuestionSet = this.props.currentQuestionSet
-        let levelID = this.props.level
         this.props.navigation.navigate('Learn', {
-            "levelID": levelID,
+            "levelID": this.props.levelId,
             "currentQuestionSet": currentQuestionSet,
             "currentQuestionSetLength": currentQuestionSet.length,
             "currentPlayerId": currentPlayerObj.id,
             "currentPlayerName": currentPlayerObj.name,
             "questionIndex": currentPlayerObj.questionIndex,
             "currentPlayer": currentPlayerObj,
+            "level": this.props.level
         })
+    }
+
+    getStars() {
+        let stars = []
+        for (let i = 0; i < this.props.correctPoints; i++) {
+            let star = <Text key={uuid.v4()} style={styles.point}>*</Text>
+            stars.push(star)
+        }
+
+        return stars
     }
 
 
@@ -38,17 +50,14 @@ export default class LevelButton extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.pointContianer}>
-                    <Text style={styles.point} > X </Text>
-                    <Text style={styles.point}> X </Text>
-                    <Text style={styles.point}> X </Text>
+                    {this.getStars()}
                 </View>
                 <View style={styles.buttonContianer}>
                     <Button
-                        key={this.props.level}
-                        title={this.props.level}
+                        key={this.props.levelId + uuid.v4()}
+                        title={this.props.levelId}
                         buttonStyle={{
                             borderRadius: 50,
-                            // width: "80%",
                             justifyContent: "center",
                             alignContent: "center",
                             backgroundColor: "#15DB95"
@@ -66,9 +75,11 @@ export default class LevelButton extends React.Component {
 LevelButton.propTypes = {
     navigation: PropTypes.object,
     route: PropTypes.object,
-    level: PropTypes.string,
+    level: PropTypes.object,
     currentPlayer: PropTypes.object,
     currentQuestionSet: PropTypes.array,
+    correctPoints: PropTypes.number,
+    levelId: PropTypes.string
 }
 
 ///////////////////////
@@ -109,6 +120,7 @@ const styles = StyleSheet.create({
     },
     point: {
         color: "#FFFFFF",
+        fontSize: 30,
         textAlign: "center"
     }
 });

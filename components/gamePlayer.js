@@ -6,7 +6,7 @@ let GamePlayer = class {
         this._name = name
         this._learnerRecord = learnerRecord
         this._questions = quentions
-
+        this._totalPoint = 0
 
     }
 
@@ -31,6 +31,10 @@ let GamePlayer = class {
 
     get questions() {
         return this._questions
+    }
+
+    get totalPoint() {
+        return this._totalPoint
     }
 
     getQuestionSetByID(levelId) {
@@ -73,9 +77,12 @@ let GamePlayer = class {
 
     }
 
+    updateTotalPoints(addedPoints) {
+        this._totalPoint = this._totalPoint + addedPoints
+    }
 
     toString() {
-        return "Name: " + this.name + ", ID: " + this.id
+        return "Name: " + this._name + ", ID: " + this._id + ", Points: " + this._totalPoint
     }
 }
 
