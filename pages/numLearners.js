@@ -18,12 +18,15 @@ export default class NumLearners extends React.Component {
             <View style={styles.background}>
                 <Text style={styles.headline}> Select The Number Of Learners</Text>
                 <Button
-                    color="#15DB95"
-                    buttonStyle={{ backgroundColor: "#15DB95" }}
+                    color="#ff5994"
+                    buttonStyle={{ backgroundColor: "#ff5994" }}
                     containerStyle={{
                         width: 350,
                         marginHorizontal: 50,
                         marginVertical: 10,
+                        borderWidth: 3,
+                        borderColor: "#000000",
+                        borderRadius: 10,
                     }}
                     titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                     title="1"
@@ -31,11 +34,14 @@ export default class NumLearners extends React.Component {
                     onPress={() => this.props.navigation.navigate('AddPlayers', { numPlayers: 1 })}
                 />
                 <Button
-                    buttonStyle={{ backgroundColor: "#15DB95" }}
+                    buttonStyle={{ backgroundColor: "#ff5994" }}
                     containerStyle={{
                         width: 350,
                         marginHorizontal: 40,
                         marginVertical: 10,
+                        borderWidth: 3,
+                        borderColor: "#000000",
+                        borderRadius: 10,
                     }}
                     titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                     title="2"
@@ -43,11 +49,14 @@ export default class NumLearners extends React.Component {
                     onPress={() => this.props.navigation.navigate('AddPlayers', { numPlayers: 2 })}
                 />
                 <Button
-                    buttonStyle={{ backgroundColor: "#15DB95" }}
+                    buttonStyle={{ backgroundColor: "#ff5994" }}
                     containerStyle={{
                         width: 350,
                         marginHorizontal: 50,
                         marginVertical: 10,
+                        borderWidth: 3,
+                        borderColor: "#000000",
+                        borderRadius: 10,
                     }}
                     titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                     title="3"
@@ -66,16 +75,14 @@ NumLearners.propTypes = {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: '#080F5B',
+        backgroundColor: '#82b6ff',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 5,
-
     },
     headline: {
         fontWeight: 'bold',
-        color: "#FFFFFF",
+        color: "#FFF",
         fontSize: 30,
         padding: 20,
         textAlign: "center",

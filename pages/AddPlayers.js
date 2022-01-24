@@ -7,8 +7,9 @@
  */
 
 import React from "react";
-import { View, Button, Alert, StyleSheet, Text } from 'react-native';
+import { View, Alert, StyleSheet, Text } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
+import { Button } from 'react-native-elements';
 import all_levels from '../levels/levels.json'
 import GamePlayer from "../components/gamePlayer";
 import { JSHash, CONSTANTS } from 'react-native-hash';
@@ -119,10 +120,19 @@ export default class AddPlayers extends React.Component {
                 <Text style={styles.headline}> Who is Learning?</Text>
                 {this.addInputBoxes()}
                 <Button
+                    color="#ff5994"
+                    buttonStyle={{ backgroundColor: "#ff5994" }}
+                    containerStyle={{
+                        width: 250,
+                        marginHorizontal: 50,
+                        marginVertical: 30,
+                        borderWidth: 3,
+                        borderColor: "#000000",
+                        borderRadius: 10,
+                    }}
+                    titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                     title="Start Learning"
-                    color="#F4E4C1"
                     type="outline"
-                    style={{ padding: 10 }}
                     onPress={async () => { await this.goToHome() }}
                 />
             </View>
@@ -139,17 +149,16 @@ AddPlayers.propTypes = {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: '#080F5B',
+        backgroundColor: '#82b6ff',
         flex: 1,
         padding: 10,
         alignItems: 'center',
-        borderRadius: 5,
     },
     headline: {
         fontWeight: 'bold',
         color: "#FFFFFF",
         fontSize: 30,
         padding: 20,
-        textAlign: "center"
+        textAlign: "center",
     }
 });

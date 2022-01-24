@@ -40,14 +40,15 @@ export default class NameInput extends React.Component {
 
     render() {
         return (
-            <View style={{ padding: 10 }}>
+            <View style={styles.learningBox}>
                 <Text style={styles.title}>Add Player {this.props.number}&apos;s Name</Text>
                 <TextInput
                     style={styles.input}
                     key={this.props.number}
                     onChangeText={this.handleChange}
-                    placeholder={"Insert Players Name"}
-                    placeholderTextColor="#15DB95"
+                    placeholder={"Name"}
+                    placeholderTextColor="#fff"
+
                 />
             </View>
 
@@ -70,16 +71,22 @@ NameInput.propTypes = {
 const styles = StyleSheet.create({
     title: {
         color: "#FFFFFF",
-        margin: 20,
         fontWeight: "bold"
+    },
+    learningBox: {
+        padding: 10,
+        backgroundColor: "#ff5994",
+        borderRadius: 10,
+        borderWidth: 3,
+        borderColor: "#000000",
     },
     input: {
         height: 50,
         width: 300,
         margin: 5,
-        borderWidth: 2,
+        borderWidth: 3,
         padding: 10,
-        borderColor: "#15DB95",
-        color: "#15DB95",
+        borderRadius: 10,
+        backgroundColor: "#82b6ff",
     },
 });

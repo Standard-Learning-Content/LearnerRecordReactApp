@@ -18,7 +18,7 @@ export default class TargetBtn extends React.Component {
         super(props)
         this.answer = this.answer.bind(this)
         this.state = {
-            buttonColor: "#15DB95"
+            buttonColor: "#edff8f"
         }
     }
 
@@ -31,14 +31,14 @@ export default class TargetBtn extends React.Component {
         }
         if (this.props.correct) {
             this.setState({
-                buttonColor: "#34c0eb"
+                buttonColor: "#84ff9f"
             })
 
             playCorrectSound()
 
             setTimeout(async () => {
                 this.setState({
-                    buttonColor: "#15DB95"
+                    buttonColor: "#edff8f"
                 })
                 const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
                     method: 'PUT',
@@ -64,13 +64,13 @@ export default class TargetBtn extends React.Component {
 
         } else {
             this.setState({
-                buttonColor: "#eb4034"
+                buttonColor: "#ff5994"
             })
             playIncorrectSound()
             this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
             setTimeout(() => {
                 this.setState({
-                    buttonColor: "#15DB95"
+                    buttonColor: "#edff8f"
                 })
                 setTimeout(async () => {
                     this.props.changeQuestion(false)
@@ -87,14 +87,17 @@ export default class TargetBtn extends React.Component {
         return (
             <Button
                 onPress={() => this.answer()}
-                color="#15DB95"
+                color="#000"
                 buttonStyle={{ backgroundColor: this.state.buttonColor }}
                 containerStyle={{
-                    width: "90%",
-                    marginHorizontal: 50,
+                    width: 350,
+                    marginHorizontal: 40,
                     marginVertical: 10,
+                    borderWidth: 3,
+                    borderColor: "#000000",
+                    borderRadius: 10,
                 }}
-                titleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 23 }}
+                titleStyle={{ color: 'black', fontWeight: 'bold', fontSize: 23 }}
                 title={this.props.value}
             />
         )

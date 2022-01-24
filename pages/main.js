@@ -104,14 +104,18 @@ Main.propTypes = {
 
 const styles = StyleSheet.create({
     page: {
-        backgroundColor: '#080F5B',
+        backgroundColor: '#82b6ff',
         width: "100%",
         height: "100%",
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: "auto"
     },
     headerContainer: {
-        width: "100%",
+        margin: 10,
+        padding: 5,
+        width: "90%",
         height: "15%",
-        backgroundColor: '#0D19AA',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: "auto"
@@ -127,13 +131,6 @@ const styles = StyleSheet.create({
         color: "#FFFFFF",
         fontSize: 30,
 
-    },
-    completeHeaderContainer: {
-        width: "100%",
-        height: "100%",
-        backgroundColor: '#F8E9A1',
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     contentContainer: {
         flex: 7,

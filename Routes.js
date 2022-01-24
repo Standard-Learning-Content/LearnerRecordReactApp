@@ -23,21 +23,57 @@ const Routes = () => {
         <Stack.Navigator >
             {/* <Stack.Screen name="Multi-Learner Questions" component={title} /> */}
             <Stack.Screen name="HowManyLearners" component={NumLearners} options={{
-                title: 'How Many Learners', headerStyle: {
-                    backgroundColor: '#fff',
+                title: 'How Many Learners',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
                 },
                 headerTintColor: '#000',
                 headerTitleStyle: {
                     fontWeight: 'bold',
                 },
             }} />
-            <Stack.Screen name="AddPlayers" component={AddPlayer} options={{ title: 'Add Players' }} />
-            <Stack.Screen name="Map" component={Main} options={{ title: 'Select a Level' }} />
+            <Stack.Screen name="AddPlayers" component={AddPlayer} options={{
+                title: 'Add Players',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
+            <Stack.Screen name="Map" component={Main} options={{
+                title: 'Select a Level',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
             <Stack.Screen name="Learn" component={Level} options={{
                 title: 'Answer The Questions',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
                 "headerLeft": null
             }} />
-            <Stack.Screen name="levelComplete" component={LevelComplete} options={{ title: 'Level Complete', "headerLeft": null }} />
+            <Stack.Screen name="levelComplete" component={LevelComplete} options={{
+                title: 'Level Complete',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+                "headerLeft": null
+            }} />
             <Stack.Screen name="LearnerRecord" component={LearnerRecord} options={{ title: 'Report Card' }} />
         </Stack.Navigator>
     )

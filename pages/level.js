@@ -255,13 +255,12 @@ const styles = StyleSheet.create({
     levelContainer: {
         flex: 1,
         flexDirection: "column",
-        backgroundColor: '#080F5B',
+        backgroundColor: '#82b6ff',
     },
     headerContainer: {
         flex: 1,
         width: "100%",
         height: "15%",
-        backgroundColor: '#0D19AA',
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -283,11 +282,13 @@ const styles = StyleSheet.create({
         flex: 1,
         width: "90%",
         margin: "5%",
-        borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#E4C580",
-        textAlign: 'center'
+        backgroundColor: "#ff5994",
+        textAlign: 'center',
+        borderRadius: 10,
+        borderWidth: 3,
+        borderColor: "#000000",
     },
     buttonsContainer: {
         flex: 4,
@@ -301,6 +302,7 @@ const styles = StyleSheet.create({
     targetText: {
         textAlign: 'center',
         fontWeight: 'bold',
+        color: "#fff",
         fontSize: 60,
         marginTop: 0,
     },

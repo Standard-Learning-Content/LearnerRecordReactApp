@@ -54,10 +54,12 @@ export default class LevelButton extends React.Component {
                 key={this.props.levelId + uuid.v4()}
                 title={this.props.levelId}
                 buttonStyle={{
-                    borderRadius: 50,
                     justifyContent: "center",
                     alignContent: "center",
-                    backgroundColor: "#15DB95"
+                    backgroundColor: "#edff8f",
+                    borderRadius: 10,
+                    borderWidth: 3,
+                    borderColor: "#000000",
                 }}
                 titleStyle={{ color: "#000000" }}
                 onPress={() => this.playLevel()}
@@ -67,10 +69,12 @@ export default class LevelButton extends React.Component {
                 key={this.props.levelId + uuid.v4()}
                 title={this.props.levelId}
                 buttonStyle={{
-                    borderRadius: 50,
                     justifyContent: "center",
                     alignContent: "center",
-                    backgroundColor: "#181818"
+                    backgroundColor: "#ff5994",
+                    borderRadius: 10,
+                    borderWidth: 3,
+                    borderColor: "#000000",
                 }}
                 titleStyle={{ color: "#000000" }}
                 onPress={() => console.log("Need More Points")}
@@ -97,7 +101,8 @@ LevelButton.propTypes = {
     currentPlayer: PropTypes.object,
     currentQuestionSet: PropTypes.array,
     correctPoints: PropTypes.number,
-    levelId: PropTypes.string
+    levelId: PropTypes.string,
+    requiredPoints: PropTypes.number
 }
 
 ///////////////////////
@@ -112,14 +117,12 @@ LevelButton.propTypes = {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
         borderRadius: 20,
         width: "20%",
         flexDirection: "column",
         marginHorizontal: 20,
-        marginVertical: 20,
-        backgroundColor: "#0D19AA",
-
+        marginVertical: 30,
+        backgroundColor: "#84ff9f",
     },
     pointContianer: {
         flex: 1,
@@ -133,8 +136,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         justifyContent: "center",
         alignContent: "center"
-        // marginHorizontal: 20,
-        // marginVertical: 20,
     },
     point: {
         color: "#FFFFFF",
