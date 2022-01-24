@@ -46,25 +46,43 @@ export default class LevelButton extends React.Component {
     }
 
 
+
     render() {
+        let button
+        if (this.props.requiredPoints <= this.props.currentPlayer.totalPoint) {
+            button = <Button
+                key={this.props.levelId + uuid.v4()}
+                title={this.props.levelId}
+                buttonStyle={{
+                    borderRadius: 50,
+                    justifyContent: "center",
+                    alignContent: "center",
+                    backgroundColor: "#15DB95"
+                }}
+                titleStyle={{ color: "#000000" }}
+                onPress={() => this.playLevel()}
+            />
+        } else {
+            button = <Button
+                key={this.props.levelId + uuid.v4()}
+                title={this.props.levelId}
+                buttonStyle={{
+                    borderRadius: 50,
+                    justifyContent: "center",
+                    alignContent: "center",
+                    backgroundColor: "#181818"
+                }}
+                titleStyle={{ color: "#000000" }}
+                onPress={() => console.log("Need More Points")}
+            />
+        }
         return (
             <View style={styles.container}>
                 <View style={styles.pointContianer}>
                     {this.getStars()}
                 </View>
                 <View style={styles.buttonContianer}>
-                    <Button
-                        key={this.props.levelId + uuid.v4()}
-                        title={this.props.levelId}
-                        buttonStyle={{
-                            borderRadius: 50,
-                            justifyContent: "center",
-                            alignContent: "center",
-                            backgroundColor: "#15DB95"
-                        }}
-                        titleStyle={{ color: "#000000" }}
-                        onPress={() => this.playLevel()}
-                    />
+                    {button}
                 </View>
             </View>
 

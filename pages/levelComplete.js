@@ -20,10 +20,20 @@ export default class LevelComplete extends React.Component {
     }
 
     render() {
+        let starCount
+        if (this.props.route.params.correctCount >= 5) {
+            starCount = 3
+        } else if (this.props.route.params.correctCount == 4 || this.props.route.params.correctCount == 3) {
+            starCount = 2
+        } else if (this.props.route.params.correctCount == 2 || this.props.route.params.correctCount == 1) {
+            starCount = 1
+        } else {
+            starCount = 0
+        }
         return (
             <View style={styles.background}>
                 <Text style={styles.headline}> Level Complete! </Text>
-                <Text style={styles.headline}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint} + {this.props.route.params.correctCount}  </Text>
+                <Text style={styles.headline}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint} + {starCount}  </Text>
                 <Button
                     onPress={() => this.backToMap()}
                     color="#15DB95"

@@ -139,13 +139,18 @@ export const playIncorrectSound = async () => {
 }
 
 export const playContentSounds = async (content) => {
-    let sound = new Audio.Sound()
-    await sound.loadAsync(soundsMap.get(content.toLowerCase()))
-    await sound.playAsync()
+    if (soundsMap.get(content.toLowerCase()) != undefined) {
+        let sound = new Audio.Sound()
+        await sound.loadAsync(soundsMap.get(content.toLowerCase()))
+        await sound.playAsync()
 
-    setTimeout(async () => {
-        await sound.unloadAsync();
-    }, 1000);
+        setTimeout(async () => {
+            await sound.unloadAsync();
+        }, 1000);
+    } else {
+        console.log("Audio Is Undefinded: " + content)
+    }
+
 }
 
 

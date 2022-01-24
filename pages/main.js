@@ -40,6 +40,7 @@ export default class Main extends React.Component {
         for (let level of currentPlayerObj.questions) {
             let levelBtn = <LevelButton
                 key={level.levelId}
+                requiredPoints={level.requiredPoints}
                 correctPoints={level.correctPoints}
                 levelId={level.levelId}
                 level={level}

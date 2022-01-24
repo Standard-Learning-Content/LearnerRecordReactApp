@@ -84,10 +84,12 @@ export default class AddPlayers extends React.Component {
                 let contentArray = data
                 let playerLevels = []
 
+                let requiredPointsCounter = 0
                 for (let level in all_levels) {
                     let keys = Object.keys(all_levels[level])
-                    let gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]])
+                    let gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
                     playerLevels.push(gameLevel)
+                    requiredPointsCounter += 3
                 }
                 let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
                 allPlayers.push(tempPlayer)

@@ -1,9 +1,10 @@
 
 let GameLevel = class {
-    constructor(levelId, correctPoints, levels) {
+    constructor(levelId, correctPoints, levels, requiredPoints) {
         this._levelId = levelId
         this._correctPoints = correctPoints
         this._levels = levels
+        this._requiredPoints = requiredPoints
     }
 
     get levelId() {
@@ -16,6 +17,10 @@ let GameLevel = class {
 
     get levels() {
         return this._levels
+    }
+
+    get requiredPoints() {
+        return this._requiredPoints
     }
 
     setCorrectPoints(score) {

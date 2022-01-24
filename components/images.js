@@ -43,14 +43,19 @@ export default class Images extends React.Component {
 
 
 
+
     render() {
-        return (
-            <Image
+        let image
+        if (imagesMap.get(this.state.image) != undefined) {
+            image = <Image
                 style={styles.logo}
                 source={imagesMap.get(this.state.image)}
             />
-
-        )
+        } else {
+            console.log("Image is undefined: " + this.state.image)
+            image = null
+        }
+        return image
     }
 
 }
