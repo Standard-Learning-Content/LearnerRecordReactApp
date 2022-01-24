@@ -17,6 +17,7 @@ export default class Main extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
+        console.log("state Changed")
         let players_len = state.players.length
         let currentPlayerIndex = (state.currentPlayerIndex + 1) % players_len
         if (state.currentPlayerIndex == -1) {

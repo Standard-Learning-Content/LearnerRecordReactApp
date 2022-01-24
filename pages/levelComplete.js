@@ -16,8 +16,8 @@ export default class LevelComplete extends React.Component {
     }
 
     backToMap() {
-        this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount)
-        this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount)
+        this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
+        this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
         this.props.navigation.navigate("Map", {})
     }
 
@@ -37,6 +37,7 @@ export default class LevelComplete extends React.Component {
 
         for (let i = 0; i < starCount; i++) {
             let star = <Image
+                key={i}
                 style={styles.star}
                 source={starImage}
             ></Image>

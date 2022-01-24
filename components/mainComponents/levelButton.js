@@ -6,7 +6,7 @@
  */
 import React from "react";
 import { Button } from 'react-native-elements'
-import { StyleSheet, View, Text, } from 'react-native';
+import { StyleSheet, View, Image, } from 'react-native';
 import PropTypes from 'prop-types';
 import uuid from 'react-native-uuid';
 
@@ -36,13 +36,28 @@ export default class LevelButton extends React.Component {
     }
 
     getStars() {
-        let stars = []
-        for (let i = 0; i < this.props.correctPoints; i++) {
-            let star = <Text key={uuid.v4()} style={styles.point}>*</Text>
-            stars.push(star)
-        }
 
-        return stars
+        if (this.props.correctPoints == 3) {
+            return <Image
+                source={require('../../assets/levelBtnStars/threeStars.png')}
+                style={styles.star}
+            ></Image>
+        } else if (this.props.correctPoints == 2) {
+            return <Image
+                source={require('../../assets/levelBtnStars/twoStars.png')}
+                style={styles.star}
+            ></Image>
+        } else if (this.props.correctPoints == 1) {
+            return <Image
+                source={require('../../assets/levelBtnStars/oneStar.png')}
+                style={styles.star}
+            ></Image>
+        } else {
+            return <Image
+                source={require('../../assets/levelBtnStars/zeroStars.png')}
+                style={styles.star}
+            ></Image>
+        }
     }
 
 
@@ -85,10 +100,13 @@ export default class LevelButton extends React.Component {
                 <View style={styles.pointContianer}>
                     {this.getStars()}
                 </View>
-                <View style={styles.buttonContianer}>
-                    {button}
+
+                <View style={styles.container2}>
+                    <View style={styles.buttonContianer}>
+                        {button}
+                    </View>
                 </View>
-            </View>
+            </View >
 
         )
     }
@@ -117,11 +135,15 @@ LevelButton.propTypes = {
 
 const styles = StyleSheet.create({
     container: {
-        borderRadius: 20,
-        width: "20%",
+        width: "25%",
         flexDirection: "column",
-        marginHorizontal: 20,
+        marginHorizontal: 15,
         marginVertical: 30,
+    },
+    container2: {
+        borderRadius: 20,
+        width: "100%",
+        flexDirection: "column",
         backgroundColor: "#84ff9f",
     },
     pointContianer: {
@@ -137,9 +159,9 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignContent: "center"
     },
-    point: {
-        color: "#FFFFFF",
-        fontSize: 30,
-        textAlign: "center"
-    }
+    star: {
+        flex: 1,
+        resizeMode: "contain",
+    },
+
 });

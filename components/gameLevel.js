@@ -23,15 +23,21 @@ let GameLevel = class {
         return this._requiredPoints
     }
 
-    setCorrectPoints(score) {
+    setCorrectPoints(score, prevScore) {
+        let tempScore
         if (score >= 5) {
-            this._correctPoints = 3
+            tempScore = 3
         } else if (score == 4 || score == 3) {
-            this._correctPoints = 2
+            tempScore = 2
         } else if (score == 2 || score == 1) {
-            this._correctPoints = 1
+            tempScore = 1
         } else {
-            this._correctPoints = 0
+            tempScore = 0
+        }
+        if (tempScore >= prevScore) {
+            this._correctPoints = tempScore
+        } else {
+            this._correctPoints = prevScore
         }
     }
 

@@ -77,16 +77,40 @@ let GamePlayer = class {
 
     }
 
-    updateTotalPoints(addedPoints) {
-        if (addedPoints >= 5) {
-            this._totalPoint += 3
-        } else if (addedPoints == 4 || addedPoints == 3) {
-            this._totalPoint += 2
-        } else if (addedPoints == 2 || addedPoints == 1) {
-            this._totalPoint += 1
-        } else {
-            this._totalPoint += 0
+    updateTotalPoints(addedPoints, levelCorrectPoints) {
+        if (levelCorrectPoints == 0) {
+            if (addedPoints >= 5) {
+                this._totalPoint += 3
+            } else if (addedPoints == 4 || addedPoints == 3) {
+                this._totalPoint += 2
+            } else if (addedPoints == 2 || addedPoints == 1) {
+                this._totalPoint += 1
+            } else {
+                this._totalPoint += 0
+            }
+        } else if (levelCorrectPoints == 1) {
+            if (addedPoints >= 5) {
+                this._totalPoint += 2
+            } else if (addedPoints == 4 || addedPoints == 3 && levelCorrectPoints < 2) {
+                this._totalPoint += 1
+            } else if (addedPoints == 2 || addedPoints == 1) {
+                this._totalPoint += 0
+            } else {
+                this._totalPoint += 0
+            }
+        } else if (levelCorrectPoints == 2) {
+            if (addedPoints >= 5) {
+                this._totalPoint += 1
+            } else if (addedPoints == 4 || addedPoints == 3) {
+                this._totalPoint += 0
+            } else if (addedPoints == 2 || addedPoints == 1) {
+                this._totalPoint += 0
+            } else {
+                this._totalPoint += 0
+            }
         }
+        return this._totalPoint
+
     }
 
     toString() {
