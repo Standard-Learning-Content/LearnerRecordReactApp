@@ -312,9 +312,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 60,
         marginTop: 0,
-        color: "#FC3D14"
+        color: "#84ff9f",
     },
     matchFirstRest: {
+        color: "#fff",
         textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 60,

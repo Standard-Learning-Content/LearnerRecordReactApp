@@ -11,7 +11,7 @@ export default class SpellingBtn extends React.Component {
         super(props)
 
         this.state = {
-            buttonColor: "#15DB95"
+            buttonColor: "#edff8f"
         }
         this.pressHandler = this.pressHandler.bind(this)
     }
@@ -20,12 +20,12 @@ export default class SpellingBtn extends React.Component {
     pressHandler() {
         if (this.props.correct) {
             this.setState({
-                buttonColor: "#34c0eb"
+                buttonColor: "#84ff9f"
             })
             this.props.answer(this.props.content)
         } else {
             this.setState({
-                buttonColor: "#eb4034"
+                buttonColor: "#ff5994"
             })
 
             this.props.answer(this.props.content)
@@ -39,14 +39,17 @@ export default class SpellingBtn extends React.Component {
         return (
             <Button
                 onPress={() => this.pressHandler()}
-                color="#15DB95"
+                color="#edff8f"
                 buttonStyle={{ backgroundColor: this.state.buttonColor }}
                 containerStyle={{
                     width: "90%",
                     marginHorizontal: 50,
-                    marginVertical: 10,
+                    marginVertical: 5,
+                    borderWidth: 3,
+                    borderColor: "#000000",
+                    textAlign: 'center'
                 }}
-                titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                 title={this.props.content}
             />
         )

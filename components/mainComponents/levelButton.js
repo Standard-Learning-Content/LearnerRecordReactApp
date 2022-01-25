@@ -138,7 +138,8 @@ const styles = StyleSheet.create({
         width: "25%",
         flexDirection: "column",
         marginHorizontal: 15,
-        marginVertical: 30,
+        marginVertical: 20,
+        borderRadius: 100
     },
     container2: {
         borderRadius: 20,

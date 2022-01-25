@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import LevelButton from '../components/mainComponents/levelButton'
+// import { Button } from 'react-native-elements'
 import config from '../config.json'
 import PropTypes from 'prop-types';
 
@@ -55,9 +56,13 @@ export default class Main extends React.Component {
 
         return (
             <View style={styles.page}>
+
                 <View style={styles.headerContainer}>
                     <Text style={styles.headline}>
-                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn {'\n'} Pick a level!
+                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn!
+                    </Text>
+                    <Text style={styles.headline}>
+                        Stars: {this.state.players[this.state.currentPlayerIndex].totalPoint}
                     </Text>
                 </View>
                 <ScrollView >
@@ -85,12 +90,7 @@ export default class Main extends React.Component {
         return (
             <View style={styles.page}>
                 {this.state.players != 0 ? this.play() : this.gameOver()}
-                {/* <Button
-                    style={{ padding: 10 }}
-                    title={`View ${this.state.players[this.state.currentPlayerIndex].name}'s Report Card`}
-                    titleStyle={{ color: "#000000" }}
-                    onPress={() => this.props.navigation.navigate('LearnerRecord', { player: this.state.players[this.state.currentPlayerIndex] })}
-                /> */}
+
             </View >
 
         )
@@ -119,7 +119,12 @@ const styles = StyleSheet.create({
         height: "15%",
         justifyContent: 'center',
         alignItems: 'center',
-        textAlign: "auto"
+        textAlign: "auto",
+        backgroundColor: "#ff5994",
+        borderRadius: 10,
+        borderWidth: 3,
+        borderColor: "#000000",
+
     },
     mainContainer: {
         flex: 1,
@@ -128,6 +133,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     headline: {
+        // margin: 5,
         fontWeight: 'bold',
         color: "#FFFFFF",
         fontSize: 30,

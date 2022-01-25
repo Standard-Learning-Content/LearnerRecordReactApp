@@ -227,8 +227,10 @@ const styles = StyleSheet.create({
         width: "90%",
         flexDirection: "row",
         margin: "5%",
+        backgroundColor: "#ff5994",
         borderRadius: 10,
-        backgroundColor: "#E4C580",
+        borderWidth: 3,
+        borderColor: "#000000",
         textAlign: 'center'
     },
     targetTextContainer: {

@@ -6,7 +6,7 @@ let GamePlayer = class {
         this._name = name
         this._learnerRecord = learnerRecord
         this._questions = quentions
-        this._totalPoint = 0
+        this._totalPoint = 450
 
     }
 

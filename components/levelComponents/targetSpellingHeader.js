@@ -31,7 +31,7 @@ export default class HeaderChar extends React.Component {
                 fontWeight: 'bold',
                 fontSize: 60,
                 marginTop: 0,
-                color: "#FC3D14"
+                color: "#84ff9f"
             }
         } else {
             charState = {
@@ -39,7 +39,7 @@ export default class HeaderChar extends React.Component {
                 fontWeight: 'bold',
                 fontSize: 60,
                 marginTop: 0,
-                color: "#000000"
+                color: "#FFF"
             }
         }
         return (
