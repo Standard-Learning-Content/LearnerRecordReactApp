@@ -5,7 +5,6 @@ import React from "react";
 import { View, StyleSheet, Text, Image } from 'react-native';
 import { Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
-import starImage from '../assets/star.png'
 
 
 export default class LevelComplete extends React.Component {
@@ -23,8 +22,6 @@ export default class LevelComplete extends React.Component {
 
     renderStars() {
         let starCount
-        let stars = []
-
         if (this.props.route.params.correctCount >= 5) {
             starCount = 3
         } else if (this.props.route.params.correctCount == 4 || this.props.route.params.correctCount == 3) {
@@ -35,20 +32,51 @@ export default class LevelComplete extends React.Component {
             starCount = 0
         }
 
-        for (let i = 0; i < starCount; i++) {
-            let star = <Image
-                key={i}
-                style={styles.star}
-                source={starImage}
-            ></Image>
-            stars.push(star)
+        if (starCount == 3) {
+            return (
+                <View style={styles.starContainer}>
+                    <Image
+                        source={require('../assets/levelBtnStars/threeStars.png')}
+                        style={styles.star}
+                    ></Image>
+                </View>)
+        } else if (starCount == 2) {
+            return (
+                <View style={styles.starContainer}>
+                    <Image
+                        source={require('../assets/levelBtnStars/twoStars.png')}
+                        style={styles.star}
+                    ></Image>
+                </View>)
+        } else if (starCount == 1) {
+            return (
+                <View style={styles.starContainer}>
+                    <Image
+                        source={require('../assets/levelBtnStars/oneStar.png')}
+                        style={styles.star}
+                    ></Image>
+                </View>)
+        } else {
+            return (
+                <View style={styles.starContainer}>
+                    <Image
+                        source={require('../assets/levelBtnStars/zeroStars.png')}
+                        style={styles.star}
+                    ></Image>
+                </View>)
         }
-        return (
-            <View style={styles.starContainer}>
-                {stars}
-            </View>
 
-        )
+
+
+        // for (let i = 0; i < starCount; i++) {
+        //     let star = <Image
+        //         key={i}
+        //         style={styles.star}
+        //         source={starImage}
+        //     ></Image>
+        //     stars.push(star)
+        // }
+
     }
 
     render() {
@@ -133,6 +161,8 @@ const styles = StyleSheet.create({
         margin: 15
     },
     star: {
+        width: 200,
+        height: 200,
         flex: 1,
         resizeMode: "contain",
     },

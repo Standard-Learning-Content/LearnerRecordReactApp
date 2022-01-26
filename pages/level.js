@@ -197,7 +197,7 @@ export default class Level extends React.Component {
                 return this.returnMatchLevel()
             case "matchfirst":
                 return this.returnMatchFirstLevel()
-            case "spelling":
+            case "spell":
                 return this.returnSpellingLevel()
             default:
                 return (<View>

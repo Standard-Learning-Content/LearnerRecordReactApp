@@ -130,8 +130,6 @@ export default class TargetSpelling extends React.Component {
 
     createDynamicHeader() {
         let textArray = []
-        console.log(this.state.correctTargets)
-        // let charArray = this.state.fullword.split("")
         let keyCounter = 0
         for (let char of this.state.correctTargets) {
             let text = <HeaderChar
