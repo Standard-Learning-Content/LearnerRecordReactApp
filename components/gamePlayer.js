@@ -1,3 +1,4 @@
+import config from "../config.json"
 
 let GamePlayer = class {
     constructor(id, name, learnerRecord, quentions) {
@@ -43,6 +44,7 @@ let GamePlayer = class {
     //////////////
     // "Setter"
     /////////////
+
     updateLocalLearnerRecord(literal, standardLearnedContent, correct) {
         let learnerRecord = this._learnerRecord
         if (Object.keys(learnerRecord).length == 0 || learnerRecord[standardLearnedContent] == undefined) {
@@ -74,6 +76,32 @@ let GamePlayer = class {
             indexedContent.totalCounts = indexedContent.totalCounts + 1
         }
 
+    }
+
+    async updateGlobalLearnerRecord(userID, standardLearnedContent, correct) {
+        let answerData = {
+            userID: userID,
+            standardLearnedContent: standardLearnedContent.replace("<", "").replace(">", ""),
+            correct: correct,
+            timestamp: Date.now()
+        }
+
+        const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*",
+                'Access-Control-Allow-Method': 'POST,GET'
+            },
+            body: JSON.stringify(answerData)
+        })
+
+        if (!res.ok) {
+            throw new Error('Request returned af non 200 response code')
+        }
+
+        const data = await res.text()
+        if (config["debug-mode"]) console.log(data)
     }
 
     updateTotalPoints(addedPoints, levelCorrectPoints) {

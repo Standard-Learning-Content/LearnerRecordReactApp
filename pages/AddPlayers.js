@@ -92,6 +92,7 @@ export default class AddPlayers extends React.Component {
                     playerLevels.push(gameLevel)
                     requiredPointsCounter += 3
                 }
+
                 let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
                 allPlayers.push(tempPlayer)
             }

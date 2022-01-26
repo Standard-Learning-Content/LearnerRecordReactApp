@@ -65,18 +65,6 @@ export default class LevelComplete extends React.Component {
                     ></Image>
                 </View>)
         }
-
-
-
-        // for (let i = 0; i < starCount; i++) {
-        //     let star = <Image
-        //         key={i}
-        //         style={styles.star}
-        //         source={starImage}
-        //     ></Image>
-        //     stars.push(star)
-        // }
-
     }
 
     render() {

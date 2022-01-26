@@ -13,6 +13,8 @@ import NumLearners from './pages/numLearners'
 import LearnerRecord from './pages/learnerRecord';
 import Level from './pages/level';
 import LevelComplete from './pages/levelComplete';
+import Title from './pages/title'
+import Instructions from './pages/instructions'
 
 
 const Stack = createStackNavigator();
@@ -21,7 +23,27 @@ const Stack = createStackNavigator();
 const Routes = () => {
     return (
         <Stack.Navigator >
-            {/* <Stack.Screen name="Multi-Learner Questions" component={title} /> */}
+            <Stack.Screen name="Title" component={Title} options={{
+                title: 'Mulit ABC\'s',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+                "headerLeft": null
+            }} />
+            <Stack.Screen name="instructions" component={Instructions} options={{
+                title: 'How To Play',
+                headerStyle: {
+                    backgroundColor: '#84ff9f',
+                },
+                headerTintColor: '#000',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
             <Stack.Screen name="HowManyLearners" component={NumLearners} options={{
                 title: 'How Many Learners',
                 headerStyle: {
