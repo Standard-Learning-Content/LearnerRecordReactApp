@@ -2,12 +2,11 @@
 let GamePlayer = class {
     constructor(id, name, learnerRecord, quentions) {
         this._questionIndex = 0
+        this._totalPoint = 0
         this._id = id
         this._name = name
         this._learnerRecord = learnerRecord
         this._questions = quentions
-        this._totalPoint = 450
-
     }
 
     ////////////

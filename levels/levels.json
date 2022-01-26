@@ -751,7 +751,7 @@
         "8": [
             {
                 "levelID": "36",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|a|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cat",
                 "incorrect": [
@@ -771,7 +771,7 @@
             },
             {
                 "levelID": "37",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|a|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pan",
                 "incorrect": [
@@ -791,7 +791,7 @@
             },
             {
                 "levelID": "38",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "m|a|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_mat",
                 "incorrect": [
@@ -811,13 +811,13 @@
             },
             {
                 "levelID": "39",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|a|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pat",
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "m",
@@ -831,17 +831,17 @@
             },
             {
                 "levelID": "40",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|a|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tan",
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
-                        "literal": "n",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA"
+                        "literal": "c",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
                     },
                     {
                         "literal": "r",
@@ -855,7 +855,7 @@
         "9": [
             {
                 "levelID": "41",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "m|a|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_map",
                 "incorrect": [
@@ -875,13 +875,13 @@
             },
             {
                 "levelID": "42",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|a|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tap",
                 "incorrect": [
                     {
-                        "literal": "p",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_p_Grapheme-p-IBA"
+                        "literal": "c",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
                     },
                     {
                         "literal": "d",
@@ -895,7 +895,7 @@
             },
             {
                 "levelID": "43",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|a|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cap",
                 "incorrect": [
@@ -915,17 +915,17 @@
             },
             {
                 "levelID": "44",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "n|a|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_nap",
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
-                        "literal": "p",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_p_Grapheme-p-IBA"
+                        "literal": "c",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
                     },
                     {
                         "literal": "g",
@@ -935,7 +935,7 @@
             },
             {
                 "levelID": "45",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|a|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_can",
                 "incorrect": [
@@ -965,7 +965,7 @@
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "n",
@@ -985,7 +985,7 @@
                 "levelID": "47",
                 "levelType": "match",
                 "correctTarget": "i",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
                 "incorrect": [
                     {
                         "literal": "k",
@@ -1017,7 +1017,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "s",
@@ -1041,7 +1041,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "n",
@@ -1065,7 +1065,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "n",
@@ -1089,7 +1089,7 @@
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "p",
@@ -1109,7 +1109,7 @@
                 "levelID": "52",
                 "levelType": "match",
                 "correctTarget": "i",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
                 "incorrect": [
                     {
                         "literal": "z",
@@ -1141,7 +1141,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "k",
@@ -1165,7 +1165,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "p",
@@ -1189,7 +1189,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "p",
@@ -1333,7 +1333,7 @@
                 "levelID": "61",
                 "levelType": "match",
                 "correctTarget": "i",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
                 "incorrect": [
                     {
                         "literal": "z",
@@ -1361,7 +1361,7 @@
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "k",
@@ -1385,7 +1385,7 @@
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "z",
@@ -1409,7 +1409,7 @@
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "z",
@@ -1433,7 +1433,7 @@
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "z",
@@ -1469,7 +1469,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "p",
@@ -1493,7 +1493,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "p",
@@ -1517,7 +1517,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "p",
@@ -1529,7 +1529,7 @@
                 "levelID": "69",
                 "levelType": "match",
                 "correctTarget": "i",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
                 "incorrect": [
                     {
                         "literal": "z",
@@ -1569,7 +1569,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     }
                 ]
             }
@@ -1951,7 +1951,7 @@
         "18": [
             {
                 "levelID": "86",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|i|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pin",
                 "incorrect": [
@@ -1965,13 +1965,13 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
             {
                 "levelID": "87",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "f|i|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_fin",
                 "incorrect": [
@@ -1991,7 +1991,7 @@
             },
             {
                 "levelID": "88",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "z|i|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_zip",
                 "incorrect": [
@@ -2011,7 +2011,7 @@
             },
             {
                 "levelID": "89",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "l|i|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_lip",
                 "incorrect": [
@@ -2031,13 +2031,13 @@
             },
             {
                 "levelID": "90",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "i|f",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_if",
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "z",
@@ -2051,13 +2051,13 @@
         "19": [
             {
                 "levelID": "91",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "n|i|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_nit",
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "s",
@@ -2071,7 +2071,7 @@
             },
             {
                 "levelID": "92",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|i|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pit",
                 "incorrect": [
@@ -2091,7 +2091,7 @@
             },
             {
                 "levelID": "93",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "l|i|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_lit",
                 "incorrect": [
@@ -2111,9 +2111,9 @@
             },
             {
                 "levelID": "94",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "i|t",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it",
                 "incorrect": [
                     {
                         "literal": "x",
@@ -2121,13 +2121,13 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     }
                 ]
             },
             {
                 "levelID": "95",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "f|i|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_fin",
                 "incorrect": [
@@ -2141,7 +2141,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     }
                 ]
             }
@@ -2153,7 +2153,7 @@
                 "levelID": "96",
                 "levelType": "match",
                 "correctTarget": "u",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA",
                 "incorrect": [
                     {
                         "literal": "b",
@@ -2173,7 +2173,7 @@
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "g",
@@ -2185,7 +2185,7 @@
                 "levelID": "98",
                 "levelType": "match",
                 "correctTarget": "u",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA",
                 "incorrect": [
                     {
                         "literal": "b",
@@ -2205,7 +2205,7 @@
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "b",
@@ -2221,7 +2221,7 @@
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "g",
@@ -2245,7 +2245,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "c",
@@ -2269,7 +2269,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "c",
@@ -2285,7 +2285,7 @@
                 "levelID": "103",
                 "levelType": "match",
                 "correctTarget": "y",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA",
                 "incorrect": [
                     {
                         "literal": "b",
@@ -2321,7 +2321,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "g",
@@ -2345,7 +2345,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "c",
@@ -2369,7 +2369,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "g",
@@ -2389,7 +2389,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "g",
@@ -2401,7 +2401,7 @@
                 "levelID": "108",
                 "levelType": "match",
                 "correctTarget": "u",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA",
                 "incorrect": [
                     {
                         "literal": "c",
@@ -2429,7 +2429,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "g",
@@ -2453,7 +2453,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             }
@@ -2465,7 +2465,7 @@
                 "levelID": "111",
                 "levelType": "match",
                 "correctTarget": "u",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA",
                 "incorrect": [
                     {
                         "literal": "r",
@@ -2473,7 +2473,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "b",
@@ -2493,11 +2493,11 @@
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "b",
@@ -2513,11 +2513,11 @@
                 "levelID": "113",
                 "levelType": "match",
                 "correctTarget": "y",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA",
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "r",
@@ -2541,7 +2541,7 @@
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "r",
@@ -2549,7 +2549,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "g",
@@ -2565,7 +2565,7 @@
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "r",
@@ -2573,7 +2573,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "b",
@@ -2605,7 +2605,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -2629,7 +2629,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -2653,7 +2653,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -2677,7 +2677,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -2685,7 +2685,7 @@
                 "levelID": "120",
                 "levelType": "match",
                 "correctTarget": "u",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA",
                 "incorrect": [
                     {
                         "literal": "c",
@@ -3063,13 +3063,13 @@
         "28": [
             {
                 "levelID": "136",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tug",
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "h",
@@ -3083,7 +3083,7 @@
             },
             {
                 "levelID": "137",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "r|u|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_rut",
                 "incorrect": [
@@ -3096,24 +3096,24 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA"
                     },
                     {
-                        "literal": "r",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_r_Grapheme-r-IBA"
+                        "literal": "h",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_h_Grapheme-h-IBA"
                     }
                 ]
             },
             {
                 "levelID": "138",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|u|b",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cub",
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "p",
@@ -3123,7 +3123,7 @@
             },
             {
                 "levelID": "139",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "n|u|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_nut",
                 "incorrect": [
@@ -3143,13 +3143,13 @@
             },
             {
                 "levelID": "140",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "b|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_bug",
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "d",
@@ -3167,13 +3167,13 @@
         "29": [
             {
                 "levelID": "141",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "b|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_bug",
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "z",
@@ -3187,7 +3187,7 @@
             },
             {
                 "levelID": "142",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "r|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_rug",
                 "incorrect": [
@@ -3196,8 +3196,8 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
                     },
                     {
-                        "literal": "g",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA"
+                        "literal": "i",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "d",
@@ -3207,7 +3207,7 @@
             },
             {
                 "levelID": "143",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tug",
                 "incorrect": [
@@ -3227,7 +3227,7 @@
             },
             {
                 "levelID": "144",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|u|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cut",
                 "incorrect": [
@@ -3247,7 +3247,7 @@
             },
             {
                 "levelID": "145",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "n|u|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_nut",
                 "incorrect": [
@@ -3273,7 +3273,7 @@
                 "levelID": "146",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "h",
@@ -3293,7 +3293,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "f",
@@ -3305,7 +3305,7 @@
                 "levelID": "148",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "h",
@@ -3325,7 +3325,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "h",
@@ -3341,7 +3341,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "f",
@@ -3489,7 +3489,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "qu",
@@ -3509,7 +3509,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "qu",
@@ -3521,7 +3521,7 @@
                 "levelID": "158",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "f",
@@ -3549,7 +3549,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "qu",
@@ -3573,7 +3573,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     }
                 ]
             }
@@ -3585,7 +3585,7 @@
                 "levelID": "161",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "t",
@@ -3609,7 +3609,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "p",
@@ -3629,7 +3629,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "t",
@@ -3645,7 +3645,7 @@
                 "levelID": "164",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "t",
@@ -3669,7 +3669,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "t",
@@ -3693,7 +3693,7 @@
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "t",
@@ -3713,7 +3713,7 @@
                 "levelID": "167",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "qu",
@@ -3745,7 +3745,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "h",
@@ -3769,7 +3769,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "t",
@@ -3793,7 +3793,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "t",
@@ -4143,7 +4143,7 @@
         "38": [
             {
                 "levelID": "186",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "f|o|x",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_fox",
                 "incorrect": [
@@ -4157,19 +4157,19 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
             {
                 "levelID": "187",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|o|x",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pox",
                 "incorrect": [
                     {
-                        "literal": "x",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_z_Grapheme-x-IBA"
+                        "literal": "u",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "z",
@@ -4183,7 +4183,7 @@
             },
             {
                 "levelID": "188",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|o|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_top",
                 "incorrect": [
@@ -4203,7 +4203,7 @@
             },
             {
                 "levelID": "189",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|o|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pot",
                 "incorrect": [
@@ -4223,7 +4223,7 @@
             },
             {
                 "levelID": "190",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "h|o|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_hop",
                 "incorrect": [
@@ -4237,7 +4237,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     }
                 ]
             }
@@ -4247,7 +4247,7 @@
         "39": [
             {
                 "levelID": "191",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "b|o|x",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_box",
                 "incorrect": [
@@ -4267,17 +4267,17 @@
             },
             {
                 "levelID": "192",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "d|o|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_dog",
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
-                        "literal": "g",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA"
+                        "literal": "k",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-k-IBA"
                     },
                     {
                         "literal": "j",
@@ -4287,7 +4287,7 @@
             },
             {
                 "levelID": "193",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "m|o|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_mop",
                 "incorrect": [
@@ -4307,7 +4307,7 @@
             },
             {
                 "levelID": "194",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|o|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pot",
                 "incorrect": [
@@ -4316,8 +4316,8 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_z_Grapheme-z-IBA"
                     },
                     {
-                        "literal": "p",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_p_Grapheme-p-IBA"
+                        "literal": "i",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "z",
@@ -4327,7 +4327,7 @@
             },
             {
                 "levelID": "195",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|o|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_top",
                 "incorrect": [
@@ -4337,7 +4337,7 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "v",
@@ -4353,7 +4353,7 @@
                 "levelID": "196",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "d",
@@ -4373,7 +4373,7 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "j",
@@ -4385,7 +4385,7 @@
                 "levelID": "198",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "d",
@@ -4405,7 +4405,7 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "d",
@@ -4421,7 +4421,7 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "j",
@@ -4569,7 +4569,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "j",
@@ -4589,7 +4589,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "j",
@@ -4601,7 +4601,7 @@
                 "levelID": "208",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "w",
@@ -4629,7 +4629,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "j",
@@ -4653,7 +4653,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     }
                 ]
             }
@@ -4665,7 +4665,7 @@
                 "levelID": "211",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "v",
@@ -4689,7 +4689,7 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "j",
@@ -4705,7 +4705,7 @@
                 "levelID": "213",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "v",
@@ -4729,7 +4729,7 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "v",
@@ -4749,7 +4749,7 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "v",
@@ -4781,7 +4781,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "w",
@@ -4805,7 +4805,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "w",
@@ -4829,7 +4829,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "w",
@@ -4841,7 +4841,7 @@
                 "levelID": "219",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "d",
@@ -4881,7 +4881,7 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     }
                 ]
             }
@@ -5243,7 +5243,7 @@
         "48": [
             {
                 "levelID": "236",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "w|e|d",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wed",
                 "incorrect": [
@@ -5253,17 +5253,17 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
-                        "literal": "w",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_w_Grapheme-w-IBA"
+                        "literal": "g",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA"
                     }
                 ]
             },
             {
                 "levelID": "237",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|e|d",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_ted",
                 "incorrect": [
@@ -5283,13 +5283,13 @@
             },
             {
                 "levelID": "238",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "j|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_jet",
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "m",
@@ -5303,7 +5303,7 @@
             },
             {
                 "levelID": "239",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "d|e|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_den",
                 "incorrect": [
@@ -5316,14 +5316,14 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_z_Grapheme-z-IBA"
                     },
                     {
-                        "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "literal": "m",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_m_Grapheme-m-IBA"
                     }
                 ]
             },
             {
                 "levelID": "240",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "w|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wet",
                 "incorrect": [
@@ -5337,7 +5337,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     }
                 ]
             }
@@ -5347,7 +5347,7 @@
         "49": [
             {
                 "levelID": "241",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "n|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_net",
                 "incorrect": [
@@ -5367,27 +5367,27 @@
             },
             {
                 "levelID": "242",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "w|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wet",
                 "incorrect": [
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "v",
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_v_Grapheme-v-IBA"
                     },
                     {
-                        "literal": "w",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_w_Grapheme-w-IBA"
+                        "literal": "g",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA"
                     }
                 ]
             },
             {
                 "levelID": "243",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "g|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_get",
                 "incorrect": [
@@ -5407,17 +5407,17 @@
             },
             {
                 "levelID": "244",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|e|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_ten",
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
-                        "literal": "n",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA"
+                        "literal": "h",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_h_Grapheme-h-IBA"
                     },
                     {
                         "literal": "s",
@@ -5427,7 +5427,7 @@
             },
             {
                 "levelID": "245",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "d|e|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_den",
                 "incorrect": [
@@ -5436,8 +5436,8 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_z_Grapheme-x-IBA"
                     },
                     {
-                        "literal": "n",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_n_Grapheme-n-IBA"
+                        "literal": "m",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_m_Grapheme-m-IBA"
                     },
                     {
                         "literal": "h",
@@ -5457,19 +5457,19 @@
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -5477,7 +5477,7 @@
                 "levelID": "247",
                 "levelType": "match",
                 "correctTarget": "e",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA",
                 "incorrect": [
                     {
                         "literal": "a",
@@ -5485,15 +5485,15 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -5501,7 +5501,7 @@
                 "levelID": "248",
                 "levelType": "match",
                 "correctTarget": "i",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA",
                 "incorrect": [
                     {
                         "literal": "a",
@@ -5509,15 +5509,15 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -5525,7 +5525,7 @@
                 "levelID": "249",
                 "levelType": "match",
                 "correctTarget": "o",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA",
                 "incorrect": [
                     {
                         "literal": "a",
@@ -5533,15 +5533,15 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
@@ -5549,7 +5549,7 @@
                 "levelID": "250",
                 "levelType": "match",
                 "correctTarget": "u",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA",
                 "incorrect": [
                     {
                         "literal": "a",
@@ -5557,15 +5557,15 @@
                     },
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     }
                 ]
             }
@@ -6089,7 +6089,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
@@ -6113,7 +6113,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
@@ -6137,7 +6137,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
@@ -6161,7 +6161,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
@@ -6169,7 +6169,7 @@
                 "levelID": "275",
                 "levelType": "match",
                 "correctTarget": "y",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA",
                 "incorrect": [
                     {
                         "literal": "r",
@@ -6815,7 +6815,7 @@
         "61": [
             {
                 "levelID": "301",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|a|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cat",
                 "incorrect": [
@@ -6835,7 +6835,7 @@
             },
             {
                 "levelID": "302",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|a|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pan",
                 "incorrect": [
@@ -6845,7 +6845,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "g",
@@ -6855,7 +6855,7 @@
             },
             {
                 "levelID": "303",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "m|a|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_mat",
                 "incorrect": [
@@ -6875,7 +6875,7 @@
             },
             {
                 "levelID": "304",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|a|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pat",
                 "incorrect": [
@@ -6895,7 +6895,7 @@
             },
             {
                 "levelID": "305",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|a|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tan",
                 "incorrect": [
@@ -6919,7 +6919,7 @@
         "62": [
             {
                 "levelID": "306",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|i|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pin",
                 "incorrect": [
@@ -6932,14 +6932,14 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_j_Grapheme-g-IBA"
                     },
                     {
-                        "literal": "p",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_p_Grapheme-p-IBA"
+                        "literal": "c",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
                     }
                 ]
             },
             {
                 "levelID": "307",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "f|i|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_fin",
                 "incorrect": [
@@ -6959,7 +6959,7 @@
             },
             {
                 "levelID": "308",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "z|i|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_zip",
                 "incorrect": [
@@ -6973,13 +6973,13 @@
                     },
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     }
                 ]
             },
             {
                 "levelID": "309",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "l|i|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_lip",
                 "incorrect": [
@@ -6988,8 +6988,8 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
                     },
                     {
-                        "literal": "l",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_l_Grapheme-l-IBA"
+                        "literal": "z",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_z_Grapheme-z-IBA"
                     },
                     {
                         "literal": "d",
@@ -6999,7 +6999,7 @@
             },
             {
                 "levelID": "310",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "b|i|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_bit",
                 "incorrect": [
@@ -7023,7 +7023,7 @@
         "63": [
             {
                 "levelID": "311",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tug",
                 "incorrect": [
@@ -7043,7 +7043,7 @@
             },
             {
                 "levelID": "312",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "r|u|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_rut",
                 "incorrect": [
@@ -7057,13 +7057,13 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
             {
                 "levelID": "313",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|u|b",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cub",
                 "incorrect": [
@@ -7072,8 +7072,8 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
                     },
                     {
-                        "literal": "b",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_b_Grapheme-b-IBA"
+                        "literal": "k",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-k-IBA"
                     },
                     {
                         "literal": "j",
@@ -7083,7 +7083,7 @@
             },
             {
                 "levelID": "314",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "n|u|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_nut",
                 "incorrect": [
@@ -7093,7 +7093,7 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     },
                     {
                         "literal": "w",
@@ -7103,7 +7103,7 @@
             },
             {
                 "levelID": "315",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "b|u|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_bug",
                 "incorrect": [
@@ -7117,7 +7117,7 @@
                     },
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     }
                 ]
             }
@@ -7127,7 +7127,7 @@
         "64": [
             {
                 "levelID": "316",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "b|o|x",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_box",
                 "incorrect": [
@@ -7141,13 +7141,13 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     }
                 ]
             },
             {
                 "levelID": "317",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "d|o|g",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_dog",
                 "incorrect": [
@@ -7157,7 +7157,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "r",
@@ -7167,13 +7167,13 @@
             },
             {
                 "levelID": "318",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "m|o|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_mop",
                 "incorrect": [
                     {
                         "literal": "e",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-e-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_e_Grapheme-e-IBA"
                     },
                     {
                         "literal": "w",
@@ -7187,13 +7187,13 @@
             },
             {
                 "levelID": "319",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|o|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pot",
                 "incorrect": [
                     {
                         "literal": "u",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-u-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_u_Grapheme-u-IBA"
                     },
                     {
                         "literal": "r",
@@ -7207,7 +7207,7 @@
             },
             {
                 "levelID": "320",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|o|p",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_top",
                 "incorrect": [
@@ -7231,7 +7231,7 @@
         "65": [
             {
                 "levelID": "321",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "w|e|d",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wed",
                 "incorrect": [
@@ -7251,7 +7251,7 @@
             },
             {
                 "levelID": "322",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "t|e|d",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_ted",
                 "incorrect": [
@@ -7271,13 +7271,13 @@
             },
             {
                 "levelID": "323",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "j|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_jet",
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "l",
@@ -7285,13 +7285,13 @@
                     },
                     {
                         "literal": "o",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c5_Grapheme-o-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_o_Grapheme-o-IBA"
                     }
                 ]
             },
             {
                 "levelID": "324",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "d|e|n",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_den",
                 "incorrect": [
@@ -7304,14 +7304,14 @@
                         "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_a_Grapheme-a-IBA"
                     },
                     {
-                        "literal": "d",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_d_Grapheme-d-IBA"
+                        "literal": "c",
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_k_Grapheme-c-IBA"
                     }
                 ]
             },
             {
                 "levelID": "325",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "w|e|t",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wet",
                 "incorrect": [
@@ -7321,7 +7321,7 @@
                     },
                     {
                         "literal": "y",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-y-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_y_Grapheme-y-IBA"
                     },
                     {
                         "literal": "n",
@@ -9195,7 +9195,7 @@
         "81": [
             {
                 "levelID": "401",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "br|ake",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_brake",
                 "incorrect": [
@@ -9211,7 +9211,7 @@
             },
             {
                 "levelID": "402",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "gr|ape",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_grape",
                 "incorrect": [
@@ -9227,7 +9227,7 @@
             },
             {
                 "levelID": "403",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "st|ale",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_stale",
                 "incorrect": [
@@ -9243,7 +9243,7 @@
             },
             {
                 "levelID": "404",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "bl|ade",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_blade",
                 "incorrect": [
@@ -9253,13 +9253,13 @@
                     },
                     {
                         "literal": "ear",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/TrigraphPhoneme_\u00c4r__Grapheme-ear-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/TrigraphPhoneme_ur__Grapheme-ear-IBA"
                     }
                 ]
             },
             {
                 "levelID": "405",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "pl|ane",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_plane",
                 "incorrect": [
@@ -9279,7 +9279,7 @@
         "82": [
             {
                 "levelID": "406",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "cr|ane",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_crane",
                 "incorrect": [
@@ -9295,7 +9295,7 @@
             },
             {
                 "levelID": "407",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "pl|ane",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_plane",
                 "incorrect": [
@@ -9311,7 +9311,7 @@
             },
             {
                 "levelID": "408",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "fr|ame",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_frame",
                 "incorrect": [
@@ -9327,7 +9327,7 @@
             },
             {
                 "levelID": "409",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "bl|ade",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_blade",
                 "incorrect": [
@@ -9343,7 +9343,7 @@
             },
             {
                 "levelID": "410",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "p|ane",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pane",
                 "incorrect": [
@@ -9377,7 +9377,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     },
                     {
                         "literal": "wh",
@@ -9401,7 +9401,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     },
                     {
                         "literal": "wh",
@@ -9425,7 +9425,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     },
                     {
                         "literal": "wh",
@@ -9437,7 +9437,7 @@
                 "levelID": "414",
                 "levelType": "match",
                 "correctTarget": "ch",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA",
                 "incorrect": [
                     {
                         "literal": "sp",
@@ -9477,7 +9477,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             }
@@ -9505,7 +9505,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9529,7 +9529,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9553,7 +9553,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9577,7 +9577,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9585,7 +9585,7 @@
                 "levelID": "420",
                 "levelType": "match",
                 "correctTarget": "ch",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA",
                 "incorrect": [
                     {
                         "literal": "wr",
@@ -9753,7 +9753,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9777,7 +9777,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9801,7 +9801,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9825,7 +9825,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9833,7 +9833,7 @@
                 "levelID": "430",
                 "levelType": "match",
                 "correctTarget": "ch",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA",
                 "incorrect": [
                     {
                         "literal": "s",
@@ -9877,7 +9877,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9901,7 +9901,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9925,7 +9925,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9949,7 +9949,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -9957,7 +9957,7 @@
                 "levelID": "435",
                 "levelType": "match",
                 "correctTarget": "ch",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA",
                 "incorrect": [
                     {
                         "literal": "p",
@@ -10365,7 +10365,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ite",
@@ -10389,7 +10389,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ite",
@@ -10405,7 +10405,7 @@
                 "levelID": "453",
                 "levelType": "match",
                 "correctTarget": "it",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it",
                 "incorrect": [
                     {
                         "literal": "in",
@@ -10441,7 +10441,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ide",
@@ -10465,7 +10465,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ite",
@@ -10489,7 +10489,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ite",
@@ -10513,7 +10513,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ite",
@@ -10529,7 +10529,7 @@
                 "levelID": "458",
                 "levelType": "match",
                 "correctTarget": "it",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it",
                 "incorrect": [
                     {
                         "literal": "in",
@@ -10565,7 +10565,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ide",
@@ -10589,7 +10589,7 @@
                     },
                     {
                         "literal": "it",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphGrapheme-it-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_it"
                     },
                     {
                         "literal": "ite",
@@ -10725,7 +10725,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -10749,7 +10749,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -10773,7 +10773,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -10797,7 +10797,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             },
@@ -10805,7 +10805,7 @@
                 "levelID": "470",
                 "levelType": "matchfirst",
                 "correctTarget": "(ch)ide",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA",
                 "incorrect": [
                     {
                         "literal": "wr",
@@ -11143,7 +11143,7 @@
         "98": [
             {
                 "levelID": "486",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sp|ine",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_spine",
                 "incorrect": [
@@ -11159,7 +11159,7 @@
             },
             {
                 "levelID": "487",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "wh|ine",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_whine",
                 "incorrect": [
@@ -11175,7 +11175,7 @@
             },
             {
                 "levelID": "488",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "pr|ide",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pride",
                 "incorrect": [
@@ -11191,7 +11191,7 @@
             },
             {
                 "levelID": "489",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sp|ike",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_spike",
                 "incorrect": [
@@ -11207,7 +11207,7 @@
             },
             {
                 "levelID": "490",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sh|ine",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_shine",
                 "incorrect": [
@@ -11227,7 +11227,7 @@
         "99": [
             {
                 "levelID": "491",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sp|ine",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_spine",
                 "incorrect": [
@@ -11243,7 +11243,7 @@
             },
             {
                 "levelID": "492",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "wh|ine",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_whine",
                 "incorrect": [
@@ -11259,7 +11259,7 @@
             },
             {
                 "levelID": "493",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "pr|ide",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pride",
                 "incorrect": [
@@ -11275,7 +11275,7 @@
             },
             {
                 "levelID": "494",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sp|ike",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_spike",
                 "incorrect": [
@@ -11291,7 +11291,7 @@
             },
             {
                 "levelID": "495",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sh|ine",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_shine",
                 "incorrect": [
@@ -13131,13 +13131,13 @@
         "115": [
             {
                 "levelID": "571",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "bl|ue",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_blue",
                 "incorrect": [
                     {
                         "literal": "ed",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_t_Grapheme-ed-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_d_Grapheme-ed-IBA"
                     },
                     {
                         "literal": "nn",
@@ -13147,7 +13147,7 @@
             },
             {
                 "levelID": "572",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "fl|ute",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_flute",
                 "incorrect": [
@@ -13163,7 +13163,7 @@
             },
             {
                 "levelID": "573",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|ute",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cute",
                 "incorrect": [
@@ -13179,7 +13179,7 @@
             },
             {
                 "levelID": "574",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "f|ume",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_fume",
                 "incorrect": [
@@ -13195,13 +13195,13 @@
             },
             {
                 "levelID": "575",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "gl|ue",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_glue",
                 "incorrect": [
                     {
                         "literal": "ou",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_\u00c5_Grapheme-ou-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ow_Grapheme-ou-IBA"
                     },
                     {
                         "literal": "er",
@@ -13215,7 +13215,7 @@
         "116": [
             {
                 "levelID": "576",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "bl|ue",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_blue",
                 "incorrect": [
@@ -13231,7 +13231,7 @@
             },
             {
                 "levelID": "577",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "fl|ute",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_flute",
                 "incorrect": [
@@ -13247,7 +13247,7 @@
             },
             {
                 "levelID": "578",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "c|ute",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_cute",
                 "incorrect": [
@@ -13263,13 +13263,13 @@
             },
             {
                 "levelID": "579",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "f|ume",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_fume",
                 "incorrect": [
                     {
                         "literal": "i",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_\u00c4_Grapheme-i-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/Phoneme_i_Grapheme-i-IBA"
                     },
                     {
                         "literal": "ale",
@@ -13279,7 +13279,7 @@
             },
             {
                 "levelID": "580",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "gl|ue",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_glue",
                 "incorrect": [
@@ -13561,7 +13561,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     },
                     {
                         "literal": "pr",
@@ -13585,7 +13585,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     },
                     {
                         "literal": "pr",
@@ -13609,7 +13609,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     },
                     {
                         "literal": "pr",
@@ -13621,7 +13621,7 @@
                 "levelID": "594",
                 "levelType": "match",
                 "correctTarget": "ch",
-                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA",
+                "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA",
                 "incorrect": [
                     {
                         "literal": "bl",
@@ -13661,7 +13661,7 @@
                     },
                     {
                         "literal": "ch",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_k_Grapheme-ch-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ch_Grapheme-ch-IBA"
                     }
                 ]
             }
@@ -17127,7 +17127,7 @@
         "149": [
             {
                 "levelID": "741",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sh|eep",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_sheep",
                 "incorrect": [
@@ -17143,7 +17143,7 @@
             },
             {
                 "levelID": "742",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "wh|eel",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wheel",
                 "incorrect": [
@@ -17159,29 +17159,29 @@
             },
             {
                 "levelID": "743",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "tr|ee",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_tree",
                 "incorrect": [
                     {
                         "literal": "se",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_z_Grapheme-se-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_s_Grapheme-se-IBA"
                     },
                     {
                         "literal": "ou",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_\u00c5_Grapheme-ou-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ow_Grapheme-ou-IBA"
                     }
                 ]
             },
             {
                 "levelID": "744",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "wh|eat",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_wheat",
                 "incorrect": [
                     {
                         "literal": "ou",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_\u00c5_Grapheme-ou-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/DiagraphPhoneme_ow_Grapheme-ou-IBA"
                     },
                     {
                         "literal": "ute",
@@ -17191,7 +17191,7 @@
             },
             {
                 "levelID": "745",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "bl|eak",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_bleak",
                 "incorrect": [
@@ -17211,7 +17211,7 @@
         "150": [
             {
                 "levelID": "746",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "pl|eat",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_pleat",
                 "incorrect": [
@@ -17227,7 +17227,7 @@
             },
             {
                 "levelID": "747",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sw|eet",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_sweet",
                 "incorrect": [
@@ -17237,13 +17237,13 @@
                     },
                     {
                         "literal": "ear",
-                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/TrigraphPhoneme_\u00c4r__Grapheme-ear-IBA"
+                        "iri": "http://www.ontologyrepository.com/CommonCoreOntologies/TrigraphPhoneme_ur__Grapheme-ear-IBA"
                     }
                 ]
             },
             {
                 "levelID": "748",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "cl|ean",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_clean",
                 "incorrect": [
@@ -17259,7 +17259,7 @@
             },
             {
                 "levelID": "749",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "squ|eak",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_squeak",
                 "incorrect": [
@@ -17275,7 +17275,7 @@
             },
             {
                 "levelID": "750",
-                "levelType": "spelling",
+                "levelType": "spell",
                 "correctTarget": "sh|eep",
                 "correctStandardContent": "http://www.ontologyrepository.com/CommonCoreOntologies/Morpheme_sheep",
                 "incorrect": [
