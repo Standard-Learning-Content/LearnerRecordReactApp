@@ -99,7 +99,7 @@ export default class LevelComplete extends React.Component {
                                     width: 350,
                                     marginHorizontal: 40,
                                     marginVertical: 10,
-                                    borderWidth: 3,
+                                    borderWidth: 4,
                                     borderColor: "#000000",
                                     borderRadius: 10,
                                 }}
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         padding: 20,
         textAlign: "center",
         backgroundColor: "#ff5994",
-        borderWidth: 3,
+        borderWidth: 4,
         borderColor: "#000000",
         borderRadius: 10,
         margin: 20

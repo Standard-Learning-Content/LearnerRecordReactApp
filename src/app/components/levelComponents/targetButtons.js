@@ -93,7 +93,7 @@ export default class TargetBtn extends React.Component {
                     width: 350,
                     marginHorizontal: 40,
                     marginVertical: 10,
-                    borderWidth: 3,
+                    borderWidth: 4,
                     borderColor: "#000000",
                     borderRadius: 10,
                 }}

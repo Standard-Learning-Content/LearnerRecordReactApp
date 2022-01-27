@@ -45,7 +45,7 @@ export default class SpellingBtn extends React.Component {
                     width: "90%",
                     marginHorizontal: 50,
                     marginVertical: 5,
-                    borderWidth: 3,
+                    borderWidth: 4,
                     borderColor: "#000000",
                     textAlign: 'center'
                 }}

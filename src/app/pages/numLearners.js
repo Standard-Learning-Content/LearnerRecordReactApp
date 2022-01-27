@@ -27,7 +27,7 @@ export default class NumLearners extends React.Component {
                                 width: 350,
                                 marginHorizontal: 50,
                                 marginVertical: 10,
-                                borderWidth: 3,
+                                borderWidth: 5,
                                 borderColor: "#000000",
                                 borderRadius: 10,
                             }}
@@ -42,7 +42,7 @@ export default class NumLearners extends React.Component {
                                 width: 350,
                                 marginHorizontal: 40,
                                 marginVertical: 10,
-                                borderWidth: 3,
+                                borderWidth: 5,
                                 borderColor: "#000000",
                                 borderRadius: 10,
                             }}
@@ -57,7 +57,7 @@ export default class NumLearners extends React.Component {
                                 width: 350,
                                 marginHorizontal: 50,
                                 marginVertical: 10,
-                                borderWidth: 3,
+                                borderWidth: 5,
                                 borderColor: "#000000",
                                 borderRadius: 10,
                             }}

@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ff5994",
         textAlign: 'center',
         borderRadius: 10,
-        borderWidth: 3,
+        borderWidth: 4,
         borderColor: "#000000",
     },
     buttonsContainer: {
