@@ -2,7 +2,7 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, StyleSheet, Image, ImageBackground, Text } from 'react-native';
 import { Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Background from '../../assets/background.png'
@@ -28,6 +28,7 @@ export default class Title extends React.Component {
         return (
             <View style={styles.background}>
                 <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                    <Text style={styles.multi}> Multi</Text>
                     <Image
                         source={require('../../assets/appLogo.png')}
                         style={styles.star}
@@ -86,6 +87,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
+    },
+    multi: {
+        top: "10%",
+        position: 'absolute',
+        color: "#fff",
+        fontSize: 50,
     },
     star: {
         width: "95%",
