@@ -23,17 +23,7 @@ const Stack = createStackNavigator();
 const Routes = () => {
     return (
         <Stack.Navigator >
-            <Stack.Screen name="Title" component={Title} options={{
-                title: 'Mulit ABC\'s',
-                headerStyle: {
-                    backgroundColor: '#84ff9f',
-                },
-                headerTintColor: '#000',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-                "headerLeft": null
-            }} />
+            <Stack.Screen name="Title" component={Title} options={{ headerShown: false }} />
             <Stack.Screen name="instructions" component={Instructions} options={{
                 title: 'How To Play',
                 headerStyle: {
@@ -74,28 +64,8 @@ const Routes = () => {
                     fontWeight: 'bold',
                 },
             }} />
-            <Stack.Screen name="Learn" component={Level} options={{
-                title: 'Answer The Questions',
-                headerStyle: {
-                    backgroundColor: '#84ff9f',
-                },
-                headerTintColor: '#000',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-                "headerLeft": null
-            }} />
-            <Stack.Screen name="levelComplete" component={LevelComplete} options={{
-                title: 'Level Complete',
-                headerStyle: {
-                    backgroundColor: '#84ff9f',
-                },
-                headerTintColor: '#000',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-                "headerLeft": null
-            }} />
+            <Stack.Screen name="Learn" component={Level} options={{ headerShown: false }} />
+            <Stack.Screen name="levelComplete" component={LevelComplete} options={{ headerShown: false }} />
             <Stack.Screen name="LearnerRecord" component={LearnerRecord} options={{ title: 'Report Card' }} />
         </Stack.Navigator>
     )

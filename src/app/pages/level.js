@@ -7,10 +7,11 @@
 
 import React from "react";
 import uuid from 'react-native-uuid';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground } from 'react-native';
 import { playContentSounds } from '../components/sounds'
 import TargetSpelling from "../components/levelComponents/targetSpelling";
 import TargetBtn from "../components/levelComponents/targetButtons";
+import Background from '../../assets/background.png'
 import * as StoreReview from 'expo-store-review';
 import PropTypes from 'prop-types';
 
@@ -215,17 +216,23 @@ export default class Level extends React.Component {
     render() {
         return (
             <View style={styles.levelContainer}>
-                <View style={styles.headerContainer}>
-                    <Text style={styles.headline}>
-                        {this.state.currentPlayerName}&apos;s Turn {'\n'}
-                        Question #: {this.state.levelID}
-                    </Text>
-                </View>
-                <View style={styles.contentContainer}>
-                    <View style={styles.level}>
-                        {this.renderLevel()}
+                <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                    <View style={styles.container}>
+                        <View style={styles.headerContainer}>
+                            <Text style={styles.headline}>
+                                {this.state.currentPlayerName}&apos;s Turn {'\n'}
+                                Question #: {this.state.levelID}
+                            </Text>
+                        </View>
+                        <View style={styles.contentContainer}>
+                            <View style={styles.level}>
+                                {this.renderLevel()}
+                            </View>
+                        </View>
                     </View>
-                </View>
+
+                </ImageBackground>
+
             </View>
 
         )
@@ -252,6 +259,21 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
     },
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: "auto"
+    },
+    container: {
+        marginVertical: "15%",
+        marginHorizontal: "10%",
+        borderRadius: 10,
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#ffffff33",
+    },
     levelContainer: {
         flex: 1,
         flexDirection: "column",
@@ -262,7 +284,8 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "15%",
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        margin: 5
     },
     headline: {
         fontWeight: 'bold',

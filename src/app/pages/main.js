@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, ImageBackground } from 'react-native';
 import LevelButton from '../components/mainComponents/levelButton'
-// import { Button } from 'react-native-elements'
+import Background from '../../assets/background.png'
 import config from '../config.json'
 import PropTypes from 'prop-types';
 
@@ -55,20 +55,22 @@ export default class Main extends React.Component {
 
         return (
             <View style={styles.page}>
+                <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                    <View style={styles.headerContainer}>
+                        <Text style={styles.headline}>
+                            {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn!
+                        </Text>
+                        <Text style={styles.headline}>
+                            Stars: {this.state.players[this.state.currentPlayerIndex].totalPoint}
+                        </Text>
+                    </View>
+                    <ScrollView style={styles.levelButtons}>
+                        <View style={styles.mainContainer}>
+                            {allLevelButtons}
+                        </View >
+                    </ScrollView>
+                </ImageBackground>
 
-                <View style={styles.headerContainer}>
-                    <Text style={styles.headline}>
-                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn!
-                    </Text>
-                    <Text style={styles.headline}>
-                        Stars: {this.state.players[this.state.currentPlayerIndex].totalPoint}
-                    </Text>
-                </View>
-                <ScrollView >
-                    <View style={styles.mainContainer}>
-                        {allLevelButtons}
-                    </View >
-                </ScrollView>
             </View>
         )
     }
@@ -107,6 +109,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#82b6ff',
         width: "100%",
         height: "100%",
+    },
+    image: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: "auto"
@@ -114,7 +119,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         margin: 10,
         padding: 5,
-        width: "90%",
+        width: "93%",
         height: "15%",
         justifyContent: 'center',
         alignItems: 'center',
@@ -123,7 +128,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 3,
         borderColor: "#000000",
-
     },
     mainContainer: {
         flex: 1,
@@ -132,11 +136,15 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     headline: {
-        // margin: 5,
         fontWeight: 'bold',
         color: "#FFFFFF",
         fontSize: 30,
-
+    },
+    levelButtons: {
+        borderRadius: 10,
+        backgroundColor: "#ffffff55",
+        marginHorizontal: "3%",
+        marginBottom: "3%",
     },
     contentContainer: {
         flex: 7,

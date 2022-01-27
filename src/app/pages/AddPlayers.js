@@ -7,7 +7,7 @@
  */
 
 import React from "react";
-import { View, Alert, StyleSheet, Text } from 'react-native';
+import { View, Alert, StyleSheet, Text, ImageBackground } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
 import { Button } from 'react-native-elements';
 import all_levels from '../levels/levels.json'
@@ -16,6 +16,7 @@ import { JSHash, CONSTANTS } from 'react-native-hash';
 import config from '../config.json'
 import PropTypes from 'prop-types';
 import GameLevel from "../components/gameLevel";
+import Background from '../../assets/background.png'
 
 //////////////////////
 // Component Class
@@ -118,24 +119,28 @@ export default class AddPlayers extends React.Component {
     render() {
         return (
             <View style={styles.background}>
-                <Text style={styles.headline}> Who is Learning?</Text>
-                {this.addInputBoxes()}
-                <Button
-                    color="#ff5994"
-                    buttonStyle={{ backgroundColor: "#ff5994" }}
-                    containerStyle={{
-                        width: 250,
-                        marginHorizontal: 50,
-                        marginVertical: 30,
-                        borderWidth: 3,
-                        borderColor: "#000000",
-                        borderRadius: 10,
-                    }}
-                    titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
-                    title="Start Learning"
-                    type="outline"
-                    onPress={async () => { await this.goToHome() }}
-                />
+                <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                    <View style={styles.container}>
+                        <Text style={styles.headline}> Who is Learning?</Text>
+                        {this.addInputBoxes()}
+                        <Button
+                            color="#ff5994"
+                            buttonStyle={{ backgroundColor: "#ff5994" }}
+                            containerStyle={{
+                                width: 250,
+                                marginHorizontal: 50,
+                                marginVertical: 30,
+                                borderWidth: 3,
+                                borderColor: "#000000",
+                                borderRadius: 10,
+                            }}
+                            titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                            title="Start Learning"
+                            type="outline"
+                            onPress={async () => { await this.goToHome() }}
+                        />
+                    </View>
+                </ImageBackground>
             </View>
 
         )
@@ -150,10 +155,16 @@ AddPlayers.propTypes = {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: '#82b6ff',
         flex: 1,
-        padding: 10,
+    },
+    image: {
+        flex: 1,
+    },
+    container: {
+        marginVertical: "2%",
+        marginHorizontal: "2%",
         alignItems: 'center',
+        flex: 1,
     },
     headline: {
         fontWeight: 'bold',

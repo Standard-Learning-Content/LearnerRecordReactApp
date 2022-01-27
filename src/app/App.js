@@ -7,8 +7,9 @@
 import React from 'react';
 import Routes from './Routes';
 import { NavigationContainer } from '@react-navigation/native';
+import { registerRootComponent } from 'expo';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
@@ -18,3 +19,4 @@ export default class App extends React.Component {
   }
 }
 
+export default registerRootComponent(App);

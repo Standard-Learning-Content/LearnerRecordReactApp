@@ -2,9 +2,10 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, ImageBackground } from 'react-native';
 import { Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
+import Background from '../../assets/background.png'
 
 
 export default class LevelComplete extends React.Component {
@@ -36,7 +37,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../assets/levelBtnStars/threeStars.png')}
+                        source={require('../../assets/levelBtnStars/threeStars.png')}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -44,7 +45,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../assets/levelBtnStars/twoStars.png')}
+                        source={require('../../assets/levelBtnStars/twoStars.png')}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -52,7 +53,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../assets/levelBtnStars/oneStar.png')}
+                        source={require('../../assets/levelBtnStars/oneStar.png')}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -60,7 +61,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../assets/levelBtnStars/zeroStars.png')}
+                        source={require('../../assets/levelBtnStars/zeroStars.png')}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -80,30 +81,36 @@ export default class LevelComplete extends React.Component {
         }
         return (
             <View style={styles.background}>
-                <Text style={styles.headline}> Level Complete! </Text>
-                {this.renderStars()}
-                <View style={styles.infoTextContainer}>
-                    <Text style={styles.infoText}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint}</Text>
-                    <Text style={styles.infoTextPlus}> + {starCount} </Text>
-                </View>
-                {/* <Text style={styles.infoText}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint} </Text><Text> + {starCount} </Text> */}
-                <View style={styles.info} >
-                    <Button
-                        onPress={() => this.backToMap()}
-                        color="#15DB95"
-                        buttonStyle={{ backgroundColor: "#ff5994" }}
-                        containerStyle={{
-                            width: 350,
-                            marginHorizontal: 40,
-                            marginVertical: 10,
-                            borderWidth: 3,
-                            borderColor: "#000000",
-                            borderRadius: 10,
-                        }}
-                        titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
-                        title={"Next"}
-                    />
-                </View>
+                <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                    <View style={styles.container}>
+                        <Text style={styles.headline}> Level Complete! </Text>
+                        {this.renderStars()}
+                        <View style={styles.infoTextContainer}>
+                            <Text style={styles.infoText}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint}</Text>
+                            <Text style={styles.infoTextPlus}> + {starCount} </Text>
+                        </View>
+                        {/* <Text style={styles.infoText}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint} </Text><Text> + {starCount} </Text> */}
+                        <View style={styles.info} >
+                            <Button
+                                onPress={() => this.backToMap()}
+                                color="#15DB95"
+                                buttonStyle={{ backgroundColor: "#ff5994" }}
+                                containerStyle={{
+                                    width: 350,
+                                    marginHorizontal: 40,
+                                    marginVertical: 10,
+                                    borderWidth: 3,
+                                    borderColor: "#000000",
+                                    borderRadius: 10,
+                                }}
+                                titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                                title={"Next"}
+                            />
+                        </View>
+                    </View>
+
+                </ImageBackground>
+
             </View >
         )
     }
@@ -121,9 +128,18 @@ const styles = StyleSheet.create({
     background: {
         backgroundColor: '#82b6ff',
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
+    },
+    image: {
+        flex: 1,
+    },
+    container: {
+        marginVertical: "20%",
+        marginHorizontal: "2%",
+        borderRadius: 10,
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#ffffff33",
     },
     headline: {
         fontWeight: 'bold',
@@ -136,7 +152,7 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderColor: "#000000",
         borderRadius: 10,
-        margin: 15
+        margin: 20
 
     },
     starContainer: {
@@ -144,7 +160,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: 'center',
-        backgroundColor: "#FFFFFFAA",
+        backgroundColor: "#4892fa",
+        // borderWidth: 3,
         borderRadius: 50,
         margin: 15
     },

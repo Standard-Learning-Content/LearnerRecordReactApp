@@ -39,22 +39,22 @@ export default class LevelButton extends React.Component {
 
         if (this.props.correctPoints == 3) {
             return <Image
-                source={require('../../assets/levelBtnStars/threeStars.png')}
+                source={require('../../../assets/levelBtnStars/threeStars.png')}
                 style={styles.star}
             ></Image>
         } else if (this.props.correctPoints == 2) {
             return <Image
-                source={require('../../assets/levelBtnStars/twoStars.png')}
+                source={require('../../../assets/levelBtnStars/twoStars.png')}
                 style={styles.star}
             ></Image>
         } else if (this.props.correctPoints == 1) {
             return <Image
-                source={require('../../assets/levelBtnStars/oneStar.png')}
+                source={require('../../../assets/levelBtnStars/oneStar.png')}
                 style={styles.star}
             ></Image>
         } else {
             return <Image
-                source={require('../../assets/levelBtnStars/zeroStars.png')}
+                source={require('../../../assets/levelBtnStars/zeroStars.png')}
                 style={styles.star}
             ></Image>
         }
@@ -139,7 +139,12 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginHorizontal: 15,
         marginVertical: 20,
-        borderRadius: 100
+        borderRadius: 50,
+        // borderWidth: 3,
+        // borderColor: "#000",
+        justifyContent: "center",
+        alignContent: "center",
+        backgroundColor: "#4892fa"
     },
     container2: {
         borderRadius: 20,
@@ -162,6 +167,9 @@ const styles = StyleSheet.create({
     },
     star: {
         flex: 1,
+        borderWidth: 3,
+        width: 50,
+        height: 50,
         resizeMode: "contain",
     },
 
