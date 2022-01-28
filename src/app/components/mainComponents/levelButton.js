@@ -92,7 +92,7 @@ export default class LevelButton extends React.Component {
                     borderColor: "#000000",
                 }}
                 titleStyle={{ color: "#000000" }}
-                onPress={() => console.log("Need More Points")}
+                onPress={() => null}
             />
         }
         return (
@@ -167,7 +167,6 @@ const styles = StyleSheet.create({
     },
     star: {
         flex: 1,
-        borderWidth: 3,
         width: 50,
         height: 50,
         resizeMode: "contain",

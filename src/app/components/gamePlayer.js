@@ -71,15 +71,13 @@ let GamePlayer = class {
                     gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
                 }
             } else {
-                gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter) // EDIT
-                // gameLevel = new GameLevel(keys[0], 3, all_levels[level][keys[0]], requiredPointsCounter)
+                gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
             }
 
             playerLevels.push(gameLevel)
             requiredPointsCounter += 3
         }
-        this._totalPoint = jsonPlayerStorage != null ? jsonPlayerStorage.totalPoint : 0; // EDIT
-        // this._totalPoint = 450
+        this._totalPoint = jsonPlayerStorage != null ? jsonPlayerStorage.totalPoint : 0;
         this._questions = playerLevels
     }
 

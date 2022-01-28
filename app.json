@@ -19,7 +19,7 @@
     },
     "android": {
       "package": "com.knowledgeGraphsForLearning.mlq",
-      "versionCode": 11,
+      "versionCode": 12,
       "useNextNotificationsApi": true,
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.knowledgeGraphsForLearning.mlq"
     },
