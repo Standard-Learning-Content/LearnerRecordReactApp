@@ -7,7 +7,7 @@
  */
 
 import React from "react";
-import { View, Alert, StyleSheet, Text, ImageBackground, ActivityIndicator } from 'react-native';
+import { View, Alert, StyleSheet, Text, ImageBackground, ActivityIndicator, ScrollView } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
 import { Button } from 'react-native-elements';
 import GamePlayer from "../components/gamePlayer";
@@ -96,7 +96,7 @@ export default class AddPlayers extends React.Component {
                             borderRadius: 10,
                         }
                         }
-                        titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                        titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                         title="Start Learning"
                         type="outline"
                         onPress={async () => { await this.goToHome() }}
@@ -137,7 +137,9 @@ export default class AddPlayers extends React.Component {
         return (
             <View style={styles.background}>
                 <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-                    {this.renderButtonOrAnimator()}
+                    <ScrollView style={styles.levelButtons}>
+                        {this.renderButtonOrAnimator()}
+                    </ScrollView>
                 </ImageBackground>
             </View>
 
@@ -159,14 +161,18 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     container: {
-        marginVertical: "2%",
+        marginVertical: "15%",
         marginHorizontal: "2%",
         alignItems: 'center',
         flex: 1,
+        borderRadius: 10,
+        justifyContent: "center",
+        borderWidth: 5,
+        backgroundColor: "#ffffff33",
     },
     headline: {
         fontWeight: 'bold',
-        color: "#FFFFFF",
+        color: "#000",
         fontSize: 30,
         padding: 20,
         textAlign: "center",

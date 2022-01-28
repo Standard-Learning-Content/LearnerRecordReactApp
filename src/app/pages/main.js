@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     },
     headline: {
         fontWeight: 'bold',
-        color: "#FFFFFF",
+        color: "#000",
         fontSize: 30,
     },
     levelButtons: {

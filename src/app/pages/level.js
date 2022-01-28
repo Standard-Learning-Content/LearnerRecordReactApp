@@ -294,6 +294,7 @@ const styles = StyleSheet.create({
     },
     contentContainer: {
         flex: 7,
+        justifyContent: "center",
     },
     mainContainer: {
         flex: 1,

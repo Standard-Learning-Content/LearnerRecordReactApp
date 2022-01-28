@@ -45,12 +45,12 @@ export default class Title extends React.Component {
                             borderColor: "#000000",
                             borderRadius: 10,
                             position: 'absolute',
-                            bottom: "25%",
+                            bottom: "17%",
                         }}
-                        titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                        titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                         title={"Play"}
                     />
-                    <Button
+                    {/* <Button
                         onPress={() => this.instructionPage()}
                         color="#15DB95"
                         buttonStyle={{ backgroundColor: "#ff5994" }}
@@ -64,9 +64,9 @@ export default class Title extends React.Component {
                             position: 'absolute',
                             bottom: "15%",
                         }}
-                        titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                        titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                         title={"How to Play"}
-                    />
+                    /> */}
                 </ImageBackground>
             </View >
         )
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     multi: {
-        top: "10%",
+        top: "15%",
         position: 'absolute',
         color: "#fff",
         fontSize: 50,
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     star: {
         width: "95%",
         position: 'absolute',
-        top: "15%",
+        top: "22%",
         flex: 1,
         resizeMode: "contain",
     },
