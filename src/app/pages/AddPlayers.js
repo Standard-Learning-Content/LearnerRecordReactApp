@@ -10,12 +10,8 @@ import React from "react";
 import { View, Alert, StyleSheet, Text, ImageBackground } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
 import { Button } from 'react-native-elements';
-import all_levels from '../levels/levels.json'
 import GamePlayer from "../components/gamePlayer";
-import { JSHash, CONSTANTS } from 'react-native-hash';
-import config from '../config.json'
 import PropTypes from 'prop-types';
-import GameLevel from "../components/gameLevel";
 import Background from '../../assets/background.png'
 
 //////////////////////
@@ -56,45 +52,12 @@ export default class AddPlayers extends React.Component {
     async goToHome() {
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
-
             for (let player in this.inputValue) {
-                // Currently we are sha256 hashing the first name for the id 
-                let hash = await JSHash(this.inputValue[player], CONSTANTS.HashAlgorithms.sha256)
-
-                let hashed_id
-                if (config["production"])
-                    hashed_id = { "userID": hash }
-                else
-                    hashed_id = { "userID": hash + "test" }
-
-                //Fetches for the Learner Record 
-                const res = await fetch(`${config["api-location"]}/readFromLearnerRecord`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': "*",
-                        'Access-Control-Allow-Method': 'POST,GET'
-                    },
-                    body: JSON.stringify(hashed_id)
-                })
-
-                if (!res.ok) {
-                    throw new Error('Request returned a non 200 response code')
-                }
-
-                const data = await res.json()
-                let contentArray = data
-                let playerLevels = []
-
-                let requiredPointsCounter = 0
-                for (let level in all_levels) {
-                    let keys = Object.keys(all_levels[level])
-                    let gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
-                    playerLevels.push(gameLevel)
-                    requiredPointsCounter += 3
-                }
-
-                let tempPlayer = new GamePlayer(hash, this.inputValue[player], contentArray, playerLevels)
+                let tempPlayer = new GamePlayer(this.inputValue[player])
+                await tempPlayer.setPlayerId(this.inputValue[player])
+                await tempPlayer.setLearnerRecord(tempPlayer.id)
+                const jsonPlayerStorage = await tempPlayer.getPlayerLocalStorage()
+                tempPlayer.setPlayerLevel(jsonPlayerStorage)
                 allPlayers.push(tempPlayer)
             }
             this.props.navigation.navigate('Map', { "players": allPlayers })

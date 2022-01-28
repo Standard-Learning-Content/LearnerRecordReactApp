@@ -1,14 +1,20 @@
 import config from "../config.json"
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import all_levels from '../levels/levels.json'
+import GameLevel from "../components/gameLevel";
+import * as Crypto from 'expo-crypto';
 
 let GamePlayer = class {
-    constructor(id, name, learnerRecord, quentions) {
+    constructor(name) {
+        this._name = name
         this._questionIndex = 0
         this._totalPoint = 0
-        this._id = id
-        this._name = name
-        this._learnerRecord = learnerRecord
-        this._questions = quentions
+        this._id = ''
+        this._learnerRecord = ''
+        this._questions = ''
+
     }
+
 
     ////////////
     // Getters
@@ -41,9 +47,67 @@ let GamePlayer = class {
         return this._questions[levelId]
     }
 
+    async getPlayerLocalStorage() {
+        const PlayLocalStorage = await AsyncStorage.getItem(this._id)
+        const jsonPlayerStorage = PlayLocalStorage != null ? JSON.parse(PlayLocalStorage) : null;
+        return jsonPlayerStorage
+    }
     //////////////
     // "Setter"
     /////////////
+    setPlayerLevel(jsonPlayerStorage) {
+        let playerLevels = []
+        let requiredPointsCounter = 0
+        for (let level in all_levels) {
+            let keys = Object.keys(all_levels[level])
+            let gameLevel
+            if (jsonPlayerStorage != null) {
+                let playLevelKey = Object.keys(jsonPlayerStorage.levelPoint)
+                if (keys[0] < parseInt(playLevelKey[0])) {
+                    gameLevel = new GameLevel(keys[0], 3, all_levels[level][keys[0]], requiredPointsCounter)
+                } else if (jsonPlayerStorage != null && keys[0] == parseInt(playLevelKey[0])) {
+                    gameLevel = new GameLevel(keys[0], jsonPlayerStorage.levelPoint[playLevelKey], all_levels[level][keys[0]], requiredPointsCounter)
+                } else {
+                    gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
+                }
+            } else {
+                gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
+            }
+
+            playerLevels.push(gameLevel)
+            requiredPointsCounter += 3
+        }
+        this._totalPoint = jsonPlayerStorage != null ? jsonPlayerStorage.totalPoint : 0;
+        this._questions = playerLevels
+    }
+
+    async setLearnerRecord(playerId) {
+        let hashed_id = { "userID": playerId }
+        const res = await fetch(`${config["api-location"]}/readFromLearnerRecord`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*",
+                'Access-Control-Allow-Method': 'POST,GET'
+            },
+            body: JSON.stringify(hashed_id)
+        })
+
+        if (!res.ok) {
+            throw new Error('Request returned a non 200 response code')
+        }
+
+        const data = await res.json()
+        this._learnerRecord = data
+    }
+
+    async setPlayerId(name) {
+        const hash = await Crypto.digestStringAsync(
+            Crypto.CryptoDigestAlgorithm.SHA256,
+            name
+        );
+        this._id = hash
+    }
 
     updateLocalLearnerRecord(literal, standardLearnedContent, correct) {
         let learnerRecord = this._learnerRecord
@@ -104,7 +168,7 @@ let GamePlayer = class {
         if (config["debug-mode"]) console.log(data)
     }
 
-    updateTotalPoints(addedPoints, levelCorrectPoints) {
+    async updateTotalPoints(addedPoints, levelCorrectPoints, currentLevelCorrectPoints, levelID) {
         if (levelCorrectPoints == 0) {
             if (addedPoints >= 5) {
                 this._totalPoint += 3
@@ -136,6 +200,16 @@ let GamePlayer = class {
                 this._totalPoint += 0
             }
         }
+
+        let value = {
+            "totalPoint": this._totalPoint,
+            "levelPoint": {
+                [levelID]: currentLevelCorrectPoints,
+            }
+        }
+
+        const jsonValue = JSON.stringify(value)
+        await AsyncStorage.setItem(this._id, jsonValue)
         return this._totalPoint
 
     }

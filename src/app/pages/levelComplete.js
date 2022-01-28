@@ -15,9 +15,14 @@ export default class LevelComplete extends React.Component {
         this.renderStars = this.renderStars.bind(this)
     }
 
+    async componentDidMount() {
+        let prevCorrectPoint = this.props.route.params.level.correctPoints
+        let currentCorrectPoints = this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
+        this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, prevCorrectPoint, currentCorrectPoints, this.props.route.params.level.levelId)
+    }
+
+
     backToMap() {
-        this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
-        this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
         this.props.navigation.navigate("Map", {})
     }
 
@@ -32,6 +37,7 @@ export default class LevelComplete extends React.Component {
         } else {
             starCount = 0
         }
+
 
         if (starCount == 3) {
             return (

@@ -39,6 +39,7 @@ let GameLevel = class {
         } else {
             this._correctPoints = prevScore
         }
+        return this._correctPoints
     }
 
     toString() {
