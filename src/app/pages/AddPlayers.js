@@ -7,7 +7,7 @@
  */
 
 import React from "react";
-import { View, Alert, StyleSheet, Text, ImageBackground } from 'react-native';
+import { View, Alert, StyleSheet, Text, ImageBackground, ActivityIndicator } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
 import { Button } from 'react-native-elements';
 import GamePlayer from "../components/gamePlayer";
@@ -21,9 +21,14 @@ export default class AddPlayers extends React.Component {
     constructor(props) {
         super(props);
         this.inputValue = {}
+        this.state = {
+            isLoading: false
+        };
 
         this.addInputBoxes = this.addInputBoxes.bind(this)
         this.goToHome = this.goToHome.bind(this)
+        this.createPlayers = this.createPlayers.bind(this)
+        this.renderButtonOrAnimator = this.renderButtonOrAnimator.bind(this)
     }
 
 
@@ -44,12 +49,7 @@ export default class AddPlayers extends React.Component {
         return inputTextArray
     }
 
-    /**
-     * Creates new gamePlayer objects for each player. Then assigns the gameplayer object an id, name, 
-     * learner Record, and set of unique question
-     * @CR
-     */
-    async goToHome() {
+    async createPlayers() {
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
             for (let player in this.inputValue) {
@@ -74,6 +74,60 @@ export default class AddPlayers extends React.Component {
                 ]
             )
         }
+    }
+
+    renderButtonOrAnimator() {
+        if (!this.state.isLoading) {
+            return (
+                <View style={styles.container}>
+                    <Text style={styles.headline}> Who is Learning?</Text>
+                    {this.addInputBoxes()}
+                    < Button
+                        color="#ff5994"
+                        buttonStyle={{ backgroundColor: "#ff5994" }
+                        }
+                        disabled={this.state.isLoading}
+                        containerStyle={{
+                            width: 250,
+                            marginHorizontal: 50,
+                            marginVertical: 30,
+                            borderWidth: 3,
+                            borderColor: "#000000",
+                            borderRadius: 10,
+                        }
+                        }
+                        titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                        title="Start Learning"
+                        type="outline"
+                        onPress={async () => { await this.goToHome() }}
+                    />
+                </View>
+
+            )
+        } else {
+            return (
+                <View style={styles.LoadingContainer}>
+                    <Text style={styles.headline}> Loading Game</Text>
+                    <ActivityIndicator size={200} animating={this.state.isLoading} color="#ff5994" />
+                </View>
+            )
+        }
+
+
+
+
+
+    }
+
+    /**
+     * Creates new gamePlayer objects for each player. Then assigns the gameplayer object an id, name, 
+     * learner Record, and set of unique question
+     * @CR
+     */
+    async goToHome() {
+        this.setState({ isLoading: true })
+        await this.createPlayers()
+        this.setState({ isLoading: false })
 
 
     }
@@ -83,26 +137,7 @@ export default class AddPlayers extends React.Component {
         return (
             <View style={styles.background}>
                 <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-                    <View style={styles.container}>
-                        <Text style={styles.headline}> Who is Learning?</Text>
-                        {this.addInputBoxes()}
-                        <Button
-                            color="#ff5994"
-                            buttonStyle={{ backgroundColor: "#ff5994" }}
-                            containerStyle={{
-                                width: 250,
-                                marginHorizontal: 50,
-                                marginVertical: 30,
-                                borderWidth: 3,
-                                borderColor: "#000000",
-                                borderRadius: 10,
-                            }}
-                            titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
-                            title="Start Learning"
-                            type="outline"
-                            onPress={async () => { await this.goToHome() }}
-                        />
-                    </View>
+                    {this.renderButtonOrAnimator()}
                 </ImageBackground>
             </View>
 
@@ -135,5 +170,15 @@ const styles = StyleSheet.create({
         fontSize: 30,
         padding: 20,
         textAlign: "center",
+    },
+    LoadingContainer: {
+        marginVertical: "25%",
+        marginHorizontal: "10%",
+        justifyContent: "center",
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor: "#ffffff33",
+        borderRadius: 10,
+        borderWidth: 4,
     }
 });
