@@ -2,8 +2,7 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Image, Text } from 'react-native';
-import { Button } from 'react-native-elements';
+import { View, StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 
