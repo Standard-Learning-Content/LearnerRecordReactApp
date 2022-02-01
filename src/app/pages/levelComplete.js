@@ -2,10 +2,10 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Text, Image, ImageBackground } from 'react-native';
-import { Button } from 'react-native-elements';
-import PropTypes from 'prop-types';
-import Background from '../../assets/background.png'
+import { View, StyleSheet, Text, Image, ImageBackground } from "react-native";
+import { Button } from "react-native-elements";
+import PropTypes from "prop-types";
+import Background from "../../assets/background.png"
 
 
 export default class LevelComplete extends React.Component {
@@ -43,7 +43,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../../assets/levelBtnStars/threeStars.png')}
+                        source={require("../../assets/levelBtnStars/threeStars.png")}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -51,7 +51,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../../assets/levelBtnStars/twoStars.png')}
+                        source={require("../../assets/levelBtnStars/twoStars.png")}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -59,7 +59,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../../assets/levelBtnStars/oneStar.png')}
+                        source={require("../../assets/levelBtnStars/oneStar.png")}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -67,7 +67,7 @@ export default class LevelComplete extends React.Component {
             return (
                 <View style={styles.starContainer}>
                     <Image
-                        source={require('../../assets/levelBtnStars/zeroStars.png')}
+                        source={require("../../assets/levelBtnStars/zeroStars.png")}
                         style={styles.star}
                     ></Image>
                 </View>)
@@ -109,7 +109,7 @@ export default class LevelComplete extends React.Component {
                                     borderColor: "#000000",
                                     borderRadius: 10,
                                 }}
-                                titleStyle={{ color: 'white', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                                titleStyle={{ color: "white", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                                 title={"Next"}
                             />
                         </View>
@@ -132,7 +132,7 @@ LevelComplete.propTypes = {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: '#82b6ff',
+        backgroundColor: "#82b6ff",
         flex: 1,
     },
     image: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffffff33",
     },
     headline: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: "#FFFFFF",
         width: "90%",
         fontSize: 30,
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: 'center',
+        alignItems: "center",
         backgroundColor: "#4892fa",
         // borderWidth: 3,
         borderRadius: 50,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     info: {
         flex: 1,
         justifyContent: "center",
-        alignItems: 'center',
+        alignItems: "center",
         margin: 15
 
     },
@@ -193,17 +193,17 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 15,
         justifyContent: "center",
-        alignItems: 'center',
+        alignItems: "center",
     },
     infoText: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: "#000",
         fontSize: 30,
         textAlign: "center",
         backgroundColor: "#84ff9f",
     },
     infoTextPlus: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: "#ff5994",
         fontSize: 30,
         textAlign: "center",

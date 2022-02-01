@@ -2,9 +2,9 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { SafeAreaView, StatusBar, StyleSheet, ScrollView } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, ScrollView } from "react-native";
 import Record from "../components/learnerRecordComponents/record";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 
 export default class LearnerRecord extends React.Component {
@@ -43,7 +43,7 @@ LearnerRecord.propTypes = {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#080F5B',
+        backgroundColor: "#080F5B",
         flex: 1,
         marginTop: StatusBar.currentHeight,
     },

@@ -2,10 +2,10 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Text, ImageBackground, ScrollView } from 'react-native';
-import { Button } from 'react-native-elements';
-import PropTypes from 'prop-types';
-import Background from '../../assets/background.png'
+import { View, StyleSheet, Text, ImageBackground, ScrollView } from "react-native";
+import { Button } from "react-native-elements";
+import PropTypes from "prop-types";
+import Background from "../../assets/background.png"
 
 
 export default class NumLearners extends React.Component {
@@ -32,10 +32,10 @@ export default class NumLearners extends React.Component {
                                     borderColor: "#000000",
                                     borderRadius: 10,
                                 }}
-                                titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                                titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                                 title="1"
                                 type="outline"
-                                onPress={() => this.props.navigation.navigate('AddPlayers', { numPlayers: 1 })}
+                                onPress={() => this.props.navigation.navigate("AddPlayers", { numPlayers: 1 })}
                             />
                             <Button
                                 buttonStyle={{ backgroundColor: "#ff5994" }}
@@ -47,10 +47,10 @@ export default class NumLearners extends React.Component {
                                     borderColor: "#000000",
                                     borderRadius: 10,
                                 }}
-                                titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                                titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                                 title="2"
                                 type="outline"
-                                onPress={() => this.props.navigation.navigate('AddPlayers', { numPlayers: 2 })}
+                                onPress={() => this.props.navigation.navigate("AddPlayers", { numPlayers: 2 })}
                             />
                             <Button
                                 buttonStyle={{ backgroundColor: "#ff5994" }}
@@ -62,10 +62,10 @@ export default class NumLearners extends React.Component {
                                     borderColor: "#000000",
                                     borderRadius: 10,
                                 }}
-                                titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                                titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                                 title="3"
                                 type="outline"
-                                onPress={() => this.props.navigation.navigate('AddPlayers', { numPlayers: 3 })}
+                                onPress={() => this.props.navigation.navigate("AddPlayers", { numPlayers: 3 })}
                             />
                         </View>
                     </ScrollView>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffffff33",
     },
     headline: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: "#000",
         fontSize: 30,
         padding: 40,

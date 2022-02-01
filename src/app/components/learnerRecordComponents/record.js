@@ -5,8 +5,8 @@
  * @CaseyRocl
  */
 import React from "react";
-import { StyleSheet, View, Text } from 'react-native';
-import PropTypes from 'prop-types';
+import { StyleSheet, View, Text } from "react-native";
+import PropTypes from "prop-types";
 
 //////////////////////
 // Component Class
@@ -69,14 +69,14 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         backgroundColor: "#0D19AA",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         borderRadius: 10,
     },
     counts: {
         flex: 1,
         flexDirection: "column",
         padding: 10,
-        justifyContent: 'center',
+        justifyContent: "center",
     }
 });

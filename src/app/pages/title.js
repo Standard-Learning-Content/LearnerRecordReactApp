@@ -2,10 +2,10 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Image, ImageBackground, Text } from 'react-native';
-import { Button } from 'react-native-elements';
-import PropTypes from 'prop-types';
-import Background from '../../assets/background.png'
+import { View, StyleSheet, Image, ImageBackground, Text } from "react-native";
+import { Button } from "react-native-elements";
+import PropTypes from "prop-types";
+import Background from "../../assets/background.png"
 
 
 export default class Title extends React.Component {
@@ -30,7 +30,7 @@ export default class Title extends React.Component {
                 <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
                     <Text style={styles.multi}> Multi</Text>
                     <Image
-                        source={require('../../assets/appLogo.png')}
+                        source={require("../../assets/appLogo.png")}
                         style={styles.star}
                     ></Image>
                     <Button
@@ -44,10 +44,10 @@ export default class Title extends React.Component {
                             borderWidth: 4,
                             borderColor: "#000000",
                             borderRadius: 10,
-                            position: 'absolute',
+                            position: "absolute",
                             bottom: "17%",
                         }}
-                        titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                        titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                         title={"Play"}
                     />
                     {/* <Button
@@ -61,10 +61,10 @@ export default class Title extends React.Component {
                             borderWidth: 4,
                             borderColor: "#000000",
                             borderRadius: 10,
-                            position: 'absolute',
+                            position: "absolute",
                             bottom: "15%",
                         }}
-                        titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                        titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                         title={"How to Play"}
                     /> */}
                 </ImageBackground>
@@ -90,13 +90,13 @@ const styles = StyleSheet.create({
     },
     multi: {
         top: "15%",
-        position: 'absolute',
+        position: "absolute",
         color: "#fff",
         fontSize: 50,
     },
     star: {
         width: "95%",
-        position: 'absolute',
+        position: "absolute",
         top: "22%",
         flex: 1,
         resizeMode: "contain",

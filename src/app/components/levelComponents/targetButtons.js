@@ -4,10 +4,10 @@
  * @CR
  */
 import React from "react";
-import { Button } from 'react-native-elements';
-import config from '../../config.json'
-import { playCorrectSound, playIncorrectSound } from '../sounds'
-import PropTypes from 'prop-types';
+import { Button } from "react-native-elements";
+import config from "../../config.json"
+import { playCorrectSound, playIncorrectSound } from "../sounds"
+import PropTypes from "prop-types";
 
 
 //////////////////////
@@ -41,17 +41,17 @@ export default class TargetBtn extends React.Component {
                     buttonColor: "#edff8f"
                 })
                 const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
-                    method: 'PUT',
+                    method: "PUT",
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': "*",
-                        'Access-Control-Allow-Method': 'POST,GET'
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Method": "POST,GET"
                     },
                     body: JSON.stringify(answerData)
                 })
 
                 if (!res.ok) {
-                    throw new Error('Request returned af non 200 response code')
+                    throw new Error("Request returned af non 200 response code")
                 }
 
                 const data = await res.text()
@@ -97,7 +97,7 @@ export default class TargetBtn extends React.Component {
                     borderColor: "#000000",
                     borderRadius: 10,
                 }}
-                titleStyle={{ color: 'black', fontWeight: 'bold', fontSize: 23 }}
+                titleStyle={{ color: "black", fontWeight: "bold", fontSize: 23 }}
                 title={this.props.value}
             />
         )

@@ -4,14 +4,14 @@
  * @CR
  */
 import React from "react";
-import { StyleSheet, View, Text } from 'react-native';
-import config from '../../config.json'
-import uuid from 'react-native-uuid';
-import Images from '../images'
-import { playCorrectSound, playIncorrectSound } from '../sounds'
-import HeaderChar from './targetSpellingHeader'
-import SpellingBtn from './targetSpellingButtons'
-import PropTypes from 'prop-types';
+import { StyleSheet, View, Text } from "react-native";
+import config from "../../config.json"
+import uuid from "react-native-uuid";
+import Images from "../images"
+import { playCorrectSound, playIncorrectSound } from "../sounds"
+import HeaderChar from "./targetSpellingHeader"
+import SpellingBtn from "./targetSpellingButtons"
+import PropTypes from "prop-types";
 
 
 
@@ -24,7 +24,7 @@ export default class TargetSpelling extends React.Component {
 
         this.state = {
             currentCharIndex: "",
-            currentPlayer: '',
+            currentPlayer: "",
             correctTargets: "",
             incorrectTarget: "",
             correctStandardContent: "",
@@ -64,17 +64,17 @@ export default class TargetSpelling extends React.Component {
             timestamp: Date.now()
         }
         const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
-            method: 'PUT',
+            method: "PUT",
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': "*",
-                'Access-Control-Allow-Method': 'POST,GET'
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Method": "POST,GET"
             },
             body: JSON.stringify(answerData)
         })
 
         if (!res.ok) {
-            throw new Error('Request returned a non 200 response code')
+            throw new Error("Request returned a non 200 response code")
         }
 
 
@@ -216,8 +216,8 @@ const styles = StyleSheet.create({
         height: "100%",
         flex: 1,
         flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     },
     targetContainer: {
         flex: 1,
@@ -229,26 +229,26 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 3,
         borderColor: "#000000",
-        textAlign: 'center'
+        textAlign: "center"
     },
     targetTextContainer: {
         flex: 1,
         width: "100%",
-        textAlign: 'center'
+        textAlign: "center"
     },
     targetText: {
-        textAlign: 'center',
-        fontWeight: 'bold',
+        textAlign: "center",
+        fontWeight: "bold",
         fontSize: 60,
         marginTop: 0,
     },
     buttonsContainer: {
         flex: 4,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
         // marginVertical: 20,
     },
 });

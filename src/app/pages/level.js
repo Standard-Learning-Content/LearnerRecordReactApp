@@ -6,14 +6,14 @@
 
 
 import React from "react";
-import uuid from 'react-native-uuid';
-import { StyleSheet, View, Text, ImageBackground } from 'react-native';
-import { playContentSounds } from '../components/sounds'
+import uuid from "react-native-uuid";
+import { StyleSheet, View, Text, ImageBackground } from "react-native";
+import { playContentSounds } from "../components/sounds"
 import TargetSpelling from "../components/levelComponents/targetSpelling";
 import TargetBtn from "../components/levelComponents/targetButtons";
-import Background from '../../assets/background.png'
-import * as StoreReview from 'expo-store-review';
-import PropTypes from 'prop-types';
+import Background from "../../assets/background.png"
+import * as StoreReview from "expo-store-review";
+import PropTypes from "prop-types";
 
 //////////////////////
 // Component Class
@@ -73,7 +73,7 @@ export default class Level extends React.Component {
         let newCount = correct ? this.state.correctCount + 1 : this.state.correctCount
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
-            this.props.navigation.navigate('levelComplete', { correctCount: newCount, currentPlayer: this.state.currentPlayer, level: this.state.level })
+            this.props.navigation.navigate("levelComplete", { correctCount: newCount, currentPlayer: this.state.currentPlayer, level: this.state.level })
         } else {
             this.setState({
                 correctCount: newCount,
@@ -220,7 +220,7 @@ export default class Level extends React.Component {
                     <View style={styles.container}>
                         <View style={styles.headerContainer}>
                             <Text style={styles.headline}>
-                                {this.state.currentPlayerName}&apos;s Turn {'\n'}
+                                {this.state.currentPlayerName}&apos;s Turn {"\n"}
                                 Question #: {this.state.levelID}
                             </Text>
                         </View>
@@ -261,8 +261,8 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         textAlign: "auto"
     },
     container: {
@@ -277,18 +277,18 @@ const styles = StyleSheet.create({
     levelContainer: {
         flex: 1,
         flexDirection: "column",
-        backgroundColor: '#82b6ff',
+        backgroundColor: "#82b6ff",
     },
     headerContainer: {
         flex: 1,
         width: "100%",
         height: "15%",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         margin: 5
     },
     headline: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: "#FFFFFF",
         fontSize: 30,
     },
@@ -299,49 +299,49 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
         flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     },
     targetContainer: {
         flex: 1,
         width: "90%",
         margin: "5%",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         backgroundColor: "#ff5994",
-        textAlign: 'center',
+        textAlign: "center",
         borderRadius: 10,
         borderWidth: 4,
         borderColor: "#000000",
     },
     buttonsContainer: {
         flex: 4,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
         marginVertical: 20,
     },
     targetText: {
-        textAlign: 'center',
-        fontWeight: 'bold',
+        textAlign: "center",
+        fontWeight: "bold",
         color: "#fff",
         fontSize: 60,
         marginTop: 0,
     },
     matchFirstTarget: {
         flex: 1,
-        textAlign: 'center',
-        fontWeight: 'bold',
+        textAlign: "center",
+        fontWeight: "bold",
         fontSize: 60,
         marginTop: 0,
         color: "#84ff9f",
     },
     matchFirstRest: {
         color: "#fff",
-        textAlign: 'center',
-        fontWeight: 'bold',
+        textAlign: "center",
+        fontWeight: "bold",
         fontSize: 60,
         marginTop: 0,
     },

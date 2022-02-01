@@ -5,10 +5,10 @@
  * @CaseyRocl
  */
 import React from "react";
-import { Button } from 'react-native-elements'
-import { StyleSheet, View, Image, } from 'react-native';
-import PropTypes from 'prop-types';
-import uuid from 'react-native-uuid';
+import { Button } from "react-native-elements";
+import { StyleSheet, View, Image, } from "react-native";
+import PropTypes from "prop-types";
+import uuid from "react-native-uuid";
 
 //////////////////////
 // Component Class
@@ -23,7 +23,7 @@ export default class LevelButton extends React.Component {
     playLevel() {
         let currentPlayerObj = this.props.currentPlayer
         let currentQuestionSet = this.props.currentQuestionSet
-        this.props.navigation.navigate('Learn', {
+        this.props.navigation.navigate("Learn", {
             "levelID": this.props.levelId,
             "currentQuestionSet": currentQuestionSet,
             "currentQuestionSetLength": currentQuestionSet.length,
@@ -39,22 +39,22 @@ export default class LevelButton extends React.Component {
 
         if (this.props.correctPoints == 3) {
             return <Image
-                source={require('../../../assets/levelBtnStars/threeStars.png')}
+                source={require("../../../assets/levelBtnStars/threeStars.png")}
                 style={styles.star}
             ></Image>
         } else if (this.props.correctPoints == 2) {
             return <Image
-                source={require('../../../assets/levelBtnStars/twoStars.png')}
+                source={require("../../../assets/levelBtnStars/twoStars.png")}
                 style={styles.star}
             ></Image>
         } else if (this.props.correctPoints == 1) {
             return <Image
-                source={require('../../../assets/levelBtnStars/oneStar.png')}
+                source={require("../../../assets/levelBtnStars/oneStar.png")}
                 style={styles.star}
             ></Image>
         } else {
             return <Image
-                source={require('../../../assets/levelBtnStars/zeroStars.png')}
+                source={require("../../../assets/levelBtnStars/zeroStars.png")}
                 style={styles.star}
             ></Image>
         }

@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet, View, Text, ScrollView, ImageBackground } from 'react-native';
-import LevelButton from '../components/mainComponents/levelButton'
-import Background from '../../assets/background.png'
-import config from '../config.json'
-import PropTypes from 'prop-types';
+import { StyleSheet, View, Text, ScrollView, ImageBackground } from "react-native";
+import LevelButton from "../components/mainComponents/levelButton"
+import Background from "../../assets/background.png"
+import config from "../config.json"
+import PropTypes from "prop-types";
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ export default class Main extends React.Component {
             "currentPlayerIndex": -1,
             "players": this.props.route.params.players,
         }
-        if (config['debug-mode']) console.log(this.state)
+        if (config["debug-mode"]) console.log(this.state)
         this.play = this.play.bind(this)
         this.gameOver = this.gameOver.bind(this)
     }
@@ -79,7 +79,7 @@ export default class Main extends React.Component {
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.completeHeaderContainer}>
-                    <Text style={styles.headline}> Congrats!{'\n'}  All the quentions are learned </Text>
+                    <Text style={styles.headline}> Congrats!{"\n"}  All the quentions are learned </Text>
                 </View>
             </View>
 
@@ -106,14 +106,14 @@ Main.propTypes = {
 
 const styles = StyleSheet.create({
     page: {
-        backgroundColor: '#82b6ff',
+        backgroundColor: "#82b6ff",
         width: "100%",
         height: "100%",
     },
     image: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         textAlign: "auto"
     },
     headerContainer: {
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
         padding: 5,
         width: "93%",
         height: "15%",
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         textAlign: "auto",
         backgroundColor: "#ff5994",
         borderRadius: 10,
@@ -132,11 +132,11 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
         flexDirection: "row",
-        flexWrap: 'wrap',
+        flexWrap: "wrap",
         justifyContent: "center"
     },
     headline: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: "#000",
         fontSize: 30,
     },

@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from 'react-native';
-import PropTypes from 'prop-types';
+import { Text } from "react-native";
+import PropTypes from "prop-types";
 
 //////////////////////
 // Component Class
@@ -27,16 +27,16 @@ export default class HeaderChar extends React.Component {
         let charState
         if (this.state.active) {
             charState = {
-                textAlign: 'center',
-                fontWeight: 'bold',
+                textAlign: "center",
+                fontWeight: "bold",
                 fontSize: 60,
                 marginTop: 0,
                 color: "#84ff9f"
             }
         } else {
             charState = {
-                textAlign: 'center',
-                fontWeight: 'bold',
+                textAlign: "center",
+                fontWeight: "bold",
                 fontSize: 60,
                 marginTop: 0,
                 color: "#FFF"

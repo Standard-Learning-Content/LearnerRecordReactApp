@@ -1,17 +1,17 @@
 import config from "../config.json"
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import all_levels from '../levels/levels.json'
-import GameLevel from "../components/gameLevel";
-import * as Crypto from 'expo-crypto';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import all_levels from "../levels/levels.json"
+import GameLevel from "./gameLevel"
+import * as Crypto from "expo-crypto";
 
 let GamePlayer = class {
     constructor(name) {
         this._name = name
         this._questionIndex = 0
         this._totalPoint = 0
-        this._id = ''
-        this._learnerRecord = ''
-        this._questions = ''
+        this._id = ""
+        this._learnerRecord = ""
+        this._questions = ""
 
     }
 
@@ -84,17 +84,17 @@ let GamePlayer = class {
     async setLearnerRecord(playerId) {
         let hashed_id = { "userID": playerId }
         const res = await fetch(`${config["api-location"]}/readFromLearnerRecord`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': "*",
-                'Access-Control-Allow-Method': 'POST,GET'
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Method": "POST,GET"
             },
             body: JSON.stringify(hashed_id)
         })
 
         if (!res.ok) {
-            throw new Error('Request returned a non 200 response code')
+            throw new Error("Request returned a non 200 response code")
         }
 
         const data = await res.json()
@@ -151,17 +151,17 @@ let GamePlayer = class {
         }
 
         const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
-            method: 'PUT',
+            method: "PUT",
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': "*",
-                'Access-Control-Allow-Method': 'POST,GET'
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Method": "POST,GET"
             },
             body: JSON.stringify(answerData)
         })
 
         if (!res.ok) {
-            throw new Error('Request returned af non 200 response code')
+            throw new Error("Request returned af non 200 response code")
         }
 
         const data = await res.text()

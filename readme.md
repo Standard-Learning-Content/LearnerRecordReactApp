@@ -25,17 +25,17 @@ In the file `./pages/AddPlayers.js` we send a POST request with players ID to ge
 ```
 ```js
   const res = await fetch(`${config["api-location"]}/readFromLearnerRecord`, {
-                    method: 'POST',
+                    method: "POST",
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': "*",
-                        'Access-Control-Allow-Method': 'POST,GET'
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Method": "POST,GET"
                     },
                     body: JSON.stringify(hashed_id)
                 })
 
                 if (!res.ok) {
-                    throw new Error('Request returned a non 200 response code')
+                    throw new Error("Request returned a non 200 response code")
                 }
 ```
 

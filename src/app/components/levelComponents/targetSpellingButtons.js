@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from 'react-native-elements';
-import PropTypes from 'prop-types';
+import { Button } from "react-native-elements";
+import PropTypes from "prop-types";
 
 
 //////////////////////
@@ -47,9 +47,9 @@ export default class SpellingBtn extends React.Component {
                     marginVertical: 5,
                     borderWidth: 4,
                     borderColor: "#000000",
-                    textAlign: 'center'
+                    textAlign: "center"
                 }}
-                titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
+                titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                 title={this.props.content}
             />
         )
