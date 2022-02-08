@@ -46,7 +46,7 @@ export default class NameInput extends React.Component {
                     style={styles.input}
                     key={this.props.number}
                     onChangeText={this.handleChange}
-                    placeholder={`Player ${this.props.number}"s Name`}
+                    placeholder={`Player ${this.props.number}'s Name`}
                     placeholderTextColor="#fff"
                 />
             </View>

@@ -9,10 +9,13 @@
 import React from "react";
 import { View, Alert, StyleSheet, Text, ImageBackground, ActivityIndicator, ScrollView } from 'react-native';
 import NameInput from "../components/addPlayerComponents/playerNameInput"
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import uuid from "react-native-uuid";
 import { Button } from 'react-native-elements';
 import GamePlayer from "../components/gamePlayer";
 import PropTypes from 'prop-types';
 import Background from '../../assets/background.png'
+import { startLearningSession } from '../firebase/firebaseLearn'
 
 //////////////////////
 // Component Class
@@ -52,15 +55,35 @@ export default class AddPlayers extends React.Component {
     async createPlayers() {
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
+            let firebasePlayerID = []
             for (let player in this.inputValue) {
                 let tempPlayer = new GamePlayer(this.inputValue[player])
                 await tempPlayer.setPlayerId(this.inputValue[player])
                 await tempPlayer.setLearnerRecord(tempPlayer.id)
                 const jsonPlayerStorage = await tempPlayer.getPlayerLocalStorage()
                 tempPlayer.setPlayerLevel(jsonPlayerStorage)
+                firebasePlayerID.push(tempPlayer.id)
                 allPlayers.push(tempPlayer)
             }
-            this.props.navigation.navigate('Map', { "players": allPlayers })
+
+            let localStorageDeviceId = await AsyncStorage.getItem("deviceID")
+            let deviceID = localStorageDeviceId != null ? JSON.parse(localStorageDeviceId) : null;
+            if (deviceID == null) {
+                deviceID = { "deviceID": uuid.v4() }
+                const value = {
+                    "deviceID": uuid.v4()
+                }
+                const jsonValue = JSON.stringify(value)
+                await AsyncStorage.setItem(jsonValue)
+            }
+
+
+
+            startLearningSession(deviceID.deviceID, Date.now(), firebasePlayerID)
+            // StartGame - Update firebase with phone id and 
+
+            // console.log(deviceID)
+            // this.props.navigation.navigate('Map', { "players": allPlayers })
         } else {
             Alert.alert(
                 "Missing Learner's Names",
