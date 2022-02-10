@@ -74,10 +74,11 @@ export default class AddPlayers extends React.Component {
                     "deviceID": uuid.v4()
                 }
                 const jsonValue = JSON.stringify(value)
-                await AsyncStorage.setItem(jsonValue)
+                console.log(jsonValue)
+                await AsyncStorage.setItem("deviceID", jsonValue)
             }
 
-
+            console.log(deviceID.deviceID)
 
             startLearningSession(deviceID.deviceID, Date.now(), firebasePlayerID)
             // StartGame - Update firebase with phone id and 
