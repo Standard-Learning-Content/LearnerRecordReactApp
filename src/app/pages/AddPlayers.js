@@ -83,7 +83,7 @@ export default class AddPlayers extends React.Component {
             // StartGame - Update firebase with phone id and 
 
             // console.log(deviceID)
-            // this.props.navigation.navigate('Map', { "players": allPlayers })
+            this.props.navigation.navigate('Map', { "players": allPlayers })
         } else {
             Alert.alert(
                 "Missing Learner's Names",
