@@ -1,7 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, ScrollView, ImageBackground } from "react-native";
-import LevelButton from "../components/mainComponents/levelButton"
-import Background from "../../assets/background.png"
+import { StyleSheet, View, Text, } from "react-native";
 import config from "../config.json"
 import PropTypes from "prop-types";
 
@@ -15,6 +13,7 @@ export default class Main extends React.Component {
         if (config["debug-mode"]) console.log(this.state)
         this.play = this.play.bind(this)
         this.gameOver = this.gameOver.bind(this)
+        this.nextQuestion = this.nextQuestion.bind(this)
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -23,54 +22,44 @@ export default class Main extends React.Component {
         if (state.currentPlayerIndex == -1) {
             return ({
                 "currentPlayerIndex": currentPlayerIndex,
-                "players": props.route.params.players
+                "players": props.route.params.players,
+                "timer": 3
             })
         } else {
             return ({
                 "currentPlayerIndex": currentPlayerIndex,
-                "players": state.players
+                "players": state.players,
+                "timer": 3
             })
         }
     }
 
 
+    nextQuestion() {
+        setTimeout(() => {
+            let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
+            this.props.navigation.navigate("Learn", {
+                "levelID": currentPlayerObj.questions[currentPlayerObj.questionIndex].levelId,
+                "currentQuestionSet": currentPlayerObj.questions[currentPlayerObj.questionIndex].levels,
+                "currentQuestionSetLength": currentPlayerObj.questions[currentPlayerObj.questionIndex].levels.length,
+                "currentPlayerId": currentPlayerObj.id,
+                "currentPlayerName": currentPlayerObj.name,
+                "questionIndex": currentPlayerObj.questionIndex,
+                "currentPlayer": currentPlayerObj,
+                "level": currentPlayerObj.questions[currentPlayerObj.questionIndex]
+            })
+        }, 2000);
+    }
+
+
     play() {
-        let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
-        let allLevelButtons = []
-
-        for (let level of currentPlayerObj.questions) {
-            let levelBtn = <LevelButton
-                key={level.levelId}
-                requiredPoints={level.requiredPoints}
-                correctPoints={level.correctPoints}
-                levelId={level.levelId}
-                level={level}
-                currentPlayer={this.state.players[this.state.currentPlayerIndex]}
-                currentQuestionSet={level.levels}
-                navigation={this.props.navigation}
-            >
-            </LevelButton>
-            allLevelButtons.push(levelBtn)
-        }
-
         return (
             <View style={styles.page}>
-                <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-                    <View style={styles.headerContainer}>
-                        <Text style={styles.headline}>
-                            {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn!
-                        </Text>
-                        <Text style={styles.headline}>
-                            Stars: {this.state.players[this.state.currentPlayerIndex].totalPoint}
-                        </Text>
-                    </View>
-                    <ScrollView style={styles.levelButtons}>
-                        <View style={styles.mainContainer}>
-                            {allLevelButtons}
-                        </View >
-                    </ScrollView>
-                </ImageBackground>
-
+                <View style={styles.headerContainer}>
+                    <Text style={styles.headline}>
+                        {this.state.players[this.state.currentPlayerIndex].name}&apos;s Turn! {'\n'}
+                    </Text>
+                </View>
             </View>
         )
     }
@@ -80,6 +69,7 @@ export default class Main extends React.Component {
             <View style={styles.mainContainer}>
                 <View style={styles.completeHeaderContainer}>
                     <Text style={styles.headline}> Congrats!{"\n"}  All the quentions are learned </Text>
+
                 </View>
             </View>
 
@@ -90,8 +80,8 @@ export default class Main extends React.Component {
     render() {
         return (
             <View style={styles.page}>
+                {this.nextQuestion()}
                 {this.state.players != 0 ? this.play() : this.gameOver()}
-
             </View >
 
         )
@@ -106,9 +96,14 @@ Main.propTypes = {
 
 const styles = StyleSheet.create({
     page: {
-        backgroundColor: "#82b6ff",
         width: "100%",
         height: "100%",
+        alignItems: "center",
+        textAlign: "auto",
+        backgroundColor: "#ff5994",
+        justifyContent: "center",
+        // alignItems: "center",
+        // textAlign: "auto",
     },
     image: {
         flex: 1,
@@ -116,37 +111,25 @@ const styles = StyleSheet.create({
         alignItems: "center",
         textAlign: "auto"
     },
-    headerContainer: {
-        margin: 10,
-        padding: 5,
-        width: "93%",
-        height: "15%",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "auto",
-        backgroundColor: "#ff5994",
-        borderRadius: 10,
-        borderWidth: 3,
-        borderColor: "#000000",
-    },
-    mainContainer: {
-        flex: 1,
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center"
-    },
+    // mainContainer: {
+    //     flex: 1,
+    //     flexDirection: "row",
+    //     flexWrap: "wrap",
+    //     justifyContent: "center"
+    // },
     headline: {
         fontWeight: "bold",
-        color: "#000",
-        fontSize: 30,
+        color: "#FFF",
+        fontSize: 50,
+        margin: 20,
     },
-    levelButtons: {
-        borderRadius: 10,
-        backgroundColor: "#ffffff55",
-        marginHorizontal: "3%",
-        marginBottom: "3%",
-    },
-    contentContainer: {
-        flex: 7,
-    }
+    // levelButtons: {
+    //     borderRadius: 10,
+    //     backgroundColor: "#ffffff55",
+    //     marginHorizontal: "3%",
+    //     marginBottom: "3%",
+    // },
+    // contentContainer: {
+    //     flex: 7,
+    // }
 });

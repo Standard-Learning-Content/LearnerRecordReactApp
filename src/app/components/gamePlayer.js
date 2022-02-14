@@ -55,6 +55,15 @@ let GamePlayer = class {
     //////////////
     // "Setter"
     /////////////
+
+    // If the player get all the questions correct in a level, the will 
+    // move to the next level
+    incrementQuesitonIndex(correctCount) {
+        if (correctCount == 5) {
+            this._questionIndex++
+        }
+    }
+
     setPlayerLevel(jsonPlayerStorage) {
         let playerLevels = []
         let requiredPointsCounter = 0

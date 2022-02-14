@@ -13,13 +13,6 @@ export default class Instructions extends React.Component {
         this.instructionPage = this.instructionPage.bind(this)
     }
 
-    playGame() {
-        this.props.navigation.navigate("HowManyLearners", {})
-    }
-
-    instructionPage() {
-        this.props.navigation.navigate("HowManyLearners", {})
-    }
 
     render() {
 

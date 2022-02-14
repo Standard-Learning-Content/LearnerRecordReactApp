@@ -19,6 +19,7 @@ export default class LevelComplete extends React.Component {
         let prevCorrectPoint = this.props.route.params.level.correctPoints
         let currentCorrectPoints = this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
         this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, prevCorrectPoint, currentCorrectPoints, this.props.route.params.level.levelId)
+        this.props.route.params.currentPlayer.incrementQuesitonIndex(this.props.route.params.correctCount)
     }
 
 

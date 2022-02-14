@@ -62,7 +62,7 @@ export default class AddPlayers extends React.Component {
                 await tempPlayer.setLearnerRecord(tempPlayer.id)
                 const jsonPlayerStorage = await tempPlayer.getPlayerLocalStorage()
                 tempPlayer.setPlayerLevel(jsonPlayerStorage)
-                firebasePlayerID.push(tempPlayer.id)
+                firebasePlayerID.push("cco:Player_" + tempPlayer.id)
                 allPlayers.push(tempPlayer)
             }
 
@@ -74,16 +74,9 @@ export default class AddPlayers extends React.Component {
                     "deviceID": uuid.v4()
                 }
                 const jsonValue = JSON.stringify(value)
-                console.log(jsonValue)
                 await AsyncStorage.setItem("deviceID", jsonValue)
             }
-
-            console.log(deviceID.deviceID)
-
-            startLearningSession(deviceID.deviceID, Date.now(), firebasePlayerID)
-            // StartGame - Update firebase with phone id and 
-
-            // console.log(deviceID)
+            startLearningSession(deviceID.deviceID, Date.now(), firebasePlayerID) //Store the players in firebase 
             this.props.navigation.navigate('Map', { "players": allPlayers })
         } else {
             Alert.alert(

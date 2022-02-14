@@ -24,16 +24,6 @@ const Routes = () => {
     return (
         <Stack.Navigator >
             <Stack.Screen name="Title" component={Title} options={{ headerShown: false }} />
-            <Stack.Screen name="instructions" component={Instructions} options={{
-                title: "How To Play",
-                headerStyle: {
-                    backgroundColor: "#84ff9f",
-                },
-                headerTintColor: "#000",
-                headerTitleStyle: {
-                    fontWeight: "bold",
-                },
-            }} />
             <Stack.Screen name="HowManyLearners" component={NumLearners} options={{
                 title: "How Many Learners",
                 headerStyle: {
@@ -54,8 +44,8 @@ const Routes = () => {
                     fontWeight: "bold",
                 },
             }} />
-            <Stack.Screen name="Map" component={Main} options={{
-                title: "Select a Level",
+            <Stack.Screen name="instructions" component={Instructions} options={{
+                title: "How To Play",
                 headerStyle: {
                     backgroundColor: "#84ff9f",
                 },
@@ -64,6 +54,8 @@ const Routes = () => {
                     fontWeight: "bold",
                 },
             }} />
+
+            <Stack.Screen name="Map" component={Main} options={{ headerShown: false }} />
             <Stack.Screen name="Learn" component={Level} options={{ headerShown: false }} />
             <Stack.Screen name="levelComplete" component={LevelComplete} options={{ headerShown: false }} />
             <Stack.Screen name="LearnerRecord" component={LearnerRecord} options={{ title: "Report Card" }} />

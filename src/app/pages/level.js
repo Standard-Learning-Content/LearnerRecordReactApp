@@ -47,7 +47,7 @@ export default class Level extends React.Component {
         if (questionIndex == 38) {
             StoreReview.requestReview()
         }
-
+        // console.log(props)
         //Only updates the state when navigating from main
         if (state.currentQuestionSetIndex == -1) {
             let newState = {
