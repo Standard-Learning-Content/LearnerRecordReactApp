@@ -73,7 +73,12 @@ export default class Level extends React.Component {
         this.state.gameplayResults.push({ "correct": correct, "content": content })
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
-            this.props.navigation.navigate("levelComplete", { gameplayResults: this.state.gameplayResults, currentPlayer: this.state.currentPlayer, level: this.state.level })
+            this.props.navigation.navigate("levelComplete", {
+                gameplayResults: this.state.gameplayResults,
+                currentPlayer: this.state.currentPlayer, level: this.state.level,
+                deviceID: this.props.route.params.deviceID,
+                sessonId: this.props.route.params.sessonId
+            })
         } else {
             this.setState({
                 currentQuestionSetIndex: newIndex

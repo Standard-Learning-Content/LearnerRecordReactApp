@@ -76,9 +76,14 @@ export default class AddPlayers extends React.Component {
                 const jsonValue = JSON.stringify(value)
                 await AsyncStorage.setItem("deviceID", jsonValue)
             }
-            startLearningSession(deviceID.deviceID, Date.now(), firebasePlayerID) //Store the players in firebase 
+            let sessionID = Date.now()
+            startLearningSession(deviceID.deviceID, sessionID, firebasePlayerID) //Store the players in firebase 
             // this.props.navigation.navigate('Map', { "players": allPlayers })instructions
-            this.props.navigation.navigate('instructions', { "players": allPlayers })
+            this.props.navigation.navigate('instructions', {
+                players: allPlayers,
+                deviceID: deviceID.deviceID,
+                sessonId: sessionID
+            })
         } else {
             Alert.alert(
                 "Missing Learner's Names",

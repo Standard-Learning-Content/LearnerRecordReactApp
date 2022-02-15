@@ -57,7 +57,13 @@ export default class Instructions extends React.Component {
                                 titleStyle={{ color: 'black', marginHorizontal: 20, fontWeight: 'bold', fontSize: 23 }}
                                 title="Start Learning"
                                 type="outline"
-                                onPress={() => { this.props.navigation.navigate('Map', { "players": this.props.route.params.players }) }}
+                                onPress={() => {
+                                    this.props.navigation.navigate('Map', {
+                                        players: this.props.route.params.players,
+                                        deviceID: this.props.route.params.deviceID,
+                                        sessonId: this.props.route.params.sessonId
+                                    })
+                                }}
                             />
                         </View>
                     </ScrollView>
@@ -116,7 +122,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#edff8f",
         padding: 5,
         width: "90%",
-        height: "25%",
+        height: "35%",
         borderWidth: 4,
         borderColor: "#000000",
         borderRadius: 10,
