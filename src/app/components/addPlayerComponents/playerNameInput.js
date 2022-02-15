@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     },
     learningBox: {
         padding: 10,
-        backgroundColor: "#ff5994",
+        backgroundColor: "#edff8f",
         borderRadius: 10,
         borderWidth: 3,
         borderColor: "#000000",

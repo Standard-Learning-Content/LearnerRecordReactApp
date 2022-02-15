@@ -2,7 +2,7 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { View, StyleSheet, Text, Image, ImageBackground } from "react-native";
+import { View, StyleSheet, Text, ImageBackground } from "react-native";
 import { Button } from "react-native-elements";
 import PropTypes from "prop-types";
 import Background from "../../assets/background.png"
