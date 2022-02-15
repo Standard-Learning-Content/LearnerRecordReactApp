@@ -32,6 +32,7 @@ export default class Level extends React.Component {
             currentPlayer: "",
             level: "",
         }
+        this.timer = Date.now()
         this.renderTargetButtons = this.renderTargetButtons.bind(this)
         this.renderSpellingTarget = this.renderSpellingTarget.bind(this)
         this.renderLevel = this.renderLevel.bind(this)
@@ -68,9 +69,15 @@ export default class Level extends React.Component {
 
     }
 
-
+    // IRI, Time to complete
     changeQuestion(correct, content) {
-        this.state.gameplayResults.push({ "correct": correct, "content": content })
+        let timeToComplete = (Date.now() - this.timer) / 1000
+        this.state.gameplayResults.push({
+            "correct": correct,
+            "content": content,
+            "TimeToComplete": timeToComplete
+        })
+        this.timer = Date.now()
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
             this.props.navigation.navigate("levelComplete", {
