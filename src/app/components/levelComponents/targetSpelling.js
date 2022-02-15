@@ -90,7 +90,7 @@ export default class TargetSpelling extends React.Component {
             userID: "",
             fullword: ""
         }, () => {
-            this.props.changeQuestion(true)
+            this.props.changeQuestion(true, this.props.correctTarget)
         });
     }
 
@@ -120,7 +120,7 @@ export default class TargetSpelling extends React.Component {
                     userID: "",
                     fullword: ""
                 }, () => {
-                    this.props.changeQuestion(false)
+                    this.props.changeQuestion(false, this.props.correctTarget)
                 });
             }, 500);
         }

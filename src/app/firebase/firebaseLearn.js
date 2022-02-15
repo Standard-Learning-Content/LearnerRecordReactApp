@@ -11,9 +11,9 @@ export function startLearningSession(phoneID, sessionID, players) {
     // console.log(sessionID)
     // console.log(players)
 
-    set(ref(db, phoneID + "/" + sessionID), {
-        players: players,
-    });
+    // set(ref(db, phoneID + "/" + sessionID), {
+    //     players: players,
+    // });
 }
 
 

@@ -6,20 +6,27 @@ import { View, StyleSheet, Text, Image, ImageBackground } from "react-native";
 import { Button } from "react-native-elements";
 import PropTypes from "prop-types";
 import Background from "../../assets/background.png"
+import uuid from "react-native-uuid";
 
 
 export default class LevelComplete extends React.Component {
     constructor(props) {
         super(props);
         this.backToMap = this.backToMap.bind(this)
-        this.renderStars = this.renderStars.bind(this)
+        this.renderReports = this.renderReports.bind(this)
     }
 
     async componentDidMount() {
         let prevCorrectPoint = this.props.route.params.level.correctPoints
         let currentCorrectPoints = this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
         this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, prevCorrectPoint, currentCorrectPoints, this.props.route.params.level.levelId)
-        this.props.route.params.currentPlayer.incrementQuesitonIndex(this.props.route.params.correctCount)
+        let correctCounter = 0
+        for (let result of this.props.route.params.gameplayResults) {
+            if (result.correct) {
+                correctCounter++
+            }
+        }
+        this.props.route.params.currentPlayer.incrementQuesitonIndex(correctCounter)
     }
 
 
@@ -27,81 +34,47 @@ export default class LevelComplete extends React.Component {
         this.props.navigation.navigate("Map", {})
     }
 
-    renderStars() {
-        let starCount
-        if (this.props.route.params.correctCount >= 5) {
-            starCount = 3
-        } else if (this.props.route.params.correctCount == 4 || this.props.route.params.correctCount == 3) {
-            starCount = 2
-        } else if (this.props.route.params.correctCount == 2 || this.props.route.params.correctCount == 1) {
-            starCount = 1
-        } else {
-            starCount = 0
-        }
+    renderReports() {
+        let reportText = []
+        for (let result of this.props.route.params.gameplayResults) {
+            let text
+            if (result.correct) {
+                text = <View style={styles.reportsContainerCorrect} key={uuid.v4()}>
+                    <Text style={styles.reports}> {result.content}</Text>
+                    <Text style={styles.reports}> Correct </Text>
+                </View>
+            } else {
+                text = <View style={styles.reportsContainerIncorrect} key={uuid.v4()}>
+                    <Text style={styles.reports}> {result.content}</Text>
+                    <Text style={styles.reports}> Incorrect </Text>
+                </View>
+            }
 
 
-        if (starCount == 3) {
-            return (
-                <View style={styles.starContainer}>
-                    <Image
-                        source={require("../../assets/levelBtnStars/threeStars.png")}
-                        style={styles.star}
-                    ></Image>
-                </View>)
-        } else if (starCount == 2) {
-            return (
-                <View style={styles.starContainer}>
-                    <Image
-                        source={require("../../assets/levelBtnStars/twoStars.png")}
-                        style={styles.star}
-                    ></Image>
-                </View>)
-        } else if (starCount == 1) {
-            return (
-                <View style={styles.starContainer}>
-                    <Image
-                        source={require("../../assets/levelBtnStars/oneStar.png")}
-                        style={styles.star}
-                    ></Image>
-                </View>)
-        } else {
-            return (
-                <View style={styles.starContainer}>
-                    <Image
-                        source={require("../../assets/levelBtnStars/zeroStars.png")}
-                        style={styles.star}
-                    ></Image>
-                </View>)
+            reportText.push(text)
         }
+        return reportText
+
+
     }
 
     render() {
-        let starCount
-        if (this.props.route.params.correctCount >= 5) {
-            starCount = 3
-        } else if (this.props.route.params.correctCount == 4 || this.props.route.params.correctCount == 3) {
-            starCount = 2
-        } else if (this.props.route.params.correctCount == 2 || this.props.route.params.correctCount == 1) {
-            starCount = 1
-        } else {
-            starCount = 0
-        }
         return (
             <View style={styles.background}>
                 <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
                     <View style={styles.container}>
                         <Text style={styles.headline}> Level Complete! </Text>
-                        {this.renderStars()}
-                        <View style={styles.infoTextContainer}>
+                        {this.renderReports()}
+                        {/* <View style={styles.infoTextContainer}>
                             <Text style={styles.infoText}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint}</Text>
                             <Text style={styles.infoTextPlus}> + {starCount} </Text>
-                        </View>
+                        </View> */}
                         {/* <Text style={styles.infoText}> {this.props.route.params.currentPlayer.name}&apos;s Points: {this.props.route.params.currentPlayer.totalPoint} </Text><Text> + {starCount} </Text> */}
                         <View style={styles.info} >
                             <Button
                                 onPress={() => this.backToMap()}
                                 color="#15DB95"
-                                buttonStyle={{ backgroundColor: "#ff5994" }}
+                                buttonStyle={{ backgroundColor: "#edff8f" }}
                                 containerStyle={{
                                     width: 350,
                                     marginHorizontal: 40,
@@ -110,7 +83,7 @@ export default class LevelComplete extends React.Component {
                                     borderColor: "#000000",
                                     borderRadius: 10,
                                 }}
-                                titleStyle={{ color: "white", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
+                                titleStyle={{ color: "black", marginHorizontal: 20, fontWeight: "bold", fontSize: 23 }}
                                 title={"Next"}
                             />
                         </View>
@@ -150,66 +123,96 @@ const styles = StyleSheet.create({
     },
     headline: {
         fontWeight: "bold",
-        color: "#FFFFFF",
+        color: "#000",
         width: "90%",
         fontSize: 30,
         padding: 20,
         textAlign: "center",
-        backgroundColor: "#ff5994",
+        backgroundColor: "#edff8f",
         borderWidth: 4,
         borderColor: "#000000",
         borderRadius: 10,
         margin: 20
-
     },
-    starContainer: {
+    reportsContainerCorrect: {
         flex: 1,
         flexDirection: "row",
-        justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#4892fa",
-        // borderWidth: 3,
-        borderRadius: 50,
-        margin: 15
-    },
-    star: {
-        width: 200,
-        height: 200,
-        flex: 1,
-        resizeMode: "contain",
-    },
-    info: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        margin: 15
-
-    },
-    infoTextContainer: {
-        flexDirection: "row",
+        margin: 10,
+        borderWidth: 4,
         backgroundColor: "#84ff9f",
-        height: "10%",
-        borderWidth: 3,
         borderColor: "#000000",
         borderRadius: 10,
-        margin: 15,
-        justifyContent: "center",
+        width: "90%",
+        height: "5%"
+    },
+    reportsContainerIncorrect: {
+        flex: 1,
+        flexDirection: "row",
         alignItems: "center",
+        margin: 10,
+        borderWidth: 4,
+        backgroundColor: "#ff5994",
+        borderColor: "#000000",
+        borderRadius: 10,
+        width: "90%",
+        height: "5%"
     },
-    infoText: {
+    reports: {
+        flex: 1,
         fontWeight: "bold",
-        color: "#000",
+        color: "#000000",
+        width: "90%",
         fontSize: 30,
-        textAlign: "center",
-        backgroundColor: "#84ff9f",
     },
-    infoTextPlus: {
-        fontWeight: "bold",
-        color: "#ff5994",
-        fontSize: 30,
-        textAlign: "center",
-        backgroundColor: "#84ff9f",
-    },
+    // starContainer: {
+    //     flex: 1,
+    //     flexDirection: "row",
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    //     backgroundColor: "#4892fa",
+    //     // borderWidth: 3,
+    //     borderRadius: 50,
+    //     margin: 15
+    // },
+    // star: {
+    //     width: 200,
+    //     height: 200,
+    //     flex: 1,
+    //     resizeMode: "contain",
+    // },
+    // info: {
+    //     flex: 1,
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    //     margin: 15
+
+    // },
+    // infoTextContainer: {
+    //     flexDirection: "row",
+    //     backgroundColor: "#84ff9f",
+    //     height: "10%",
+    //     borderWidth: 3,
+    //     borderColor: "#000000",
+    //     borderRadius: 10,
+    //     margin: 15,
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    // },
+    // infoText: {
+    //     fontWeight: "bold",
+    //     color: "#000",
+    //     fontSize: 30,
+    //     textAlign: "center",
+    //     backgroundColor: "#84ff9f",
+    // },
+    // infoTextPlus: {
+    //     fontWeight: "bold",
+    //     color: "#ff5994",
+    //     fontSize: 30,
+    //     textAlign: "center",
+    //     backgroundColor: "#84ff9f",
+    // },
 });
 
 

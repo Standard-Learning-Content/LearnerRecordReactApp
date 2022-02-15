@@ -144,9 +144,9 @@ export default class AddPlayers extends React.Component {
     async goToHome() {
         this.setState({ isLoading: true })
         await this.createPlayers()
-        this.setState({ isLoading: false })
-
-
+        setTimeout(() => {
+            this.setState({ isLoading: false })
+        }, 500)
     }
 
 

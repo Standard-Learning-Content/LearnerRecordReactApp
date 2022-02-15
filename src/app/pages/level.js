@@ -22,7 +22,7 @@ export default class Level extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            correctCount: 0,
+            gameplayResults: [],
             currentQuestionSetLength: "",
             levelID: "",
             currentQuestionSetIndex: -1,
@@ -51,7 +51,7 @@ export default class Level extends React.Component {
         //Only updates the state when navigating from main
         if (state.currentQuestionSetIndex == -1) {
             let newState = {
-                correctCount: 0,
+                gameplayResults: [],
                 currentQuestionSetLength: props.route.params.currentQuestionSetLength,
                 levelID: props.route.params.levelID,
                 level: props.route.params.level,
@@ -69,14 +69,13 @@ export default class Level extends React.Component {
     }
 
 
-    changeQuestion(correct) {
-        let newCount = correct ? this.state.correctCount + 1 : this.state.correctCount
+    changeQuestion(correct, content) {
+        this.state.gameplayResults.push({ "correct": correct, "content": content })
         let newIndex = this.state.currentQuestionSetIndex + 1
         if (newIndex == this.state.currentQuestionSetLength) {
-            this.props.navigation.navigate("levelComplete", { correctCount: newCount, currentPlayer: this.state.currentPlayer, level: this.state.level })
+            this.props.navigation.navigate("levelComplete", { gameplayResults: this.state.gameplayResults, currentPlayer: this.state.currentPlayer, level: this.state.level })
         } else {
             this.setState({
-                correctCount: newCount,
                 currentQuestionSetIndex: newIndex
             })
         }
@@ -88,6 +87,7 @@ export default class Level extends React.Component {
         let correct = <TargetBtn
             key={correctTarget + uuid.v4()}
             value={correctTarget}
+            correctValue={correctTarget}
             navigation={this.props.navigation}
             changeQuestion={this.changeQuestion}
             currentPlayer={this.state.currentPlayer}
@@ -101,6 +101,7 @@ export default class Level extends React.Component {
             let incorrect = <TargetBtn
                 key={attempt.literal + uuid.v4()}
                 value={attempt.literal}
+                correctValue={correctTarget}
                 navigation={this.props.navigation}
                 changeQuestion={this.changeQuestion}
                 currentPlayer={this.state.currentPlayer}
