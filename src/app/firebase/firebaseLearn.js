@@ -1,6 +1,15 @@
 import { getDatabase, ref, set } from "firebase/database";
 import { initializeApp } from 'firebase/app'
-import firebaseConfig from './firebaseApp'
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDP6kHztrdvnAsSNyrn8KvyqJHuYlKnDmE",
+    authDomain: "multi-abc-s.firebaseapp.com",
+    projectId: "multi-abc-s",
+    storageBucket: "multi-abc-s.appspot.com",
+    messagingSenderId: "216103901662",
+    appId: "1:216103901662:web:64bf59c095ee0aff8b254f",
+    measurementId: "G-DDRSQ467KH"
+};
 
 initializeApp(firebaseConfig);
 const db = getDatabase();
