@@ -20,7 +20,7 @@ export default class Instructions extends React.Component {
         for (let player of this.props.route.params.players) {
             let playerComponent = <View style={styles.playerContainer} key={uuid.v4()}>
                 <Text style={styles.playerText}> {player.name}</Text>
-                <Text style={styles.playerText}> Level: {player.questionIndex} </Text>
+                <Text style={styles.playerText}> Level: {player.levelIndex} </Text>
             </View>
             playerArray.push(playerComponent)
         }

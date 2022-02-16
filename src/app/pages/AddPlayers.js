@@ -53,6 +53,7 @@ export default class AddPlayers extends React.Component {
     }
 
     async createPlayers() {
+        // AsyncStorage.getAllKeys().then(keys => AsyncStorage.multiRemove(keys)).then(() => alert('success')); // Use to clear async storage
         if (Object.keys(this.inputValue).length == this.props.route.params.numPlayers) {
             let allPlayers = []
             let firebasePlayerID = []

@@ -43,9 +43,9 @@ export default class Level extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        let questionIndex = props.route.params.questionIndex
+        let levelIndex = props.route.params.levelIndex
 
-        if (questionIndex == 38) {
+        if (levelIndex == 38) {
             StoreReview.requestReview()
         }
         // console.log(props)

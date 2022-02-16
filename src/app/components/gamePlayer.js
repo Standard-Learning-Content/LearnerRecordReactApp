@@ -7,8 +7,7 @@ import * as Crypto from "expo-crypto";
 let GamePlayer = class {
     constructor(name) {
         this._name = name
-        this._questionIndex = 0
-        this._totalPoint = 0
+        this._levelIndex = 0
         this._id = ""
         this._learnerRecord = ""
         this._questions = ""
@@ -31,17 +30,14 @@ let GamePlayer = class {
         return this._learnerRecord
     }
 
-    get questionIndex() {
-        return this._questionIndex
+    get levelIndex() {
+        return this._levelIndex
     }
 
     get questions() {
         return this._questions
     }
 
-    get totalPoint() {
-        return this._totalPoint
-    }
 
     getQuestionSetByID(levelId) {
         return this._questions[levelId]
@@ -58,36 +54,29 @@ let GamePlayer = class {
 
     // If the player get all the questions correct in a level, the will 
     // move to the next level
-    incrementQuesitonIndex(correctCount) {
+    async incrementQuesitonIndex(correctCount) {
         if (correctCount == 5) {
-            this._questionIndex++
+            this._levelIndex++
+            const jsonValue = JSON.stringify({ "levelIndex": this._levelIndex })
+            await AsyncStorage.setItem(this._id, jsonValue)
         }
     }
 
     setPlayerLevel(jsonPlayerStorage) {
         let playerLevels = []
-        let requiredPointsCounter = 0
         for (let level in all_levels) {
             let keys = Object.keys(all_levels[level])
-            let gameLevel
-            if (jsonPlayerStorage != null) {
-                let playLevelKey = Object.keys(jsonPlayerStorage.levelPoint)
-                if (keys[0] < parseInt(playLevelKey[0])) {
-                    gameLevel = new GameLevel(keys[0], 3, all_levels[level][keys[0]], requiredPointsCounter)
-                } else if (jsonPlayerStorage != null && keys[0] == parseInt(playLevelKey[0])) {
-                    gameLevel = new GameLevel(keys[0], jsonPlayerStorage.levelPoint[playLevelKey], all_levels[level][keys[0]], requiredPointsCounter)
-                } else {
-                    gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
-                }
-            } else {
-                gameLevel = new GameLevel(keys[0], 0, all_levels[level][keys[0]], requiredPointsCounter)
-            }
-
+            let gameLevel = new GameLevel(keys[0], all_levels[level][keys[0]])
             playerLevels.push(gameLevel)
-            requiredPointsCounter += 3
         }
-        this._totalPoint = jsonPlayerStorage != null ? jsonPlayerStorage.totalPoint : 0;
         this._questions = playerLevels
+
+        if (jsonPlayerStorage != null) {
+            this._levelIndex = jsonPlayerStorage.levelIndex
+        } else {
+            this._levelIndex = 0
+        }
+
     }
 
     async setLearnerRecord(playerId) {
@@ -177,51 +166,51 @@ let GamePlayer = class {
         if (config["debug-mode"]) console.log(data)
     }
 
-    async updateTotalPoints(addedPoints, levelCorrectPoints, currentLevelCorrectPoints, levelID) {
-        if (levelCorrectPoints == 0) {
-            if (addedPoints >= 5) {
-                this._totalPoint += 3
-            } else if (addedPoints == 4 || addedPoints == 3) {
-                this._totalPoint += 2
-            } else if (addedPoints == 2 || addedPoints == 1) {
-                this._totalPoint += 1
-            } else {
-                this._totalPoint += 0
-            }
-        } else if (levelCorrectPoints == 1) {
-            if (addedPoints >= 5) {
-                this._totalPoint += 2
-            } else if (addedPoints == 4 || addedPoints == 3 && levelCorrectPoints < 2) {
-                this._totalPoint += 1
-            } else if (addedPoints == 2 || addedPoints == 1) {
-                this._totalPoint += 0
-            } else {
-                this._totalPoint += 0
-            }
-        } else if (levelCorrectPoints == 2) {
-            if (addedPoints >= 5) {
-                this._totalPoint += 1
-            } else if (addedPoints == 4 || addedPoints == 3) {
-                this._totalPoint += 0
-            } else if (addedPoints == 2 || addedPoints == 1) {
-                this._totalPoint += 0
-            } else {
-                this._totalPoint += 0
-            }
-        }
+    // async updateTotalPoints(addedPoints, levelCorrectPoints, currentLevelCorrectPoints, levelID) {
+    //     if (levelCorrectPoints == 0) {
+    //         if (addedPoints >= 5) {
+    //             this._totalPoint += 3
+    //         } else if (addedPoints == 4 || addedPoints == 3) {
+    //             this._totalPoint += 2
+    //         } else if (addedPoints == 2 || addedPoints == 1) {
+    //             this._totalPoint += 1
+    //         } else {
+    //             this._totalPoint += 0
+    //         }
+    //     } else if (levelCorrectPoints == 1) {
+    //         if (addedPoints >= 5) {
+    //             this._totalPoint += 2
+    //         } else if (addedPoints == 4 || addedPoints == 3 && levelCorrectPoints < 2) {
+    //             this._totalPoint += 1
+    //         } else if (addedPoints == 2 || addedPoints == 1) {
+    //             this._totalPoint += 0
+    //         } else {
+    //             this._totalPoint += 0
+    //         }
+    //     } else if (levelCorrectPoints == 2) {
+    //         if (addedPoints >= 5) {
+    //             this._totalPoint += 1
+    //         } else if (addedPoints == 4 || addedPoints == 3) {
+    //             this._totalPoint += 0
+    //         } else if (addedPoints == 2 || addedPoints == 1) {
+    //             this._totalPoint += 0
+    //         } else {
+    //             this._totalPoint += 0
+    //         }
+    //     }
 
-        let value = {
-            "totalPoint": this._totalPoint,
-            "levelPoint": {
-                [levelID]: currentLevelCorrectPoints,
-            }
-        }
+    //     let value = {
+    //         "totalPoint": this._totalPoint,
+    //         "levelPoint": {
+    //             [levelID]: currentLevelCorrectPoints,
+    //         }
+    //     }
 
-        const jsonValue = JSON.stringify(value)
-        await AsyncStorage.setItem(this._id, jsonValue)
-        return this._totalPoint
+    //     const jsonValue = JSON.stringify(value)
+    //     await AsyncStorage.setItem(this._id, jsonValue)
+    //     return this._totalPoint
 
-    }
+    // }
 
     toString() {
         return "Name: " + this._name + ", ID: " + this._id + ", Points: " + this._totalPoint

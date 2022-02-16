@@ -39,14 +39,14 @@ export default class Main extends React.Component {
         setTimeout(() => {
             let currentPlayerObj = this.state.players[this.state.currentPlayerIndex]
             this.props.navigation.navigate("Learn", {
-                levelID: currentPlayerObj.questions[currentPlayerObj.questionIndex].levelId,
-                currentQuestionSet: currentPlayerObj.questions[currentPlayerObj.questionIndex].levels,
-                currentQuestionSetLength: currentPlayerObj.questions[currentPlayerObj.questionIndex].levels.length,
+                levelID: currentPlayerObj.questions[currentPlayerObj.levelIndex].levelId,
+                currentQuestionSet: currentPlayerObj.questions[currentPlayerObj.levelIndex].levels,
+                currentQuestionSetLength: currentPlayerObj.questions[currentPlayerObj.levelIndex].levels.length,
                 currentPlayerId: currentPlayerObj.id,
                 currentPlayerName: currentPlayerObj.name,
-                questionIndex: currentPlayerObj.questionIndex,
+                levelIndex: currentPlayerObj.levelIndex,
                 currentPlayer: currentPlayerObj,
-                level: currentPlayerObj.questions[currentPlayerObj.questionIndex],
+                level: currentPlayerObj.questions[currentPlayerObj.levelIndex],
                 deviceID: this.props.route.params.deviceID,
                 sessonId: this.props.route.params.sessonId,
             })

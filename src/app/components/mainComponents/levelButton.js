@@ -29,7 +29,7 @@ export default class LevelButton extends React.Component {
             "currentQuestionSetLength": currentQuestionSet.length,
             "currentPlayerId": currentPlayerObj.id,
             "currentPlayerName": currentPlayerObj.name,
-            "questionIndex": currentPlayerObj.questionIndex,
+            "levelIndex": currentPlayerObj.levelIndex,
             "currentPlayer": currentPlayerObj,
             "level": this.props.level
         })

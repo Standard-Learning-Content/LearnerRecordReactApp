@@ -18,9 +18,9 @@ export default class LevelComplete extends React.Component {
     }
 
     async componentDidMount() {
-        let prevCorrectPoint = this.props.route.params.level.correctPoints
-        let currentCorrectPoints = this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
-        this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, prevCorrectPoint, currentCorrectPoints, this.props.route.params.level.levelId)
+        // let prevCorrectPoint = this.props.route.params.level.correctPoints
+        // let currentCorrectPoints = this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
+        // this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, prevCorrectPoint, currentCorrectPoints, this.props.route.params.level.levelId)
         recordAnswer(this.props.route.params.deviceID, this.props.route.params.currentPlayer.id, this.props.route.params.level.levelId, this.props.route.params.gameplayResults)
         let correctCounter = 0
         for (let result of this.props.route.params.gameplayResults) {
@@ -28,7 +28,7 @@ export default class LevelComplete extends React.Component {
                 correctCounter++
             }
         }
-        this.props.route.params.currentPlayer.incrementQuesitonIndex(correctCounter)
+        await this.props.route.params.currentPlayer.incrementQuesitonIndex(correctCounter)
     }
 
 
