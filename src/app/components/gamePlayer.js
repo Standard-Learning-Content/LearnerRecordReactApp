@@ -64,9 +64,22 @@ let GamePlayer = class {
 
     setPlayerLevel(jsonPlayerStorage) {
         let playerLevels = []
+        let setlevelIndexFromLR = false
+        let levelIndexFromLR = 0
         for (let level in all_levels) {
-            let keys = Object.keys(all_levels[level])
-            let gameLevel = new GameLevel(keys[0], all_levels[level][keys[0]])
+            let levelID = Object.keys(all_levels[level])
+            let questionArray = all_levels[level][levelID[0]]
+            let gameLevel = new GameLevel(levelID[0], questionArray)
+            if (!setlevelIndexFromLR && Object.keys(this._learnerRecord).length > 0) {
+                for (let question of questionArray) {
+                    if (this._learnerRecord[question.correctStandardContent].countsCorrect < 10) {
+                        setlevelIndexFromLR = true
+                        break;
+                    }
+                }
+                levelIndexFromLR++
+            }
+
             playerLevels.push(gameLevel)
         }
         this._questions = playerLevels
@@ -74,8 +87,9 @@ let GamePlayer = class {
         if (jsonPlayerStorage != null) {
             this._levelIndex = jsonPlayerStorage.levelIndex
         } else {
-            this._levelIndex = 0
+            this._levelIndex = levelIndexFromLR
         }
+
 
     }
 

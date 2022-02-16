@@ -61,6 +61,7 @@ export default class AddPlayers extends React.Component {
                 let tempPlayer = new GamePlayer(this.inputValue[player])
                 await tempPlayer.setPlayerId(this.inputValue[player])
                 await tempPlayer.setLearnerRecord(tempPlayer.id)
+                // console.log(tempPlayer.learnerRecord)
                 const jsonPlayerStorage = await tempPlayer.getPlayerLocalStorage()
                 tempPlayer.setPlayerLevel(jsonPlayerStorage)
                 firebasePlayerID.push("cco:Player_" + tempPlayer.id)
@@ -79,7 +80,6 @@ export default class AddPlayers extends React.Component {
             }
             let sessionID = Date.now()
             startLearningSession(deviceID.deviceID, sessionID, firebasePlayerID) //Store the players in firebase 
-            // this.props.navigation.navigate('Map', { "players": allPlayers })instructions
             this.props.navigation.navigate('instructions', {
                 players: allPlayers,
                 deviceID: deviceID.deviceID,
