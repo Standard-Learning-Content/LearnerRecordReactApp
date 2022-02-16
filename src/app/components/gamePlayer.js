@@ -85,7 +85,11 @@ let GamePlayer = class {
         this._questions = playerLevels
 
         if (jsonPlayerStorage != null) {
-            this._levelIndex = jsonPlayerStorage.levelIndex
+            if (levelIndexFromLR < jsonPlayerStorage.levelIndex) {
+                this._levelIndex = jsonPlayerStorage.levelIndex
+            } else {
+                this._levelIndex = levelIndexFromLR
+            }
         } else {
             this._levelIndex = levelIndexFromLR
         }
