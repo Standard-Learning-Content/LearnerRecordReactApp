@@ -15,7 +15,7 @@ import { Button } from 'react-native-elements';
 import GamePlayer from "../components/gamePlayer";
 import PropTypes from 'prop-types';
 import Background from '../../assets/background.png'
-import { startLearningSession } from '../firebase/firebaseLearn'
+// import { startLearningSession } from '../firebase/firebaseLearn'
 
 //////////////////////
 // Component Class
@@ -79,7 +79,7 @@ export default class AddPlayers extends React.Component {
                 await AsyncStorage.setItem("deviceID", jsonValue)
             }
             let sessionID = Date.now()
-            startLearningSession(deviceID.deviceID, sessionID, firebasePlayerID) //Store the players in firebase 
+            // startLearningSession(deviceID.deviceID, sessionID, firebasePlayerID) //Store the players in firebase 
             this.props.navigation.navigate('instructions', {
                 players: allPlayers,
                 deviceID: deviceID.deviceID,

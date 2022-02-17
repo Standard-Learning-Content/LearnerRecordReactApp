@@ -26,7 +26,6 @@
     "expo-modules-core": "~0.4.10",
     "expo-status-bar": "~1.1.0",
     "expo-store-review": "~5.0.3",
-    "firebase": "^9.6.6",
     "install": "^0.13.0",
     "prop-types": "^15.8.1",
     "react": "17.0.1",

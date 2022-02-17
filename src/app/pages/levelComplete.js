@@ -2,7 +2,7 @@
  * Selects how many user are learnering 
  */
 import React from "react";
-import { recordAnswer } from '../firebase/firebaseLearn'
+// import { recordAnswer } from '../firebase/firebaseLearn'
 import { View, StyleSheet, Text, ImageBackground } from "react-native";
 import { Button } from "react-native-elements";
 import PropTypes from "prop-types";
@@ -21,7 +21,7 @@ export default class LevelComplete extends React.Component {
         // let prevCorrectPoint = this.props.route.params.level.correctPoints
         // let currentCorrectPoints = this.props.route.params.level.setCorrectPoints(this.props.route.params.correctCount, this.props.route.params.level.correctPoints)
         // this.props.route.params.currentPlayer.updateTotalPoints(this.props.route.params.correctCount, prevCorrectPoint, currentCorrectPoints, this.props.route.params.level.levelId)
-        recordAnswer(this.props.route.params.deviceID, this.props.route.params.currentPlayer.id, this.props.route.params.level.levelId, this.props.route.params.gameplayResults)
+        // recordAnswer(this.props.route.params.deviceID, this.props.route.params.currentPlayer.id, this.props.route.params.level.levelId, this.props.route.params.gameplayResults)
         let correctCounter = 0
         for (let result of this.props.route.params.gameplayResults) {
             if (result.correct) {
