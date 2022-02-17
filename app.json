@@ -21,12 +21,6 @@
       "versionCode": 14,
       "useNextNotificationsApi": true,
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.knowledgeGraphsForLearning.mlq",
-      "keystore": {
-        "keystorePath": "credentials/android/keystore.jks",
-        "keystorePassword": "a2241a1f0e664a73b03f3a6e64527acf",
-        "keyAlias": "QGRldi5jYXNleS9sZWFybmVyUmVjb3Jk",
-        "keyPassword": "5ca4866caebe42c3b7de601866999305"
-      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
