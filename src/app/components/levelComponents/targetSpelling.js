@@ -63,23 +63,29 @@ export default class TargetSpelling extends React.Component {
             correct: true,
             timestamp: Date.now()
         }
-        const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Method": "POST,GET"
-            },
-            body: JSON.stringify(answerData)
-        })
+        try {
+            const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Method": "POST,GET"
+                },
+                body: JSON.stringify(answerData)
+            })
 
-        if (!res.ok) {
-            throw new Error("Request returned a non 200 response code")
+            if (!res.ok) {
+                throw new Error("Request returned a non 200 response code")
+            }
+            const data = await res.text()
+            if (config["debug-mode"]) console.log(data)
+        } catch (error) {
+            console.log(error)
         }
 
 
-        const data = await res.text()
-        if (config["debug-mode"]) console.log(data)
+
+
         this.props.currentPlayer.updateLocalLearnerRecord(this.props.correctTarget, answerData.standardLearnedContent, answerData.correct)
         this.setState({
             currentCharIndex: "",

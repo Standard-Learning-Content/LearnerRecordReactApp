@@ -5,7 +5,6 @@
  */
 import React from "react";
 import { Button } from "react-native-elements";
-import config from "../../config.json"
 import { playCorrectSound, playIncorrectSound } from "../sounds"
 import PropTypes from "prop-types";
 
@@ -33,29 +32,34 @@ export default class TargetBtn extends React.Component {
             this.setState({
                 buttonColor: "#84ff9f"
             })
-
             playCorrectSound()
 
             setTimeout(async () => {
                 this.setState({
                     buttonColor: "#edff8f"
                 })
-                const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Method": "POST,GET"
-                    },
-                    body: JSON.stringify(answerData)
-                })
+                try {
+                    const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "*",
+                            "Access-Control-Allow-Method": "POST,GET"
+                        },
+                        body: JSON.stringify(answerData)
+                    })
 
-                if (!res.ok) {
-                    throw new Error("Request returned af non 200 response code")
+                    if (!res.ok) {
+                        throw new Error("Request returned a non 200 response code")
+                    }
+
+                    const data = await res.text()
+                    console.log(data)
+                } catch (error) {
+                    console.log(error)
                 }
 
-                const data = await res.text()
-                if (config["debug-mode"]) console.log(data)
+
                 this.props.currentPlayer.updateLocalLearnerRecord(this.props.value, answerData.standardLearnedContent, answerData.correct)
                 setTimeout(async () => {
                     this.props.changeQuestion(true, this.props.correctValue)
