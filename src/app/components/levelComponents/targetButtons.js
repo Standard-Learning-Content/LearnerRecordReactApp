@@ -8,7 +8,7 @@ import { Button } from "react-native-elements";
 import { playCorrectSound, playIncorrectSound } from "../sounds"
 import PropTypes from "prop-types";
 
-
+const debug = false
 //////////////////////
 // Component Class
 /////////////////////
@@ -54,7 +54,7 @@ export default class TargetBtn extends React.Component {
                     }
 
                     const data = await res.text()
-                    console.log(data)
+                    if (debug) console.log(data)
                 } catch (error) {
                     console.log(error)
                 }
