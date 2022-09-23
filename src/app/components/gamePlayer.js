@@ -171,7 +171,6 @@ let GamePlayer = class {
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Method": "POST,GET"
             },
             body: JSON.stringify(answerData)
         })

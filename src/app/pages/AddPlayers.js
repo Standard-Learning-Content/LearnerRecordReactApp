@@ -61,7 +61,6 @@ export default class AddPlayers extends React.Component {
                 let tempPlayer = new GamePlayer(this.inputValue[player])
                 await tempPlayer.setPlayerId(this.inputValue[player])
                 await tempPlayer.setLearnerRecord(tempPlayer.id)
-                // console.log(tempPlayer.learnerRecord)
                 const jsonPlayerStorage = await tempPlayer.getPlayerLocalStorage()
                 tempPlayer.setPlayerLevel(jsonPlayerStorage)
                 firebasePlayerID.push("cco:Player_" + tempPlayer.id)
