@@ -64,7 +64,7 @@ export default class TargetSpelling extends React.Component {
             timestamp: Date.now()
         }
         try {
-            const res = await fetch("http://3.132.12.204:4000/writeToLearnerRecord", {
+            const res = await fetch("http://3.12.231.86:4000/writeToLearnerRecord", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
