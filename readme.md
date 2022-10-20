@@ -50,15 +50,20 @@ In the file `./components/targetButtons.js` we send a PUT request with data to u
     "timestamp": Date.now()
 }
 ```
+# Getting Started
 
-# How to Run
+## Dependencies
+1. nodejs - `sudo apt install nodejs`
+2. npm = `sudo apt install npm`
+3. yarn = `npm install --global yarn`
+
+## How to Run
 1. Install all the dependacies `yarn install`
 2. Run the app `yarn start`
 
 > Notice: MLQ uses the expo framework to run on IOS, Android, and Web Platforms. Once the app runs, expo will open an internet browser. 
 > You can then select options to run the app. My prefered option is to download the expo app on your phone and scan the QR code 
 > on the web browser. The app will then run locally on your phone. 
-
 
 
 # How to build 
