@@ -56,7 +56,9 @@ In the file `./components/targetButtons.js` we send a PUT request with data to u
 1. nodejs - `sudo apt install nodejs`
 2. npm = `sudo apt install npm`
 3. yarn = `npm install --global yarn`
-5. One a mobile Device, Install the Expo go App
+4. One a mobile Device, Install the Expo go App
+
+> Note I am using node v14.20.1 (npm v6.14.17)
 
 ## How to Run
 1. Install all the dependacies `yarn install`
