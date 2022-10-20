@@ -14,7 +14,7 @@
 # Standard Content 
 All the standard content is published at this link: https://docs.google.com/spreadsheets/d/1jVHFCGuw0yabhU-JeuqQZmutD4tTyCX0/edit?usp=sharing&ouid=113939925190518808864&rtpof=true&sd=true
 
-
+<!-- 
 # Reading from the Ontology
 
 In the file `./pages/AddPlayers.js` we send a POST request with players ID to get their learner Record
@@ -49,7 +49,7 @@ In the file `./components/targetButtons.js` we send a PUT request with data to u
     "correct": true or false ,
     "timestamp": Date.now()
 }
-```
+``` -->
 # Getting Started
 
 ## Dependencies
